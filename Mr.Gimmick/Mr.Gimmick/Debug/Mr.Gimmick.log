@@ -1,0 +1,13 @@
+﻿  Boss.cpp
+  Enemy.cpp
+  Flag.cpp
+  Hazard.cpp
+  MovableBackgroundObj.cpp
+  MovableTile.cpp
+  PassiveCreature.cpp
+  ScrollBar.cpp
+  UselessObj.cpp
+  Water.cpp
+  Waterfall.cpp
+  Generating Code...
+  Mr.Gimmick.vcxproj -> C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Debug\Mr.Gimmick.exe
