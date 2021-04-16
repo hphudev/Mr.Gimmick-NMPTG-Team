@@ -1,13 +1,18 @@
 ﻿#include "Game.h"
 
+// *
 // Khởi tạo game
 bool Game::InitGame(HWND window)
 {
-	// Đặt lại tiến trình số ngẫu nhiên
-	srand((unsigned int)time(NULL));
+	this->window = window;
 
-	// Trả về okay
-	return 1;
+	return this->directX.InitDirectX(this->window);
+}
+
+// *
+void Game::LoadGame()
+{
+
 }
 
 // Vòng lặp game chính
@@ -36,6 +41,18 @@ void Game::RunGame(HWND window)
 	{
 		PostMessage(window, WM_DESTROY, 0, 0);
 	}
+}
+
+// *
+void Game::UpdateGame()
+{
+
+}
+
+// *
+void Game::Render()
+{
+
 }
 
 // Giải phóng bộ nhớ và dọn dẹp trước khi kết thúc game

@@ -2,7 +2,7 @@
 
 #include "MovableTile.h"
 
-class Water : public MovableTile
+class WaterTile : public MovableTile
 {
 
 };

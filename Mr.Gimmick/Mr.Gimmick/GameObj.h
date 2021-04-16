@@ -1,6 +1,9 @@
 #pragma once
+// *
 
-class GameObj
+#include "VisualObj.h"
+
+class GameObj : VisualObj
 {
 
 };

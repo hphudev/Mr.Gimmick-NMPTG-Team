@@ -1,4 +1,7 @@
-﻿//#include "dsutil.h"
+﻿// *
+#pragma once
+
+//#include "dsutil.h"
 //#include "IOHandler.h"
 //#include <dxerr9.h>
 //#include <dsound.h>

@@ -1,8 +1,8 @@
 #pragma once
 
-#include "UsefulObj.h"
+#include "ImmovableObj.h"
 
-class Treasure : public UsefulObj
+class Treasure : public ImmovableObj
 {
 
 };

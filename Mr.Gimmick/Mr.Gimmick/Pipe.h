@@ -1,8 +1,9 @@
+// *
 #pragma once
 
-#include "ImmovableObj.h"
+#include "ImmovableBackgroundObj.h"
 
-class Pipe : public ImmovableObj
+class Pipe : public ImmovableBackgroundObj
 {
 
 };

@@ -1,8 +1,9 @@
 #pragma once
+// *
 
-#include "MovableBackgroundObj.h"
+#include "Tile.h"
 
-class MovableTile : public MovableBackgroundObj
+class MovableTile : public Tile
 {
 
 };
