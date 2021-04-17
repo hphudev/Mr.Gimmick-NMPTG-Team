@@ -1,0 +1,12 @@
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\TileMap\TileMap1\bin\Debug\TileMap1.exe.config
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\TileMap\TileMap1\bin\Debug\TileMap1.exe
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\TileMap\TileMap1\bin\Debug\TileMap1.pdb
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\TileMap\TileMap1\bin\Debug\XnaFan.ImageComparison.dll
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\TileMap\TileMap1\obj\Debug\TileMap.csprojAssemblyReference.cache
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\TileMap\TileMap1\obj\Debug\TileMap1.Form1.resources
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\TileMap\TileMap1\obj\Debug\TileMap1.Properties.Resources.resources
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\TileMap\TileMap1\obj\Debug\TileMap.csproj.GenerateResource.cache
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\TileMap\TileMap1\obj\Debug\TileMap.csproj.CoreCompileInputs.cache
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\TileMap\TileMap1\obj\Debug\TileMap.csproj.CopyComplete
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\TileMap\TileMap1\obj\Debug\TileMap1.exe
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\TileMap\TileMap1\obj\Debug\TileMap1.pdb
