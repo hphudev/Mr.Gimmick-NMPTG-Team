@@ -1,6 +1,5 @@
 #include "DirectX.h"
 
-// *
 bool DirectX::InitDirectX(HWND window)
 {
 	//make sure Direct3D objects was created okay
@@ -34,8 +33,13 @@ DirectInput DirectX::GetDirectInput()
     return this->directInput;
 }
 
-// *
 //DirectSound DirectX::GetDirectSound()
 //{
 //    return this->directSound;
 //}
+
+void DirectX::ReleaseDirectX()
+{
+	this->directXGraphic.Release();
+	this->directInput.Release();
+}

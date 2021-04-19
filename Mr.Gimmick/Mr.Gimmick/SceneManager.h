@@ -1,6 +1,8 @@
 #pragma once
 
-class SceneManager
+#include "GameComponent.h"
+
+class SceneManager : public GameComponent
 {
 
 };

@@ -1,9 +1,14 @@
 #pragma once
-// *
 
-#include "VisualObj.h"
+#include <list>
+#include "TwoDimensionObj.h"
+#include "Tile.h"
 
-class GameObj : VisualObj
+using namespace std;
+
+class GameObj : public TwoDimensionObj
 {
-
+public:
+    GameObj();
+    GameObj(float x, float y);
 };

@@ -1,4 +1,12 @@
 ﻿#include "Box.h"
+
+Box::Box(float x, float y, float vX, float vY, float width, float height)
+{
+	this->point = Point(x, y);
+	this->velocity = Velocity(vX, vY);
+	this->dimension = Dimension(width, height);
+}
+
 //
 //void FindDistance(float coordinate1, float coordinate2, float dimension1, float dimension2, 
 //    float& distance1, float& distance2)

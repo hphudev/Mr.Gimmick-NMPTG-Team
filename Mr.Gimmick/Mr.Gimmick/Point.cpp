@@ -1,14 +1,11 @@
 #include "Point.h"
 
-template <typename T>
-Point<T>::Point()
+Point::Point()
 {
-	this->x = this->y = 0;
+	
 }
 
-template <typename T>
-Point<T>::Point(T x, T y)
+Point::Point(float x, float y) : Pair(x, y)
 {
-	this->x = x;
-	this->y = y;
+
 }

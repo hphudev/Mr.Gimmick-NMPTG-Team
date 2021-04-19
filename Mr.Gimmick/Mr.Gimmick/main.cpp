@@ -1,14 +1,12 @@
 #include "Game.h"
 #include "WindowHandler.h"
 
-Game game;	
-// *
+Game game;
 
 LRESULT WINAPI WinProc(HWND window, UINT message, WPARAM wParameter, LPARAM lParameter);
-// *
 
 //entry point for a Windows program
-int WINAPI WinMain(HINSTANCE currentInstance, HINSTANCE previousInstance, LPSTR argCmdLines,	// *
+int WINAPI WinMain(HINSTANCE currentInstance, HINSTANCE previousInstance, LPSTR argCmdLines, 
 	int cmdShowMode)
 {
 	WindowHandler windowHandler;
@@ -45,4 +43,3 @@ LRESULT WINAPI WinProc(HWND window, UINT message, WPARAM wParameter, LPARAM lPar
 
 	return DefWindowProc(window, message, wParameter, lParameter);
 }
-// *

@@ -1,12 +1,12 @@
-﻿// *
-#pragma once
+﻿#pragma once
 
+#include "DirectXComponent.h"
 //#include "dsutil.h"
 //#include "IOHandler.h"
 //#include <dxerr9.h>
 //#include <dsound.h>
 //
-class DirectSound
+class DirectSound : public DirectXComponent
 {
 //private:
 //	CSoundManager* soundManager;		// Quản lý phần cứng

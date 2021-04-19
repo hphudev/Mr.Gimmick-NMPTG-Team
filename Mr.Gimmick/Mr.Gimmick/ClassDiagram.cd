@@ -1,12 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Background" Collapsed="true">
-    <Position X="28" Y="15.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Background.h</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Boss" Collapsed="true">
     <Position X="29.75" Y="9" Width="1.5" />
     <TypeIdentifier>
@@ -15,9 +8,9 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Box" Collapsed="true">
-    <Position X="28" Y="13.75" Width="1.5" />
+    <Position X="8.5" Y="15" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAABAAAIAAAAAAAQAAAAAAAA=</HashCode>
       <FileName>Box.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -28,52 +21,31 @@
       <FileName>Bullet.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CollisionHandler" Collapsed="true">
-    <Position X="14.25" Y="12.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>CollisionHandler.h</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Device" Collapsed="true">
-    <Position X="2.75" Y="11.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Device.h</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Dimension" Collapsed="true">
-    <Position X="33.25" Y="13.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Dimension.h</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="DirectInput" Collapsed="true">
-    <Position X="31.5" Y="12.25" Width="1.5" />
+    <Position X="36" Y="12.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAACBAAAAAAAAABAAAAAAEAAAAAAACAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAACBAAAAAAAAABAAAAAAEAAAAAAABAAAAA=</HashCode>
       <FileName>DirectInput.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DirectSound" Collapsed="true">
-    <Position X="33.25" Y="12.25" Width="1.5" />
+    <Position X="38.25" Y="12.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>DirectSound.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DirectX" Collapsed="true">
-    <Position X="28" Y="12.25" Width="1.5" />
+    <Position X="0.5" Y="16.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAACAAAAAAEAAACAAAAAAAAAAAAAACAAgAA=</HashCode>
+      <HashCode>AAAAAAAAAAACAAAAAAEAAACAAAAAAIAAAAAAACAAgAA=</HashCode>
       <FileName>DirectX.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DirectXGraphic" Collapsed="true">
-    <Position X="29.75" Y="12.25" Width="1.5" />
+    <Position X="40.5" Y="12.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BAAEAAIJBAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <HashCode>BAAEAAIBBAAAAAAAAAAAAAAAAAAAAAAQAAAAABAAAAA=</HashCode>
       <FileName>DirectXGraphic.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -85,9 +57,9 @@
     </TypeIdentifier>
   </Class>
   <Class Name="FileHandler" Collapsed="true">
-    <Position X="16.5" Y="12.75" Width="1.5" />
+    <Position X="14.5" Y="12.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>FileHandler.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -99,28 +71,28 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Game" Collapsed="true">
-    <Position X="28" Y="11.5" Width="1.5" />
+    <Position X="8.5" Y="15.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ACAIAAAAAEAAAAAgAAAAQAAAAAAAAAAIABQAAIAQAAE=</HashCode>
+      <HashCode>ACAIAAAAAEAAAAAgAAAAQAAAAAgAAAAIABQAAIAQIAE=</HashCode>
       <FileName>Game.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameObj" Collapsed="true">
     <Position X="31" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GameObj.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GraphicDevice" Collapsed="true">
-    <Position X="0.5" Y="12.75" Width="1.5" />
+    <Position X="0.5" Y="11.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAACAIAAAoAABBAAAAAAAAEAAQAAAABAAAAAAIA=</HashCode>
+      <HashCode>AAQAAAACAIABC4AABBAAAAAAAAEAAQAAAABAAAAAAAA=</HashCode>
       <FileName>GraphicDevice.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Handler" Collapsed="true">
-    <Position X="15.25" Y="11.5" Width="1.5" />
+    <Position X="14.5" Y="11.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Handler.h</FileName>
@@ -140,13 +112,6 @@
       <FileName>HUD.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Image" Collapsed="true">
-    <Position X="24.5" Y="11.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Image.h</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="ImmovableBackgroundObj" Collapsed="true">
     <Position X="45.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
@@ -164,14 +129,14 @@
   <Class Name="ImmovableTile" Collapsed="true">
     <Position X="9.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAgAAAAAAAAgAAAAQAAAAAEAAAAIQAAAAAAAAAAAA=</HashCode>
       <FileName>ImmovableTile.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="InputDevice" Collapsed="true">
-    <Position X="5" Y="12.75" Width="1.5" />
+    <Position X="5" Y="11.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAACCAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <HashCode>AAAAAAACCAABAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>InputDevice.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -197,21 +162,22 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Keyboard" Collapsed="true">
-    <Position X="4" Y="14.25" Width="1.5" />
+    <Position X="4" Y="12.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAACAAIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
       <FileName>Keyboard.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Map" Collapsed="true">
-    <Position X="25.25" Y="7.5" Width="1.5" />
+  <Class Name="Background" Collapsed="true">
+    <Position X="8.5" Y="17.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Map.h</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAIAAkAAAAAAA=</HashCode>
+      <FileName>Background.h</FileName>
+      <NewMemberFileName>Map.h</NewMemberFileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Mouse" Collapsed="true">
-    <Position X="6.25" Y="14.25" Width="1.5" />
+    <Position X="6.25" Y="12.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAACAAAAAEAAAAEAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Mouse.h</FileName>
@@ -227,14 +193,14 @@
   <Class Name="MovableObj" Collapsed="true">
     <Position X="20.25" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAEAIAAAgAAAAAAAAACAgAAAAAAAgQAAAAAAAA=</HashCode>
       <FileName>MovableObj.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MovableTile" Collapsed="true">
     <Position X="2.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAgAAAAAAgEgAAAAAAAAAAABEAAgAgAAAAAAAAAAA=</HashCode>
       <FileName>MovableTile.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -255,14 +221,14 @@
   <Class Name="PlayableObj" Collapsed="true">
     <Position X="14" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>PlayableObj.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Point&lt;T&gt;" Collapsed="true">
-    <Position X="29.75" Y="13.75" Width="1.5" />
+  <Class Name="Point" Collapsed="true">
+    <Position X="25.75" Y="12.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAABgAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Point.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -273,32 +239,18 @@
       <FileName>ScrollBar.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Sprite" Collapsed="true">
-    <Position X="24.5" Y="12.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Sprite.h</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Tile" Collapsed="true">
     <Position X="6.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
       <FileName>Tile.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Tilemap" Collapsed="true">
-    <Position X="29.75" Y="15.25" Width="1.5" />
+    <Position X="44" Y="12.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAQABAAAAAAAAAAASACCCCQAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Tilemap.h</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Tileset" Collapsed="true">
-    <Position X="31.5" Y="15.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Tileset.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TransformHandler" Collapsed="true">
@@ -336,25 +288,11 @@
       <FileName>UselessObj.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Vector" Collapsed="true">
-    <Position X="28" Y="13" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Vector.h</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Velocity" Collapsed="true">
-    <Position X="31.5" Y="13.75" Width="1.5" />
+    <Position X="28" Y="12.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
       <FileName>Velocity.h</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="VisualObj" Collapsed="true">
-    <Position X="18" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>VisualObj.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Waterfall" Collapsed="true">
@@ -365,7 +303,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="WindowHandler" Collapsed="true">
-    <Position X="18.75" Y="12.75" Width="1.5" />
+    <Position X="16.75" Y="12.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAQgAAAAAAAAAAAIAAAAA=</HashCode>
       <FileName>WindowHandler.h</FileName>
@@ -374,7 +312,7 @@
   <Class Name="Yumetaro" Collapsed="true">
     <Position X="14" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAwAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Yumetaro.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -388,42 +326,50 @@
   <Class Name="PipeTile" Collapsed="true">
     <Position X="11.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>PipeTile.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TerrainTile" Collapsed="true">
     <Position X="7.25" Y="4.75" Width="1.5" />
+    <InheritanceLine Type="ImmovableTile" ManuallyRouted="true">
+      <Path>
+        <Point X="10.25" Y="3.941" />
+        <Point X="10.25" Y="4.375" />
+        <Point X="8" Y="4.375" />
+        <Point X="8" Y="4.75" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>TerrainTile.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WaterTile" Collapsed="true">
     <Position X="0.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>WaterTile.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ScrollBarTile" Collapsed="true">
     <Position X="2.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
       <FileName>ScrollBarTile.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="FlagTile" Collapsed="true">
     <Position X="5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>FlagTile.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SceneryTile" Collapsed="true">
     <Position X="9.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>SceneryTile.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -435,31 +381,108 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Camera" Collapsed="true">
-    <Position X="29.75" Y="11.5" Width="1.5" />
+    <Position X="2.75" Y="16.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Camera.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Scene" Collapsed="true">
-    <Position X="29.75" Y="14.5" Width="1.5" />
+    <Position X="8.5" Y="16.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Scene.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SpriteHandler" Collapsed="true">
-    <Position X="21" Y="12.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>SpriteHandler.h</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="SceneManager" Collapsed="true">
-    <Position X="28" Y="14.5" Width="1.5" />
+    <Position X="5" Y="16.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>SceneManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pair" Collapsed="true">
+    <Position X="29" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAEAkAEgAAAAAAAAAAAAAAAQAAAAAAAAAAABA=</HashCode>
+      <FileName>Pair.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Vector" Collapsed="true">
+    <Position X="32.5" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Vector.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dimension" Collapsed="true">
+    <Position X="30.25" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Dimension.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Image" Collapsed="true">
+    <Position X="22.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAQAAAAAAABAAAAAABAAAAAAAAAAQAA=</HashCode>
+      <FileName>Image.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpriteHandler" Collapsed="true">
+    <Position X="19" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAQgAAgCAAAAAAAAAAAAQAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>SpriteHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sprite" Collapsed="true">
+    <Position X="22.5" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAQAAAIAAAAAAA=</HashCode>
+      <FileName>Sprite.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TwoDimensionObj" Collapsed="true">
+    <Position X="18.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TwoDimensionObj.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Device" Collapsed="true">
+    <Position X="2.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Device.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DirectXComponent" Collapsed="true">
+    <Position X="38.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>DirectXComponent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BackgroundComponent" Collapsed="true">
+    <Position X="45" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BackgroundComponent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tileset" Collapsed="true">
+    <Position X="46.25" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAgAgAKgAAAAAAAAAAAI=</HashCode>
+      <FileName>Tileset.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameComponent" Collapsed="true">
+    <Position X="2.75" Y="15" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameComponent.h</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
