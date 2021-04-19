@@ -1,17 +1,6 @@
 ﻿#include "InputDevice.h"
 
-InputDevice::~InputDevice()
-{
-	if (this->device != NULL)
-	{
-		// Trả quyền kiểm soát thiết bị
-		this->device->Unacquire();
-
-		this->device->Release();
-	}
-}
-
-bool InputDevice::InitDevice(LPDIRECTINPUT8& directInput, int type, HWND window)	// *
+bool InputDevice::InitDevice(LPDIRECTINPUT8& directInput, int type, HWND window)
 {
 	// Khởi tạo đối tượng thiết bị
 	HRESULT result = directInput->CreateDevice(
@@ -47,7 +36,6 @@ bool InputDevice::InitDevice(LPDIRECTINPUT8& directInput, int type, HWND window)
 													// trị chung thường được truyền khi làm việc với 
 													// bàn phím và chuột là DISCL_NONEXCLUSIVE và 
 													// DISCL_FOREGROUND
-													// *
 
 	// Chắc chắn thiết lập mức độ hợp tác thành công
 	if (result != DI_OK)
@@ -65,4 +53,15 @@ bool InputDevice::InitDevice(LPDIRECTINPUT8& directInput, int type, HWND window)
 	}
 
 	return 1;
+}
+
+void InputDevice::ReleaseDevice()
+{
+	if (this->device != NULL)
+	{
+		// Trả quyền kiểm soát thiết bị
+		this->device->Unacquire();
+
+		this->device->Release();
+	}
 }

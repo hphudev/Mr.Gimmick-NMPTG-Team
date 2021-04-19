@@ -1,6 +1,10 @@
 #pragma once
 
-class Velocity
-{
+#include "Pair.h"
 
+class Velocity : public Pair
+{
+public:
+	Velocity();
+	Velocity(float vX, float vY);
 };

@@ -146,22 +146,24 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Background.h" />
+    <ClInclude Include="BackgroundComponent.h" />
     <ClInclude Include="Boss.h" />
     <ClInclude Include="Box.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="Camera.h" />
-    <ClInclude Include="CollisionHandler.h" />
     <ClInclude Include="Device.h" />
     <ClInclude Include="Dimension.h" />
     <ClInclude Include="DirectInput.h" />
     <ClInclude Include="DirectSound.h" />
     <ClInclude Include="DirectX.h" />
+    <ClInclude Include="DirectXComponent.h" />
     <ClInclude Include="DirectXGraphic.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="FileHandler.h" />
     <ClInclude Include="Flag.h" />
     <ClInclude Include="FlagTile.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GameComponent.h" />
     <ClInclude Include="GameObj.h" />
     <ClInclude Include="GraphicDevice.h" />
     <ClInclude Include="Handler.h" />
@@ -181,6 +183,7 @@
     <ClInclude Include="MovableBackgroundObj.h" />
     <ClInclude Include="MovableObj.h" />
     <ClInclude Include="MovableTile.h" />
+    <ClInclude Include="Pair.h" />
     <ClInclude Include="PassiveCreature.h" />
     <ClInclude Include="Pipe.h" />
     <ClInclude Include="PipeTile.h" />
@@ -207,7 +210,7 @@
     <ClInclude Include="UselessObj.h" />
     <ClInclude Include="Vector.h" />
     <ClInclude Include="Velocity.h" />
-    <ClInclude Include="VisualObj.h" />
+    <ClInclude Include="TwoDimensionObj.h" />
     <ClInclude Include="Waterfall.h" />
     <ClInclude Include="WaterTile.h" />
     <ClInclude Include="WindowHandler.h" />
@@ -215,22 +218,24 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Background.cpp" />
+    <ClCompile Include="BackgroundComponent.cpp" />
     <ClCompile Include="Boss.cpp" />
     <ClCompile Include="Box.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Camera.cpp" />
-    <ClCompile Include="CollisionHandler.cpp" />
     <ClCompile Include="Device.cpp" />
     <ClCompile Include="Dimension.cpp" />
     <ClCompile Include="DirectInput.cpp" />
     <ClCompile Include="DirectSound.cpp" />
     <ClCompile Include="DirectX.cpp" />
+    <ClCompile Include="DirectXComponent.cpp" />
     <ClCompile Include="DirectXGraphic.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="FileHandler.cpp" />
     <ClCompile Include="Flag.cpp" />
     <ClCompile Include="FlagTile.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameComponent.cpp" />
     <ClCompile Include="GameObj.cpp" />
     <ClCompile Include="GraphicDevice.cpp" />
     <ClCompile Include="Handler.cpp" />
@@ -251,6 +256,7 @@
     <ClCompile Include="MovableBackgroundObj.cpp" />
     <ClCompile Include="MovableObj.cpp" />
     <ClCompile Include="MovableTile.cpp" />
+    <ClCompile Include="Pair.cpp" />
     <ClCompile Include="PassiveCreature.cpp" />
     <ClCompile Include="Pipe.cpp" />
     <ClCompile Include="PipeTile.cpp" />
@@ -276,7 +282,7 @@
     <ClCompile Include="UselessObj.cpp" />
     <ClCompile Include="Vector.cpp" />
     <ClCompile Include="Velocity.cpp" />
-    <ClCompile Include="VisualObj.cpp" />
+    <ClCompile Include="TwoDimensionObj.cpp" />
     <ClCompile Include="Waterfall.cpp" />
     <ClCompile Include="WaterTile.cpp" />
     <ClCompile Include="WindowHandler.cpp" />

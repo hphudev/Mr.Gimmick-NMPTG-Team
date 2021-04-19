@@ -1,6 +1,10 @@
 #pragma once
 
-class Vector
-{
+#include "Pair.h"
 
+class Vector : public Pair
+{
+public:
+	Vector();
+	Vector(float x, float y);
 };

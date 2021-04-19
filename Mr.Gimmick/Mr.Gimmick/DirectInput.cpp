@@ -1,20 +1,5 @@
 ﻿#include "DirectInput.h"
 
-DirectInput::~DirectInput()
-{
-	if (this->directInput != NULL)
-	{
-		this->directInput->Release();
-	}
-
-	for (int i = 0; i < 2; i++)
-	{
-		delete this->devices[i];
-	}
-
-	delete[] this->devices;
-}
-
 bool DirectInput::InitDirectInputObjects(HWND window)
 {
 	this->devices = new InputDevice * [2];
@@ -27,7 +12,7 @@ bool DirectInput::InitDirectInputObjects(HWND window)
 		DIRECTINPUT_VERSION,		// Luôn luôn là DIRECTINPUT_VERSION
 		IID_IDirectInput8,		// Định danh phiên bản DirectInput mà ta muốn sử dụng (hiện tại là 
 								// IID_IDirectInput8)
-		(void**)&this->directInput,		// Con trỏ trỏ đến con trỏ đối tượng DirectInput	// *
+		(void**)&this->directInput,		// Con trỏ trỏ đến con trỏ đối tượng DirectInput
 		NULL);		// Luôn luôn là NULL
 
 	// Chắc chắn đối tượng directInput được tạo
@@ -58,6 +43,22 @@ bool DirectInput::InitDirectInputObjects(HWND window)
 	}
 
 	return 1;
+}
+
+ void DirectInput::Release()
+{
+	if (this->directInput != NULL)
+	{
+		this->directInput->Release();
+	}
+
+	for (int i = 0; i < 2; i++)
+	{
+		this->devices[i]->ReleaseDevice();
+		delete this->devices[i];
+	}
+
+	delete[] this->devices;
 }
 
 Mouse* DirectInput::GetMouse()

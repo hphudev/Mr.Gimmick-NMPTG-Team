@@ -1,14 +1,5 @@
 ﻿#include "DirectXGraphic.h"
 
-DirectXGraphic::~DirectXGraphic()
-{
-	//release the Direct3D object
-	if (this->direct3D != NULL)
-	{
-		this->direct3D->Release();
-	}
-}
-
 bool DirectXGraphic::InitDirect3DObjects(HWND window, int width, int height, bool isFullscreen)
 {
 	//Khởi tạo đối tượng direct3D
@@ -28,6 +19,15 @@ bool DirectXGraphic::InitDirect3DObjects(HWND window, int width, int height, boo
 	}
 
 	return 1;
+}
+
+void DirectXGraphic::Release()
+{
+	//release the Direct3D object
+	if (this->direct3D != NULL)
+	{
+		this->direct3D->Release();
+	}
 }
 
 LPDIRECT3DSURFACE9 DirectXGraphic::LoadSurface(LPCWSTR filename, D3DCOLOR transparentColor)

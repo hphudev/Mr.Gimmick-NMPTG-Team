@@ -1,14 +1,5 @@
 ﻿#include "GraphicDevice.h"
 
-GraphicDevice::~GraphicDevice()
-{
-	//release the Direct3D device
-	if (this->device != NULL)
-	{
-		this->device->Release();
-	}
-}
-
 bool GraphicDevice::InitDevice(LPDIRECT3D9 direct3D, HWND window, int width, int height, 
 	bool isFullscreen)
 {
@@ -42,8 +33,17 @@ bool GraphicDevice::InitDevice(LPDIRECT3D9 direct3D, HWND window, int width, int
 
 	//Tạo con trỏ trỏ đến backbuffer
 	this->device->GetBackBuffer(0, 0, D3DBACKBUFFER_TYPE_MONO, &this->backbuffer);
-
+	
 	return 1;
+}
+
+void GraphicDevice::ReleaseDevice()
+{
+	//release the Direct3D device
+	if (this->device != NULL)
+	{
+		this->device->Release();
+	}
 }
 
 HRESULT GraphicDevice::CreateSurface(D3DXIMAGE_INFO imageInfo, LPDIRECT3DSURFACE9& image)
@@ -108,4 +108,14 @@ void GraphicDevice::EndRendering()
 void GraphicDevice::ShowBackbuffer()
 {
 	this->device->Present(NULL, NULL, NULL, NULL);
+}
+
+HRESULT GraphicDevice::CreateSpriteHandler(LPD3DXSPRITE& spriteHandler)
+{
+	return D3DXCreateSprite(this->device, &spriteHandler);
+}
+
+LPDIRECT3DSURFACE9 GraphicDevice::GetBackbuffer()
+{
+	return this->backbuffer;
 }

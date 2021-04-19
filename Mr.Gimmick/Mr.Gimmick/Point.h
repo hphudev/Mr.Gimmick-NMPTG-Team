@@ -1,11 +1,10 @@
 #pragma once
 
-template <typename T>
-class Point
+#include "Pair.h"
+
+class Point : public Pair
 {
-private:
-	T x, y;
 public:
 	Point();
-	Point(T x, T y);
+	Point(float x, float y);
 };
