@@ -1,1 +1,40 @@
-﻿  Mr.Gimmick.vcxproj -> C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Debug\Mr.Gimmick.exe
+﻿  Boss.cpp
+  Bullet.cpp
+  DieState.cpp
+  DizzyState.cpp
+  Enemy.cpp
+  Flag.cpp
+  FlyState.cpp
+  Game.cpp
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\Game.cpp(64,24): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\Game.cpp(70,24): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\Game.cpp(76,27): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\Game.cpp(82,27): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  HUD.cpp
+  Hazard.cpp
+  IdleState.cpp
+  InteractableObj.cpp
+  Item.cpp
+  Map.cpp
+  MovableBackgroundObj.cpp
+  MovableObj.cpp
+  PassiveCreature.cpp
+  PlayableObj.cpp
+  RunState.cpp
+  ScrollBar.cpp
+  Generating Code...
+  Compiling...
+  SlideState.cpp
+  State.cpp
+  UnplayableObj.cpp
+  UsefulObj.cpp
+  UselessObj.cpp
+  Waterfall.cpp
+  WindowHandler.cpp
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+  Yumetaro.cpp
+  main.cpp
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+  Generating Code...
+  Mr.Gimmick.vcxproj -> C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Debug\Mr.Gimmick.exe

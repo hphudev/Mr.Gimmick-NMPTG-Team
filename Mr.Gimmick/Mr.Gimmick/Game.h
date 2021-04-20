@@ -28,7 +28,7 @@
 
 #define YUMETARO_BACKGROUND_COLOR D3DCOLOR_XRGB(0, 0, 255)
 
-#define SPRITE_YUMETARO_PATH L"C:/Users/DELL/Documents/TvT/UIT/SE102.L21/Project/Mr.Gimmick_1/Debug/Yumetaro.png"
+#define SPRITE_YUMETARO_PATH L"C:/Users/DELL/Documents/TvT/UIT/SE102.L21/Project/Resource/Yumetaro.png"
 #pragma endregion
 #pragma region Level
 #pragma region Level_1
@@ -39,7 +39,7 @@
 
 #define BACKGROUND_COLOR_LEVEL_1 D3DCOLOR_XRGB(0, 255, 0)
 
-#define FILE_TILEMAP_PATH_LEVEL_1 L"C:/Users/DELL/Documents/TvT/UIT/SE102.L21/Project/Mr.Gimmick/Debug/Tilemap.txt"
+#define FILE_TILEMAP_PATH_LEVEL_1 L"C:/Users/DELL/Documents/TvT/UIT/SE102.L21/Project/Resource/Tilemap.txt"
 #pragma endregion
 #pragma endregion
 #pragma endregion

@@ -8,6 +8,7 @@ MovableObj::MovableObj()
 MovableObj::MovableObj(float x, float y, float vX, float vY) : GameObj(x, y)
 {
 	this->velocity = Velocity(vX, vY);
+	this->state = new IdleState();
 }
 
 MovableObj::~MovableObj()
@@ -51,7 +52,9 @@ void MovableObj::Draw(int indexOfRow, bool isRotate, GraphicDevice graphicDevice
 	for (int i = 0; i < length; i++)
 	{
 		movableTile = this->tiles.back();
-		movableTile->Draw(indexOfRow, 0, graphicDevice);
+		// *
+		movableTile->Draw(graphicDevice, indexOfRow);
+		// *
 		this->tiles.pop_back();
 		this->tiles.push_front(movableTile);
 	}
@@ -62,4 +65,9 @@ void MovableObj::Draw(int indexOfRow, bool isRotate, GraphicDevice graphicDevice
 void MovableObj::SetVelocity(float vX, float vY)
 {
 	this->velocity.SetValue(vX, vY);
+}
+
+void MovableObj::SetState(State* state)
+{
+	this->state = state;
 }

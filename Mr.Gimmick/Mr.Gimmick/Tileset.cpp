@@ -34,7 +34,12 @@ Tileset::Tileset(int numberOfTiles, LPCWSTR nameOfLevel, D3DCOLOR backgroundColo
 Tileset::~Tileset()
 {
 	// ?
-	//delete[] this->tiles;
+	/*for (int i = 0; i < this->numberOfTiles; i++)
+	{
+		delete this->tiles[i];
+	}
+
+	delete[] this->tiles;*/
 	// ?
 }
 

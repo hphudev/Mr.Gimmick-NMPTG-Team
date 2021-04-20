@@ -25,7 +25,8 @@ ImmovableTile::~ImmovableTile()
 	// ?
 }
 
-void ImmovableTile::Draw(LPDIRECT3DSURFACE9 backbuffer,  GraphicDevice graphicDevice)
+void ImmovableTile::Draw(GraphicDevice graphicDevice, int indexOfRow, bool isRotate, 
+	LPDIRECT3DSURFACE9 backbuffer)
 {
 	RECT destinationRectangle;
 	float x = this->point.GetFirstValue();
