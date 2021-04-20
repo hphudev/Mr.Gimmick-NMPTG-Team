@@ -13,6 +13,7 @@ public:
 	ImmovableTile();
 	ImmovableTile(float x, float y, float imageWidth, float imageHeight, LPCWSTR fileImageName);
 	~ImmovableTile();
-	void Draw(LPDIRECT3DSURFACE9 backbuffer, GraphicDevice graphicDevice);
+	void Draw(GraphicDevice graphicDevice, int indexOfRow = 0, bool isRotate = 0,
+		LPDIRECT3DSURFACE9 backbuffer = NULL);
 	bool Load(D3DXCOLOR transparentColor, DirectXGraphic directXGraphic);
 };

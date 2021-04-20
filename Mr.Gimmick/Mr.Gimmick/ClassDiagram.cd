@@ -8,7 +8,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Box" Collapsed="true">
-    <Position X="8.5" Y="15" Width="1.5" />
+    <Position X="22.75" Y="15" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAACAAAAAAAAAAAAAAABAAAIAAAAAAAQAAAAAAAA=</HashCode>
       <FileName>Box.h</FileName>
@@ -71,7 +71,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Game" Collapsed="true">
-    <Position X="8.5" Y="15.75" Width="1.5" />
+    <Position X="22.75" Y="15.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ACAIAAAAAEAAAAAgAAAAQAAAAAgAAAAIABQAAIAQIAE=</HashCode>
       <FileName>Game.h</FileName>
@@ -113,7 +113,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ImmovableBackgroundObj" Collapsed="true">
-    <Position X="45.5" Y="4.75" Width="1.5" />
+    <Position X="45" Y="4.75" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ImmovableBackgroundObj.h</FileName>
@@ -169,9 +169,9 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Background" Collapsed="true">
-    <Position X="8.5" Y="17.25" Width="1.5" />
+    <Position X="22.75" Y="17.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAIAAkAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAggAAAAAAIAAkBAAAAAA=</HashCode>
       <FileName>Background.h</FileName>
       <NewMemberFileName>Map.h</NewMemberFileName>
     </TypeIdentifier>
@@ -184,7 +184,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="MovableBackgroundObj" Collapsed="true">
-    <Position X="36.5" Y="7.5" Width="1.5" />
+    <Position X="36.25" Y="7.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>MovableBackgroundObj.h</FileName>
@@ -242,7 +242,7 @@
   <Class Name="Tile" Collapsed="true">
     <Position X="6.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <HashCode>AAAAgAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
       <FileName>Tile.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -275,7 +275,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="UsefulObj" Collapsed="true">
-    <Position X="20.75" Y="6.25" Width="1.5" />
+    <Position X="19.75" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>UsefulObj.h</FileName>
@@ -388,7 +388,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Scene" Collapsed="true">
-    <Position X="8.5" Y="16.5" Width="1.5" />
+    <Position X="22.75" Y="16.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Scene.h</FileName>
@@ -444,7 +444,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="TwoDimensionObj" Collapsed="true">
-    <Position X="18.25" Y="0.5" Width="1.5" />
+    <Position X="18.25" Y="0.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAACABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>TwoDimensionObj.h</FileName>
@@ -458,14 +458,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="DirectXComponent" Collapsed="true">
-    <Position X="38.25" Y="11.5" Width="1.5" />
+    <Position X="38" Y="11.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
       <FileName>DirectXComponent.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BackgroundComponent" Collapsed="true">
-    <Position X="45" Y="11.5" Width="1.5" />
+    <Position X="44.75" Y="11.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>BackgroundComponent.h</FileName>
@@ -483,6 +483,71 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GameComponent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="State" Collapsed="true">
+    <Position X="14.25" Y="15" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>State.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IdleState" Collapsed="true">
+    <Position X="8.25" Y="16.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IdleState.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RunState" Collapsed="true">
+    <Position X="10.5" Y="16.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RunState.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FlyState" Collapsed="true">
+    <Position X="12.75" Y="16.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FlyState.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DizzyState" Collapsed="true">
+    <Position X="19.5" Y="16.25" Width="1.5" />
+    <InheritanceLine Type="State" FixedToPoint="true">
+      <Path>
+        <Point X="15" Y="15.562" />
+        <Point X="15" Y="15.875" />
+        <Point X="20.25" Y="15.875" />
+        <Point X="20.25" Y="16.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DizzyState.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SlideState" Collapsed="true">
+    <Position X="15" Y="16.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SlideState.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DieState" Collapsed="true">
+    <Position X="17.25" Y="16.25" Width="1.5" />
+    <InheritanceLine Type="State" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="15" Y="15.562" />
+        <Point X="15" Y="15.875" />
+        <Point X="18" Y="15.875" />
+        <Point X="18" Y="16.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DieState.h</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

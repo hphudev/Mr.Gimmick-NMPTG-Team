@@ -225,6 +225,27 @@
     <ClInclude Include="GameComponent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="State.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IdleState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RunState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FlyState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DizzyState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SlideState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DieState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameObj.cpp">
@@ -435,6 +456,27 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GameComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="State.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IdleState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RunState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FlyState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DizzyState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SlideState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DieState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

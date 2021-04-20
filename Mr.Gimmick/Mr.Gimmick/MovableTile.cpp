@@ -23,7 +23,8 @@ MovableTile::~MovableTile()
 	delete this->sprite;
 }
 
-void MovableTile::Draw(int indexOfRow, bool isRotate, GraphicDevice graphicDevice)
+void MovableTile::Draw(GraphicDevice graphicDevice, int indexOfRow, bool isRotate, 
+	LPDIRECT3DSURFACE9 backbuffer)
 {
 	LPD3DXSPRITE spriteHandler;		// Biến để gọi các hàm để vẽ sprite từ texture
 	

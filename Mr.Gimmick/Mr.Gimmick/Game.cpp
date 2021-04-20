@@ -14,7 +14,14 @@ bool Game::InitGame(HWND window)
 		YUMETARO_VELOCITY_Y, YUMETARO_SIZE, SPRITE_YUMETARO_PATH);
 	this->background = Background(NUMBER_OF_ROWS_LEVEL_1, NUMBER_OF_COLUMNS_LEVEL_1,
 		FILE_TILEMAP_PATH_LEVEL_1, NUMBER_OF_TILES_LEVEL_1, L"Level_1", BACKGROUND_COLOR_LEVEL_1);
-	
+
+	this->background.LoadBackground(this->directX.GetDirectXGraphic());
+
+	if (!LoadGame())
+	{
+		return 0;
+	}
+
 	return flag;
 }
 
@@ -37,11 +44,6 @@ void Game::RunGame(HWND window)
 		return;
 	}
 
-	if (!LoadGame())
-	{
-		return;
-	}
-
 	UpdateGame();
 	Render();
 
@@ -54,7 +56,7 @@ void Game::RunGame(HWND window)
 
 void Game::UpdateGame()
 {
-	int velocity = 5;
+	int velocity = 2;
 
 	// Di chuyển bằng bàn phím
 	if (KEY_DOWN(VK_LEFT))
