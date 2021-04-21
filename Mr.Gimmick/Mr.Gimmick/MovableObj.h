@@ -10,7 +10,9 @@ class MovableObj : public GameObj
 protected:
 	Velocity velocity;
 	list<MovableTile*> tiles;
+	// *
 	State* state;
+	// *
 public:
     MovableObj();
     MovableObj(float x, float y, float vX, float vY);
@@ -18,5 +20,7 @@ public:
 	virtual void Move(int screenWidth, int screenHeight);
 	void Draw(int indexOfRow, bool isRotate, GraphicDevice graphicDevice);
 	void SetVelocity(float vX, float vY);
+	// *
 	void SetState(State* state);
+	// *
 };

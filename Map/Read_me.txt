@@ -11,7 +11,5 @@ mục) và file tilemap chưa fix bug. Mấy bạn phân
 công kiểm tra các ô được ký hiệu bằng cách tìm các 
 ô đó trong background dựa vào các ô liên quan và so 
 sánh với các ô trong tileset rồi điền giá trị đúng 
-vào nó rồi tổng hợp lại nha. (Các ô không có trong
-tileset các bạn có thể copy từ background vào đâu
-đó r sửa source code load ô đó lên r chạy lại để đỡ 
-tốn công nha)
+vào nó rồi tổng hợp lại nha. Các ô không khớp với 
+tileset thì các bạn ký hiệu là "bbb" nha.

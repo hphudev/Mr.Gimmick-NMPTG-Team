@@ -5,12 +5,9 @@
 #include "DirectSound.h"
 #include "GameComponent.h"
 
-#pragma region Definition
-// Thiết lập màn hình
-#define FULLSCREEN 0		// 0 = windowed, 1 = fullscreen
-#define SCREEN_WIDTH 640
-#define SCREEN_HEIGHT 480
-#pragma endregion
+// *
+
+// *
 
 class DirectX : public GameComponent
 {
@@ -19,7 +16,9 @@ private:
 	DirectInput directInput;
 	//DirectSound directSound;
 public:
-	bool InitDirectX(HWND window);
+	// *
+	bool InitDirectX(HWND window, int screenWidth, int screenHeight, bool isFullscreen);
+	// *
 	void ReleaseDirectX();
 	DirectXGraphic GetDirectXGraphic();
 	DirectInput GetDirectInput();
