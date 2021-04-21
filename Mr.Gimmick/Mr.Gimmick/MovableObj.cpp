@@ -67,7 +67,9 @@ void MovableObj::SetVelocity(float vX, float vY)
 	this->velocity.SetValue(vX, vY);
 }
 
+// *
 void MovableObj::SetState(State* state)
 {
 	this->state = state;
 }
+// *

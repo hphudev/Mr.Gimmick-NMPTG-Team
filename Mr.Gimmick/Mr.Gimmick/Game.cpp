@@ -9,7 +9,9 @@ Game::Game()
 bool Game::InitGame(HWND window)
 {
 	this->window = window;
-	bool flag = this->directX.InitDirectX(this->window);
+	// *
+	bool flag = this->directX.InitDirectX(this->window, SCREEN_WIDTH, SCREEN_HEIGHT, FULLSCREEN);
+	// *
 	this->yumetaro = Yumetaro(YUMETARO_START_X, YUMETARO_START_Y, YUMETARO_VELOCITY_X,
 		YUMETARO_VELOCITY_Y, YUMETARO_SIZE, SPRITE_YUMETARO_PATH);
 	this->background = Background(NUMBER_OF_ROWS_LEVEL_1, NUMBER_OF_COLUMNS_LEVEL_1,

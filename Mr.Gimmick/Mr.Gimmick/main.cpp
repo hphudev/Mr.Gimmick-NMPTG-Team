@@ -1,4 +1,4 @@
-#include "Game.h"
+﻿#include "Game.h"
 #include "WindowHandler.h"
 
 Game game;
