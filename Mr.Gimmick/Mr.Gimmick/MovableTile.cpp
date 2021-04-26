@@ -106,3 +106,8 @@ Sprite* MovableTile::GetSprite()
 {
 	return this->sprite;
 }
+
+void MovableTile::Animate()
+{
+	this->sprite->Animate();
+}

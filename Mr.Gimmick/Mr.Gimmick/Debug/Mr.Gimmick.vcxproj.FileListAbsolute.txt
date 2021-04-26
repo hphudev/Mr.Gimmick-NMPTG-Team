@@ -2,3 +2,5 @@ C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Debug\Mr.Gimmick.pd
 C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Mr.Gimmick\Mr.Gimmick\Debug\Mr.Gimmick.pdb
 C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Debug\Mr.Gimmick.pdb
 C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\Debug\Mr.Gimmick.pdb
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Debug\Mr.Gimmick.pdb
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\Debug\Mr.Gimmick.pdb
