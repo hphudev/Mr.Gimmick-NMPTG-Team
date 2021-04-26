@@ -24,7 +24,7 @@ void SpriteHandler::Animate()
 		// Animation sprite
 		if (++this->currentFrame > this->lastFrame)
 		{
-			this->currentFrame = 0;
+			this->currentFrame = 1;
 		}
 	}
 }

@@ -15,3 +15,8 @@ SpriteHandler Sprite::GetSpriteHandler()
 {
 	return this->spriteHandler;
 }
+
+void Sprite::Animate()
+{
+	this->spriteHandler.Animate();
+}

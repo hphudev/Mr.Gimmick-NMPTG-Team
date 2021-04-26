@@ -5,10 +5,6 @@
 #include "DirectSound.h"
 #include "GameComponent.h"
 
-// *
-
-// *
-
 class DirectX : public GameComponent
 {
 private:
@@ -16,9 +12,7 @@ private:
 	DirectInput directInput;
 	//DirectSound directSound;
 public:
-	// *
 	bool InitDirectX(HWND window, int screenWidth, int screenHeight, bool isFullscreen);
-	// *
 	void ReleaseDirectX();
 	DirectXGraphic GetDirectXGraphic();
 	DirectInput GetDirectInput();

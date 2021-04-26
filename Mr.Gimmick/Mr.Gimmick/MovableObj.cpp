@@ -52,9 +52,7 @@ void MovableObj::Draw(int indexOfRow, bool isRotate, GraphicDevice graphicDevice
 	for (int i = 0; i < length; i++)
 	{
 		movableTile = this->tiles.back();
-		// *
 		movableTile->Draw(graphicDevice, indexOfRow);
-		// *
 		this->tiles.pop_back();
 		this->tiles.push_front(movableTile);
 	}
@@ -67,9 +65,7 @@ void MovableObj::SetVelocity(float vX, float vY)
 	this->velocity.SetValue(vX, vY);
 }
 
-// *
 void MovableObj::SetState(State* state)
 {
 	this->state = state;
 }
-// *

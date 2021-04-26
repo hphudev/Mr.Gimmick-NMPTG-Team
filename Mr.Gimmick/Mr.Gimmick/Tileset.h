@@ -5,9 +5,7 @@
 #include "BackgroundComponent.h"
 
 #pragma region Definition
-// *
 #define FILE_TILESET_PATH L"../../Resource/Map/"
-// *
 
 #define TILE_SIZE 16
 #pragma endregion

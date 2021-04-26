@@ -9,7 +9,6 @@
 #include "Background.h"
 
 #pragma region Definition
-// *
 #define APP_TITLE L"Mr.Gimmick"
 
 #define KEY_DOWN(vk_code) ((GetAsyncKeyState(vk_code) & 0x8000) ? 1 : 0)
@@ -18,7 +17,7 @@
 #define FULLSCREEN 0
 #define SCREEN_WIDTH 640
 #define SCREEN_HEIGHT 480
-// *
+
 #pragma region Level
 #pragma region Level_1
 #define NUMBER_OF_ROWS_LEVEL_1 30
@@ -28,9 +27,7 @@
 
 #define BACKGROUND_COLOR_LEVEL_1 D3DCOLOR_XRGB(0, 255, 0)
 
-// *
 #define FILE_TILEMAP_PATH_LEVEL_1 L"../../Resource/Tilemap.txt"
-// *
 #pragma endregion
 #pragma endregion
 #pragma endregion

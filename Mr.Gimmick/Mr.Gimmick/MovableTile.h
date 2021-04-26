@@ -19,4 +19,5 @@ public:
     bool Load(D3DXCOLOR transparentColor, DirectXGraphic directXGraphic);
     RECT* GetRectangleOfSprite();
     Sprite* GetSprite();
+    void Animate();
 };

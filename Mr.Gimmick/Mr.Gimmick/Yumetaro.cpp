@@ -5,10 +5,10 @@ Yumetaro::Yumetaro()
 
 }
 
-Yumetaro::Yumetaro(float x, float y, float vX, float vY, float size, LPCWSTR fileSpriteName) 
-	: PlayableObj(x, y, vX, vY)
+Yumetaro::Yumetaro(float x, float y, float vX, float vY, float width, float height,
+	LPCWSTR fileSpriteName) : PlayableObj(x, y, vX, vY)
 {
-	MovableTile* movableTile = new MovableTile(x, y, size, size, fileSpriteName, 1, 1, 1);
+	MovableTile* movableTile = new MovableTile(x, y, width, height, fileSpriteName, 6, 0, 1);
 	this->tiles.push_back(movableTile);
 }
 
@@ -61,4 +61,6 @@ void Yumetaro::Move(int screenWidth, int screenHeight)
 	{
 		this->point.SetSecondValue(0);
 	}
+
+	this->tiles.back()->Animate();
 }
