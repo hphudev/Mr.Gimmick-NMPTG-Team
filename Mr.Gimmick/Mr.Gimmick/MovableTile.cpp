@@ -57,6 +57,7 @@ void MovableTile::Draw(GraphicDevice graphicDevice, int indexOfRow, bool isRotat
 	}
 
 	// Vẽ sprite
+	spriteHandler->SetTransform((new TransformHandler())->GetScaleMatrix());
 	spriteHandler->Draw(
 		this->texture,		// Texture được sử dụng làm hình ảnh nguồn cho sprite
 		&sourceRectangle,		// Vị trí của tile trong sprite

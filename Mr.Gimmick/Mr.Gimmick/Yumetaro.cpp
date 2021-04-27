@@ -22,8 +22,9 @@ void Yumetaro::Move(int screenWidth, int screenHeight)
 {
 	Dimension spriteDimension = this->tiles.back()->GetSprite()->GetDimension();
 	float lim[2];
-	lim[0] = screenWidth - spriteDimension.GetFirstValue();
-	lim[1] = screenHeight - spriteDimension.GetSecondValue();
+	int scale = SCALE;
+	lim[0] = screenWidth / scale - spriteDimension.GetFirstValue();
+	lim[1] = screenHeight / scale - spriteDimension.GetSecondValue();
 
 	float x = this->point.GetFirstValue();
 	float y = this->point.GetSecondValue();

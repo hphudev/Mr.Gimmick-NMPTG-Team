@@ -1,11 +1,14 @@
 #include "PlayableObj.h"
+#include "TransformHandler.h"
 
 #pragma region Definition
 #define YUMETARO_START_X 16 * 4
-#define YUMETARO_START_Y 16 * 21 - 5
+#define YUMETARO_START_Y 16 * 6 - 4
 
-#define YUMETARO_VELOCITY_X 1
+#define YUMETARO_VELOCITY_X 2
 #define YUMETARO_VELOCITY_Y 0
+
+#define YUMETARO_SCALE 2
 
 #define YUMETARO_WIDTH 19.4f
 #define YUMETARO_HEIGHT 23.0f

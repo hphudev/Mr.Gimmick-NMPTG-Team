@@ -3,6 +3,7 @@
 #include <d3d9.h>
 #include "Tile.h"
 #include "DirectXGraphic.h"
+#include "TransformHandler.h"
 
 class ImmovableTile : public Tile
 {
