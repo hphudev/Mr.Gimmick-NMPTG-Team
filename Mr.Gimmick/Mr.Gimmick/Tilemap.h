@@ -19,5 +19,7 @@ public:
 	int** GetMatrix();
 	void SetMatrix(int** matrix);
 	int GetRow();
-	int GetColumn();
+	int GetColumn(); 
+	int GetElement(int i, int j);
+	void SetElement(int i, int j, int value);
 };
