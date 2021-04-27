@@ -28,7 +28,7 @@
 
 #define BACKGROUND_COLOR_LEVEL_1 D3DCOLOR_XRGB(255, 255, 0)
 
-#define FILE_TILEMAP_PATH_LEVEL_1 L"C:/Users/DELL/Documents/TvT/UIT/SE102.L21/Project/Github/New folder/Mr.Gimmick-NMPTG-Team/Resource/Tilemap.txt"
+#define FILE_TILEMAP_PATH_LEVEL_1 L"E:/Clone/Mr.Gimmick-NMPTG-Team/Resource/Tilemap.txt"
 #pragma endregion
 #pragma endregion
 #pragma endregion

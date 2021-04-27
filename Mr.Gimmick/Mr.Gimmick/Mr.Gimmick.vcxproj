@@ -197,6 +197,10 @@
     <ClInclude Include="RunState.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="Scene_Intro.h" />
+    <ClInclude Include="Scene_Map.h" />
+    <ClInclude Include="Scene_Play.h" />
+    <ClInclude Include="Scene_StartMenu.h" />
     <ClInclude Include="ScrollBar.h" />
     <ClInclude Include="ScrollBarTile.h" />
     <ClInclude Include="Scenery.h" />
@@ -276,6 +280,10 @@
     <ClCompile Include="RunState.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="Scene_Intro.cpp" />
+    <ClCompile Include="Scene_Map.cpp" />
+    <ClCompile Include="Scene_Play.cpp" />
+    <ClCompile Include="Scene_StartMenu.cpp" />
     <ClCompile Include="ScrollBar.cpp" />
     <ClCompile Include="ScrollBarTile.cpp" />
     <ClCompile Include="Scenery.cpp" />

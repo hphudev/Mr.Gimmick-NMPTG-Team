@@ -5,6 +5,7 @@
 #define YUMETARO_START_X 16 * 4
 #define YUMETARO_START_Y 16 * 6 - 4
 
+#pragma once
 #define YUMETARO_VELOCITY_X 2
 #define YUMETARO_VELOCITY_Y 0
 
