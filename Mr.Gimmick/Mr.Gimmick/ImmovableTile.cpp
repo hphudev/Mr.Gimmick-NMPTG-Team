@@ -29,8 +29,9 @@ void ImmovableTile::Draw(GraphicDevice graphicDevice, int indexOfRow, bool isRot
 	LPDIRECT3DSURFACE9 backbuffer)
 {
 	RECT destinationRectangle;
-	float x = this->point.GetFirstValue();
-	float y = this->point.GetSecondValue();
+	float scale = SCALE;
+	float x = this->point.GetFirstValue() * scale;
+	float y = this->point.GetSecondValue() * scale;
 	Dimension dimension = this->image->GetDimension();
 	float width = dimension.GetFirstValue();
 	float height = dimension.GetSecondValue();

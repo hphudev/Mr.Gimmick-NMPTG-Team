@@ -17,13 +17,15 @@ Tileset::Tileset(int numberOfTiles, LPCWSTR nameOfLevel, D3DCOLOR backgroundColo
 	wstring* wss = new wstring[numberOfTiles];
 	string index;
 	int tileSize = TILE_SIZE;
+	int scale = SCALE;
 
 	for (int i = 0; i < numberOfTiles; i++)
 	{
 		index = to_string(i);
 		wss[i] = ws + wstring(index.begin(), index.end()) + L".jpg";
 		filename = wss[i].c_str();
-		this->tiles[i] = ImmovableTile(i * tileSize, 0, tileSize, tileSize, filename);
+		this->tiles[i] = ImmovableTile(i * tileSize * scale, 0, tileSize * scale, tileSize * scale, 
+			filename);
 	}
 
 	// ?

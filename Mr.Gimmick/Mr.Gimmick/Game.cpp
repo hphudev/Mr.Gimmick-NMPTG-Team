@@ -58,7 +58,7 @@ void Game::RunGame(HWND window)
 
 void Game::UpdateGame()
 {
-	int velocity = 2;
+	int velocity = YUMETARO_VELOCITY_X;
 
 	// Di chuyển bằng bàn phím
 	if (KEY_DOWN(VK_LEFT))
@@ -88,6 +88,8 @@ void Game::UpdateGame()
 
 void Game::Render()
 {
+	Sleep(1000 / FPS);
+
 	GraphicDevice graphicDevice = this->directX.GetDirectXGraphic().GetGraphicDevice();
 
 	// Bắt đầu render

@@ -3,6 +3,7 @@
 #include "DirectXGraphic.h"
 #include "Tile.h"
 #include "Sprite.h"
+#include "TransformHandler.h"
 
 class MovableTile : public Tile
 {
