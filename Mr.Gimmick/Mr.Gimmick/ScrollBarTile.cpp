@@ -12,3 +12,13 @@ ScrollBarTile::ScrollBarTile(float x, float y, float spriteWidth, float spriteHe
 {
 
 }
+
+Tile* ScrollBarTile::Clone()
+{
+	return new ScrollBarTile(*this);
+}
+
+string ScrollBarTile::GetType()
+{
+	return "ScrollBarTile";
+}

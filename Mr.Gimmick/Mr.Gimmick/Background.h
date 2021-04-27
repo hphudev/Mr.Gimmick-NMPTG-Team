@@ -9,7 +9,8 @@ class Background
 private:
 	Tileset tileset;
 	Tilemap tilemap;
-	ImmovableTile** tiles;
+	Tile*** tiles;
+	int row, column;
 public:
 	Background();
 	Background(int row, int column, LPCWSTR fileTilemapName, int numberOfTiles, LPCWSTR nameOfLevel, 

@@ -17,4 +17,6 @@ public:
 	void Draw(GraphicDevice graphicDevice, int indexOfRow = 0, bool isRotate = 0,
 		LPDIRECT3DSURFACE9 backbuffer = NULL);
 	bool Load(D3DXCOLOR transparentColor, DirectXGraphic directXGraphic);
+	Tile* Clone();
+	string GetType();
 };

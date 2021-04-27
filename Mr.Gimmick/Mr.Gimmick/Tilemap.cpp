@@ -65,3 +65,13 @@ int Tilemap::GetColumn()
 {
 	return this->column;
 }
+
+int Tilemap::GetElement(int i, int j)
+{
+	return this->matrix[i][j];
+}
+
+void Tilemap::SetElement(int i, int j, int value)
+{
+	this->matrix[i][j] = value;
+}

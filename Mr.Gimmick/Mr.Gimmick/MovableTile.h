@@ -21,4 +21,6 @@ public:
     RECT* GetRectangleOfSprite();
     Sprite* GetSprite();
     void Animate();
+    Tile* Clone();
+    string GetType();
 };

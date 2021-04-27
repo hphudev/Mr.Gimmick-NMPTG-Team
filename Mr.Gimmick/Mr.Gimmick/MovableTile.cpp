@@ -112,3 +112,13 @@ void MovableTile::Animate()
 {
 	this->sprite->Animate();
 }
+
+Tile* MovableTile::Clone()
+{
+	return new MovableTile(*this);
+}
+
+string MovableTile::GetType()
+{
+	return "MovableTile";
+}

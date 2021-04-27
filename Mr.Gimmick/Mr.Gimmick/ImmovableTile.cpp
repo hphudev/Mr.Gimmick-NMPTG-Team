@@ -57,3 +57,13 @@ bool ImmovableTile::Load(D3DXCOLOR transparentColor, DirectXGraphic directXGraph
 
 	return 1;
 }
+
+Tile* ImmovableTile::Clone()
+{
+	return new ImmovableTile(*this);
+}
+
+string ImmovableTile::GetType()
+{
+	return "ImmovableTile";
+}
