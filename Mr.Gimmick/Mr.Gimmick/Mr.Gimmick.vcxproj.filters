@@ -141,9 +141,6 @@
     <ClInclude Include="Flag.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MovableTile.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="MovableBackgroundObj.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -169,9 +166,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Tile.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ImmovableTile.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Terrain.h">
@@ -246,16 +240,25 @@
     <ClInclude Include="DieState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Scene_Play.h">
+    <ClInclude Include="AnimatedTile.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Scene_Map.h">
+    <ClInclude Include="InanimatedTile.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Scene_Intro.h">
+    <ClInclude Include="SceneIntro.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Scene_StartMenu.h">
+    <ClInclude Include="SceneMap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneStartMenu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ScenePlay.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimatedObj.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -389,9 +392,6 @@
     <ClCompile Include="Flag.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MovableTile.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="MovableBackgroundObj.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -414,9 +414,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Tile.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ImmovableTile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Terrain.cpp">
@@ -491,16 +488,25 @@
     <ClCompile Include="DieState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Scene_Play.cpp">
+    <ClCompile Include="AnimatedTile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Scene_Map.cpp">
+    <ClCompile Include="InanimatedTile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Scene_Intro.cpp">
+    <ClCompile Include="SceneIntro.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Scene_StartMenu.cpp">
+    <ClCompile Include="SceneMap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneStartMenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ScenePlay.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimatedObj.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

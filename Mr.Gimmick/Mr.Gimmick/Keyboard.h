@@ -1,4 +1,5 @@
 ﻿#pragma once
+
 #include "InputDevice.h"
 
 class Keyboard : public InputDevice

@@ -1,8 +1,8 @@
 #pragma once
 
-#include "MovableTile.h"
+#include "AnimatedTile.h"
 
-class WaterTile : public MovableTile
+class WaterTile : public AnimatedTile
 {
 public:
     WaterTile();

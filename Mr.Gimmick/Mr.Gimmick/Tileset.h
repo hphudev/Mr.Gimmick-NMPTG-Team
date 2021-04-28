@@ -1,14 +1,16 @@
 #pragma once
 
 #include <string>
-#include "ImmovableTile.h"
+#include "InanimatedTile.h"
 #include "BackgroundComponent.h"
-#include "MovableTile.h"
+#include "AnimatedTile.h"
 #include "TransformHandler.h"
 #include "ScrollBarTile.h"
 
 #pragma region Definition
-#define FILE_TILESET_PATH L"E:/Clone/Mr.Gimmick-NMPTG-Team/Resource/Map/"
+#define FOLDER_TILESET_PATH L"../../Resource/Map/"
+//#define FOLDER_TILESET_PATH L"E:/Clone/Mr.Gimmick-NMPTG-Team/Resource/Map/"	//Tâm
+//#define FOLDER_TILESET_PATH L"C:/Users/DELL/Documents/TvT/UIT/SE102.L21/Project/Github/Mr.Gimmick-NMPTG-Team/Resource/Map/"	//Thái
 
 #define TILE_SIZE 16
 #pragma endregion

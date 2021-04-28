@@ -1,4 +1,5 @@
 #pragma once
+
 #include "MovableObj.h"
 
 class PlayableObj : public MovableObj

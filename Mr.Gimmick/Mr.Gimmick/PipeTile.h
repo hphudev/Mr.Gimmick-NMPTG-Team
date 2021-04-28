@@ -1,8 +1,8 @@
 #pragma once
 
-#include "ImmovableTile.h"
+#include "InanimatedTile.h"
 
-class PipeTile : public ImmovableTile
+class PipeTile : public InanimatedTile
 {
 public:
     PipeTile();

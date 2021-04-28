@@ -2,14 +2,14 @@
 
 #include "GameObj.h"
 #include "Velocity.h"
-#include "MovableTile.h"
+#include "AnimatedTile.h"
 #include "IdleState.h"
 
 class MovableObj : public GameObj
 {
 protected:
 	Velocity velocity;
-	list<MovableTile*> tiles;
+	list<AnimatedTile*> tiles;
 	State* state;
 public:
     MovableObj();

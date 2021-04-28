@@ -1,8 +1,8 @@
 #pragma once
 
-#include "MovableTile.h"
+#include "AnimatedTile.h"
 
-class ScrollBarTile : public MovableTile
+class ScrollBarTile : public AnimatedTile
 {
 public:
     ScrollBarTile();

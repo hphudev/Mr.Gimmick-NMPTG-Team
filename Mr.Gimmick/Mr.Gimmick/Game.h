@@ -15,8 +15,8 @@
 #define KEY_UP(vk_code) ((GetAsyncKeyState(vk_code) * 0x8000) ? 1 : 0)
 
 #define FULLSCREEN 0
-#define SCREEN_WIDTH 1920//16 * TILE_SIZE * SCALE
-#define SCREEN_HEIGHT 1080//12 * TILE_SIZE * SCALE
+#define SCREEN_WIDTH 16 * TILE_SIZE * SCALE
+#define SCREEN_HEIGHT 12 * TILE_SIZE * SCALE
 
 #define FPS 60
 #pragma region Level
@@ -28,7 +28,9 @@
 
 #define BACKGROUND_COLOR_LEVEL_1 D3DCOLOR_XRGB(255, 255, 0)
 
-#define FILE_TILEMAP_PATH_LEVEL_1 L"E:/Clone/Mr.Gimmick-NMPTG-Team/Resource/Tilemap.txt"
+#define FILE_TILEMAP_PATH_LEVEL_1 L"../../Resource/Map/Level_1/Tilemap.txt"
+//#define FILE_TILEMAP_PATH_LEVEL_1 L"E:/Clone/Mr.Gimmick-NMPTG-Team/Resource/Tilemap.txt"	//Tâm
+//#define FILE_TILEMAP_PATH_LEVEL_1 L"C:/Users/DELL/Documents/TvT/UIT/SE102.L21/Project/Github/Mr.Gimmick-NMPTG-Team/Resource/Map/Level_1/Tilemap.txt"	//Thái
 #pragma endregion
 #pragma endregion
 #pragma endregion

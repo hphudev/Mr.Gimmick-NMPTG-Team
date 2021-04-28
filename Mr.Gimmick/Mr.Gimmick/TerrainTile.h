@@ -1,8 +1,8 @@
 #pragma once
 
-#include "ImmovableTile.h"
+#include "InanimatedTile.h"
 
-class TerrainTile : public ImmovableTile
+class TerrainTile : public InanimatedTile
 {
 public:
     TerrainTile();

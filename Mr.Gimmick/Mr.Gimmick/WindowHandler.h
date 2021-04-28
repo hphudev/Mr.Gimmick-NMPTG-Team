@@ -1,8 +1,9 @@
 ﻿#pragma once
 
+#include <d3d9.h>
 #include "Handler.h"
 #include "Game.h"
-#include <d3d9.h>
+//#include "SceneManager.h"
 
 class WindowHandler : public Handler
 {

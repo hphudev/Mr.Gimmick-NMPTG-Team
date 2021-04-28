@@ -126,13 +126,6 @@
       <FileName>ImmovableObj.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ImmovableTile" Collapsed="true">
-    <Position X="9.5" Y="3.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAgAAAAAAAAgAAAAQAAAAAEAAAAIQAAAAAAAAAAAA=</HashCode>
-      <FileName>ImmovableTile.h</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="InputDevice" Collapsed="true">
     <Position X="5" Y="11.25" Width="1.5" />
     <TypeIdentifier>
@@ -171,7 +164,7 @@
   <Class Name="Background" Collapsed="true">
     <Position X="22.75" Y="17.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAggAAAAAAIAAkBAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgACwgAAAAAAIAAkBAAAAAA=</HashCode>
       <FileName>Background.h</FileName>
       <NewMemberFileName>Map.h</NewMemberFileName>
     </TypeIdentifier>
@@ -193,15 +186,8 @@
   <Class Name="MovableObj" Collapsed="true">
     <Position X="20.25" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAEAIAAAgAAAAAAAAACAgAAAAAAAgQAAAAAAAA=</HashCode>
+      <HashCode>AAAABAAEAIAAAgAAAAAAAAACAgAAAAAEAgQAAAAAAAA=</HashCode>
       <FileName>MovableObj.h</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="MovableTile" Collapsed="true">
-    <Position X="2.75" Y="3.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAgAAAAAAgEgAAAAAAAAAAABEAAgAgAAAAAAAAAAA=</HashCode>
-      <FileName>MovableTile.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PassiveCreature" Collapsed="true">
@@ -242,21 +228,21 @@
   <Class Name="Tile" Collapsed="true">
     <Position X="6.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAgAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <HashCode>AAAAgAAAAAAAAgAAAAAAAAAAAAAAAAEAAAAAAAAAARA=</HashCode>
       <FileName>Tile.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Tilemap" Collapsed="true">
     <Position X="44" Y="12.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAQABAAAAAAAAAAASACCCCQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAQABAAAAAAIAAAASACCCCQAAAAAAAAAAAAAAIAAA=</HashCode>
       <FileName>Tilemap.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TransformHandler" Collapsed="true">
     <Position X="12" Y="12.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>TransformHandler.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -332,14 +318,6 @@
   </Class>
   <Class Name="TerrainTile" Collapsed="true">
     <Position X="7.25" Y="4.75" Width="1.5" />
-    <InheritanceLine Type="ImmovableTile" ManuallyRouted="true">
-      <Path>
-        <Point X="10.25" Y="3.941" />
-        <Point X="10.25" Y="4.375" />
-        <Point X="8" Y="4.375" />
-        <Point X="8" Y="4.75" />
-      </Path>
-    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>TerrainTile.h</FileName>
@@ -355,7 +333,7 @@
   <Class Name="ScrollBarTile" Collapsed="true">
     <Position X="2.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAQAAAAABA=</HashCode>
       <FileName>ScrollBarTile.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -390,14 +368,14 @@
   <Class Name="Scene" Collapsed="true">
     <Position X="22.75" Y="16.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAACAAgAggAAAAAAAIAIAAiAIAIAAAIAAAAI=</HashCode>
       <FileName>Scene.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SceneManager" Collapsed="true">
     <Position X="5" Y="16.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAACAAEAAAAAAQIAAAAIAAEAIAAAAAAAAAAY=</HashCode>
       <FileName>SceneManager.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -439,7 +417,7 @@
   <Class Name="Sprite" Collapsed="true">
     <Position X="22.5" Y="12.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAQAAAIAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAQAAAAAAAAQAAAIAAAAAAA=</HashCode>
       <FileName>Sprite.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -474,7 +452,7 @@
   <Class Name="Tileset" Collapsed="true">
     <Position X="46.25" Y="12.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAgAgAKgAAAAAAAAAAAI=</HashCode>
+      <HashCode>AAAAQABAAAAAAAAAAAAAAAAAAgAgAKgAAAAAAACIAAA=</HashCode>
       <FileName>Tileset.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -488,7 +466,7 @@
   <Class Name="State" Collapsed="true">
     <Position X="14.25" Y="15" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>State.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -548,6 +526,20 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>DieState.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AnimatedTile" Collapsed="true">
+    <Position X="2.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgACAAAAgEgAAAAABAAQAABAAAgEAAAAAAAAAABA=</HashCode>
+      <FileName>AnimatedTile.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InanimatedTile" Collapsed="true">
+    <Position X="9.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAgAAAAQAAAAAEAAAQAEAAAAAAABAABA=</HashCode>
+      <FileName>InanimatedTile.h</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

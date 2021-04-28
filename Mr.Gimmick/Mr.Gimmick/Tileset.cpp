@@ -12,7 +12,7 @@ Tileset::Tileset(int numberOfTiles, LPCWSTR nameOfLevel, D3DCOLOR backgroundColo
 	this->numberOfTiles = numberOfTiles;
 	this->tiles = new Tile*[numberOfTiles];
 
-	LPCWSTR filePath = FILE_TILESET_PATH, filePath1 = L"/Tileset/Tileset_", filename;
+	LPCWSTR filePath = FOLDER_TILESET_PATH, filePath1 = L"/Tileset/Tileset_", filename;
 	wstring ws = wstring(filePath) + nameOfLevel + filePath1;
 	wstring* wss = new wstring[numberOfTiles];
 	string index;
@@ -32,7 +32,7 @@ Tileset::Tileset(int numberOfTiles, LPCWSTR nameOfLevel, D3DCOLOR backgroundColo
 		}
 		else
 		{
-			this->tiles[i] = new ImmovableTile(i * tileSize * scale, 0, tileSize * scale,
+			this->tiles[i] = new InanimatedTile(i * tileSize * scale, 0, tileSize * scale,
 				tileSize * scale, filename);
 		}
 	}

@@ -8,8 +8,8 @@ Yumetaro::Yumetaro()
 Yumetaro::Yumetaro(float x, float y, float vX, float vY, float width, float height,
 	LPCWSTR fileSpriteName) : PlayableObj(x, y, vX, vY)
 {
-	MovableTile* movableTile = new MovableTile(x, y, width, height, fileSpriteName, 6, 0, 1);
-	this->tiles.push_back(movableTile);
+	AnimatedTile* animatedTile = new AnimatedTile(x, y, width, height, fileSpriteName, 6, 0, 1);
+	this->tiles.push_back(animatedTile);
 }
 
 bool Yumetaro::Load(D3DXCOLOR transparentColor, DirectXGraphic directXGrphic)

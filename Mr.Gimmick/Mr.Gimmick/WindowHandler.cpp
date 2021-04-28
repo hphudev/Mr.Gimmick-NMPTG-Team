@@ -1,5 +1,4 @@
 #include "WindowHandler.h"
-#include "SceneManager.h"
 
 //helper function to set up the window properties
 ATOM WindowHandler::RegisterClassWindow(HINSTANCE currentInstance, WNDPROC WinProc)
@@ -47,8 +46,8 @@ HWND WindowHandler::CreateGameWindow(HINSTANCE currentInstance, WNDPROC WinProc)
 		APP_TITLE, //window class
 		APP_TITLE, //title bar
 		style, //window style
-		(1920 - SCREEN_WIDTH) / 2, //x position of window
-		(1080 - SCREEN_HEIGHT) / 2, //y position of window
+		(1920 / 1.25 - SCREEN_WIDTH) / 2, //x position of window
+		(1080 /1.25 - SCREEN_HEIGHT) / 2, //y position of window
 		SCREEN_WIDTH, //width of the window
 		SCREEN_HEIGHT, //height of the window
 		NULL, //parent window
@@ -76,8 +75,8 @@ void WindowHandler::RunGameWindow(MSG& message, HWND window, Game game)
 {
 	// main message loop
 	bool done = 0;
+	//SceneManager* sceneManager = new SceneManager(window);
 
-	SceneManager* sceneManager = new SceneManager(window);
 	while (!done)
 	{
 		if (PeekMessage(&message, NULL, 0, 0, PM_REMOVE))
@@ -95,8 +94,8 @@ void WindowHandler::RunGameWindow(MSG& message, HWND window, Game game)
 		else
 		{
 			//process game loop (else prevents running after window is closed)
-			//game.RunGame(window);
-			sceneManager->Run();
+			game.RunGame(window);
+			//sceneManager->Run();
 		}
 	}
 }

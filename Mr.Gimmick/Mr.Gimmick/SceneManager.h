@@ -3,10 +3,10 @@
 #include "GameComponent.h"
 #include "WindowHandler.h"
 #include "Scene.h"
-#include "Scene_Play.h"
-#include "Scene_Intro.h"
-#include "Scene_StartMenu.h"
-#include "Scene_Map.h"
+#include "ScenePlay.h"
+#include "SceneIntro.h"
+#include "SceneStartMenu.h"
+#include "SceneMap.h"
 
 #define MAX_FRAME_RATE 120;
 

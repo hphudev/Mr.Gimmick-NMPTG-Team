@@ -9,7 +9,7 @@ SceneManager::SceneManager(HWND window)
 	//scene = new Scene_Map(window);
 	//scene = new Scene_Play(window);
 	this->window = window;
-	scene = new Scene_Intro(window);
+	scene = new SceneIntro(window);
 }
 SceneManager::~SceneManager()
 {
@@ -47,16 +47,16 @@ void SceneManager::InitNextScene(int id, DWORD& timeStart)
 	switch (id)
 	{
 	case INTRO:
-		scene = new Scene_Intro(window);
+		scene = new SceneIntro(window);
 		break;
 	case STARTMENU:
-		scene = new Scene_StartMenu(window);
+		scene = new SceneStartMenu(window);
 		break;
 	case MAP:
-		scene = new Scene_Map(window);
+		scene = new SceneMap(window);
 		break;
 	case GAMEPLAY:
-		scene = new Scene_Play(window);
+		scene = new ScenePlay(window);
 		break;
 	}
 }
