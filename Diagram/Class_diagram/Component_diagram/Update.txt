@@ -1,0 +1,7 @@
+- Sửa tên MovableTile thành AnimatedTile, ImmovableTile 
+thành InanimatedTile
+- Xóa Box
+- Thêm AnimatedObj
+- Sửa và sửa tên MovableObj thành AnimatedAndMovableObj
+- Sửa Background, Tileset
+- Xóa Terrain, Scenery

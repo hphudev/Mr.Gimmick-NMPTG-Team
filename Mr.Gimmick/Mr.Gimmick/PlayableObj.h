@@ -1,8 +1,8 @@
 #pragma once
 
-#include "MovableObj.h"
+#include "AnimatedAndMovableObj.h"
 
-class PlayableObj : public MovableObj
+class PlayableObj : public AnimatedAndMovableObj
 {
 public:
     PlayableObj();

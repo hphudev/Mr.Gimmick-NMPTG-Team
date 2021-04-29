@@ -1,8 +1,8 @@
 #pragma once
 
-#include "UnplayableObj.h"
+#include "AnimatedAndImmovableObj.h"
 
-class UsefulObj : public UnplayableObj
+class UsefulObj : public AnimatedAndImmovableObj
 {
 
 };
