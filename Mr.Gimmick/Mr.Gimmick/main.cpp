@@ -13,7 +13,7 @@ int WINAPI WinMain(HINSTANCE currentInstance, HINSTANCE previousInstance, LPSTR 
 	HWND window = windowHandler.CreateGameWindow(currentInstance, WinProc);
 	windowHandler.DisplayGameWidow(window, cmdShowMode);
 
-	if (!game.InitGame(window))
+	if (!game.InitGame(window) || !game.LoadGame())
 	{
 		return 0;
 	}
