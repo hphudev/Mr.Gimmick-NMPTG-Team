@@ -9,18 +9,18 @@ Yumetaro::Yumetaro(float x, float y, float vX, float vY, float width, float heig
 	LPCWSTR fileSpriteName) : PlayableObj(x, y, vX, vY)
 {
 	AnimatedTile* animatedTile = new AnimatedTile(x, y, width, height, fileSpriteName, 6, 0, 1);
-	this->tiles.push_back(animatedTile);
+	this->animatedTiles.push_back(animatedTile);
 }
 
 bool Yumetaro::Load(D3DXCOLOR transparentColor, DirectXGraphic directXGrphic)
 {
 	// Tải texture với màu xanh là màu trong suốt
-	return this->tiles.back()->Load(transparentColor, directXGrphic);
+	return this->animatedTiles.back()->Load(transparentColor, directXGrphic);
 }
 
 void Yumetaro::Move(int screenWidth, int screenHeight)
 {
-	Dimension spriteDimension = this->tiles.back()->GetSprite()->GetDimension();
+	Dimension spriteDimension = this->animatedTiles.back()->GetSprite()->GetDimension();
 	float lim[2];
 	int scale = SCALE;
 	lim[0] = screenWidth / scale - spriteDimension.GetFirstValue();
@@ -40,7 +40,7 @@ void Yumetaro::Move(int screenWidth, int screenHeight)
 	if ((flags[0] && flags[1] && flags[2] && flags[3]) || (!flags[0] && vX <= 0) || 
 		(!flags[1] && vY >= 0) || (!flags[2] && vY <= 0) || (!flags[3] && vY >= 0))
 	{
-		MovableObj::Move(screenWidth, screenHeight);
+		AnimatedAndMovableObj::Move(screenWidth, screenHeight);
 	}
 
 	if (!flags[0])
@@ -63,5 +63,5 @@ void Yumetaro::Move(int screenWidth, int screenHeight)
 		this->point.SetSecondValue(0);
 	}
 
-	this->tiles.back()->Animate();
+	this->animatedTiles.back()->Animate();
 }

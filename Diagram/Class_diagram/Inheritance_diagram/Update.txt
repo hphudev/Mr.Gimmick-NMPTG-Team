@@ -1,0 +1,22 @@
+- Sửa tên MovableTile thành AnimatedTile, ImmovableTile 
+thành InanimatedTile
+- Thêm AnimatedObj, InanimatedObj
+- Sửa và sửa tên MovableObj thành AnimatedAndMovableObj, 
+ImmovableObj thành AnimatedAndImmovableObj; thêm lớp 
+InanimatedAndImmovableObj, InanimatedAndMovableObj
+- Xóa Hazard, sửa InteractableObj và sửa tên thành
+HazardsAndInteractables 
+- Xóa Bullet
+- Xóa Item, sửa HUD và sửa tên thành ItemsAndHUD
+- Sửa Map
+- Sửa và sửa tên PassiveCreature thành PassiveCreatures
+- Sửa UsefulObj, UselessObj
+- Xóa MovableBackgroundObj, ImmovableBackgroundObj
+- Sửa và sửa tên Enemy thành Enemies
+- Sửa tên Boss thành Bosses
+- Sửa Waterfall, ScrollBar, Flag
+- Sửa và sửa tên Treasure thành Treasures
+- Sửa Pipe, Scenery, Terrain
+- Thêm UFO
+- Thêm Pulley, Rope, Door
+- Thêm Level, LevelOne

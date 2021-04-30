@@ -1,8 +1,8 @@
 #pragma once
 
-#include "MovableBackgroundObj.h"
+#include "UselessObj.h"
 
-class Waterfall : public MovableBackgroundObj
+class Waterfall : public UselessObj
 {
 
 };

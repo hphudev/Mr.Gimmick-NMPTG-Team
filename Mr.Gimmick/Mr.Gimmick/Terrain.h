@@ -1,8 +1,8 @@
 #pragma once
 
-#include "ImmovableBackgroundObj.h"
+#include "InanimatedAndImmovableObj.h"
 
-class Terrain : public ImmovableBackgroundObj
+class Terrain : public InanimatedAndImmovableObj
 {
 
 };

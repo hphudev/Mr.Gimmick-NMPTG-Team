@@ -1,8 +1,8 @@
 #pragma once
 
-#include "MovableBackgroundObj.h"
+#include "UselessObj.h"
 
-class ScrollBar : public MovableBackgroundObj
+class ScrollBar : public UselessObj
 {
 
 };
