@@ -17,13 +17,6 @@ bool Game::InitGame(HWND window)
 	this->background = Background(NUMBER_OF_ROWS_LEVEL_1, NUMBER_OF_COLUMNS_LEVEL_1,
 		FILE_TILEMAP_PATH_LEVEL_1, NUMBER_OF_TILES_LEVEL_1, L"Level_1", BACKGROUND_COLOR_LEVEL_1);
 
-	this->background.LoadBackground(this->directX.GetDirectXGraphic());
-
-	if (!LoadGame())
-	{
-		return 0;
-	}
-
 	return flag;
 }
 
@@ -33,6 +26,8 @@ bool Game::LoadGame()
 	{
 		return 0;
 	}
+
+	this->background.LoadBackground(this->directX.GetDirectXGraphic());
 
 	return 1;
 }
