@@ -13,6 +13,13 @@ AnimatedTile::AnimatedTile(float x, float y, float spriteWidth, float spriteHeig
 		currentSpriteFrame, animationCount);
 }
 
+AnimatedTile::AnimatedTile(const AnimatedTile& animatedTile)
+{
+	this->point = animatedTile.point;
+	this->texture = animatedTile.texture;
+	this->sprite = animatedTile.sprite->Clone();
+}
+
 AnimatedTile::~AnimatedTile()
 {
 	if (this->texture != NULL)
@@ -26,6 +33,8 @@ AnimatedTile::~AnimatedTile()
 void AnimatedTile::Draw(GraphicDevice graphicDevice, int indexOfRow, bool isRotate, 
 	LPDIRECT3DSURFACE9 backbuffer)
 {
+	this->numberOfDrawings++;
+
 	LPD3DXSPRITE spriteHandler;		// Biến để gọi các hàm để vẽ sprite từ texture
 	
 	// Tạo đối tượng sprite handler
@@ -121,4 +130,14 @@ Tile* AnimatedTile::Clone()
 string AnimatedTile::GetType()
 {
 	return "AnimatedTile";
+}
+
+int AnimatedTile::GetNumberOfDrawings()
+{
+	return this->numberOfDrawings;
+}
+
+void AnimatedTile::SetNumberOfDrawings(int numberOfDrawings)
+{
+	this->numberOfDrawings = numberOfDrawings;
 }

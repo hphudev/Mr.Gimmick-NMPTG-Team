@@ -1,6 +1,5 @@
 #pragma once
 
-#include <list>
 #include "TwoDimensionObj.h"
 #include "Tile.h"
 

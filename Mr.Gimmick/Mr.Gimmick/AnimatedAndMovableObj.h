@@ -11,7 +11,11 @@ protected:
 	State* state;
 public:
 	AnimatedAndMovableObj();
-	AnimatedAndMovableObj(float x, float y, float vX, float vY);
+	AnimatedAndMovableObj(float x, float y, int numberOfAnimatedTiles, float vX, float vY);
+	void Copy(const AnimatedAndMovableObj& animatedAndMovableObj);
+	AnimatedAndMovableObj(const AnimatedAndMovableObj& animatedAndMovableObj);
+	void Clean();
+	AnimatedAndMovableObj& operator = (const AnimatedAndMovableObj& animatedAndMovableObj);
 	~AnimatedAndMovableObj();
 	virtual void Move(int screenWidth, int screenHeight);
 	void SetVelocity(float vX, float vY);

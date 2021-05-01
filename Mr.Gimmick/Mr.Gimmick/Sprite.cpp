@@ -20,3 +20,8 @@ void Sprite::Animate()
 {
 	this->spriteHandler.Animate();
 }
+
+Sprite* Sprite::Clone()
+{
+	return new Sprite(*this);
+}

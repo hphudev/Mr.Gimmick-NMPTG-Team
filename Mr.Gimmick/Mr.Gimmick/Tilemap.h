@@ -15,6 +15,10 @@ private:
 public:
 	Tilemap();
 	Tilemap(int row, int column, LPCWSTR filename);
+	void Copy(const Tilemap& tilemap);
+	Tilemap(const Tilemap& tilemap);
+	void Clean();
+	Tilemap& operator = (const Tilemap& tilemap);
 	~Tilemap();
 	int** GetMatrix();
 	void SetMatrix(int** matrix);

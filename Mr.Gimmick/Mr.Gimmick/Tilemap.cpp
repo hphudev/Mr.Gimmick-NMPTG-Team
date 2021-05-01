@@ -12,7 +12,7 @@ Tilemap::Tilemap(int row, int column, LPCWSTR filename)
 	this->row = row;
 	this->column = column;
 	this->filename = filename;
-	this->matrix = new int* [row];
+	this->matrix = new int*[row];
 
 	for (int i = 0; i < row; i++)
 	{
@@ -20,24 +20,53 @@ Tilemap::Tilemap(int row, int column, LPCWSTR filename)
 	}
 }
 
-Tilemap::~Tilemap()
+void Tilemap::Copy(const Tilemap& tilemap)
 {
-	for (int i = 0; i < row; i++)
+	this->row = tilemap.row;
+	this->column = tilemap.column;
+	this->filename = tilemap.filename;
+	this->matrix = new int*[tilemap.row];
+
+	for (int i = 0; i < tilemap.row; i++)
 	{
-		if (this->matrix[i] != NULL)
+		this->matrix[i] = new int[tilemap.column];
+
+		for (int j = 0; j < tilemap.column; j++)
 		{
-			// ?
-			//delete[] this->matrix[i];
-			// ?
+			this->matrix[i][j] = tilemap.matrix[i][j];
 		}
 	}
+}
 
-	if (this->matrix != NULL)
+Tilemap::Tilemap(const Tilemap& tilemap)
+{
+	Copy(tilemap);
+}
+
+void Tilemap::Clean()
+{
+	for (int i = 0; i < this->row; i++)
 	{
-		// ?
-		//delete[] this->matrix;
-		// ?
+		delete[] this->matrix[i];
 	}
+
+	delete[] this->matrix;
+}
+
+Tilemap& Tilemap::operator = (const Tilemap& tilemap)
+{
+	if (this != &tilemap)
+	{
+		Clean();
+		Copy(tilemap);
+	}
+
+	return *this;
+}
+
+Tilemap::~Tilemap()
+{
+	Clean();
 }
 
 int** Tilemap::GetMatrix()

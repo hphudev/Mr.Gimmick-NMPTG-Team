@@ -13,4 +13,5 @@ public:
 		int currentFrame, int animationCount);
 	SpriteHandler GetSpriteHandler();
 	void Animate();
+	Sprite* Clone();
 };

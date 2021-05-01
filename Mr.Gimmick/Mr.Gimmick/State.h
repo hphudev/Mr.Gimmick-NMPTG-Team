@@ -2,5 +2,7 @@
 
 class State
 {
-	virtual void ChangeState(int type) {}
+public:
+	virtual void ChangeState(int type);
+	virtual State* Clone();
 };
