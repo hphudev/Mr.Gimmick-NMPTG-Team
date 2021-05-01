@@ -18,14 +18,14 @@
 #define YUMETARO_BACKGROUND_COLOR D3DCOLOR_XRGB(0, 0, 255)
 
 #define SPRITE_YUMETARO_PATH L"../../Resource/Image/Yumetaro.png"
-//#define SPRITE_YUMETARO_PATH L"C:/Users/DELL/Documents/TvT/UIT/SE102.L21/Project/Github/Mr.Gimmick-NMPTG-Team/Resource/Image/Yumetaro.png"	//Thái
 #pragma endregion
 
 class Yumetaro : public PlayableObj
 {
 public:
     Yumetaro();
-    Yumetaro(float x, float y, float vX, float vY, float width, float height, LPCWSTR fileSpriteName);
+    Yumetaro(float x, float y, float vX, float vY, int numberOfAnimatedTiles, float width, float height, 
+        LPCWSTR fileSpriteName);
     bool Load(D3DXCOLOR transparentColor, DirectXGraphic directXGrphic);
     void Move(int screenWidth, int screenHeight);
 };

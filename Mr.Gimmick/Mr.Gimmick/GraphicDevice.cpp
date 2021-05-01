@@ -97,7 +97,8 @@ bool GraphicDevice::CheckDevice()
 
 bool GraphicDevice::BeginRendering()
 {
-	return this->device->BeginScene();
+	HRESULT result = this->device->BeginScene();
+	return result == S_OK;
 }
 
 void GraphicDevice::EndRendering()

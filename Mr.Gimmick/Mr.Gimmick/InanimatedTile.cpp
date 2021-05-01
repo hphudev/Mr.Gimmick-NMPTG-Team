@@ -15,14 +15,10 @@ InanimatedTile::~InanimatedTile()
 {
 	if (this->surface != NULL)
 	{
-		// ?
-		//this->surface->Release();
-		// ?
+		this->surface->Release();
 	}
 
-	// ?
-	//delete this->image;
-	// ?
+	delete this->image;
 }
 
 void InanimatedTile::Draw(GraphicDevice graphicDevice, int indexOfRow, bool isRotate, 

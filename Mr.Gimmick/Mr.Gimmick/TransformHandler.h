@@ -5,7 +5,7 @@
 #include "Pair.h"
 
 #pragma region Definition
-#define SCALE 3//0.923
+#define SCALE 2.5
 #pragma endregion
 
 class TransformHandler : public Handler

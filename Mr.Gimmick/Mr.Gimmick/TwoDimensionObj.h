@@ -11,5 +11,6 @@ protected:
 public:
 	TwoDimensionObj();
 	TwoDimensionObj(float x, float y);
+	Point GetPoint();
 	void SetPoint(float x, float y);
 };

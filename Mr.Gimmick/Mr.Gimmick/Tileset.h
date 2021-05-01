@@ -9,8 +9,6 @@
 
 #pragma region Definition
 #define FOLDER_TILESET_PATH L"../../Resource/Map/"
-//#define FOLDER_TILESET_PATH L"E:/Clone/Mr.Gimmick-NMPTG-Team/Resource/Map/"	//Tâm
-//#define FOLDER_TILESET_PATH L"C:/Users/DELL/Documents/TvT/UIT/SE102.L21/Project/Github/Mr.Gimmick-NMPTG-Team/Resource/Map/"	//Thái
 
 #define TILE_SIZE 16
 #pragma endregion
@@ -26,6 +24,10 @@ private:
 public:
 	Tileset();
 	Tileset(int numberOfTiles, LPCWSTR nameOfLevel, D3DCOLOR backgroundColor);
+	void Copy(const Tileset& tileset);
+	Tileset(const Tileset& tileset);
+	void Clean();
+	Tileset& operator = (const Tileset& tileset);
 	~Tileset(); 
 	bool CheckTile(int value, int numberOfRows, int firstTile, int numberOfTiles,
 		int numberOfTilesInOneRow);

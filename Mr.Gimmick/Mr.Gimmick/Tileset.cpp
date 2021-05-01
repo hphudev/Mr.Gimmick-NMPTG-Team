@@ -4,6 +4,7 @@ Tileset::Tileset()
 {
 	this->numberOfTiles = 0;
 	this->tiles = NULL;
+	this->backgroundColor = NULL;
 }
 
 Tileset::Tileset(int numberOfTiles, LPCWSTR nameOfLevel, D3DCOLOR backgroundColor)
@@ -17,7 +18,7 @@ Tileset::Tileset(int numberOfTiles, LPCWSTR nameOfLevel, D3DCOLOR backgroundColo
 	wstring* wss = new wstring[numberOfTiles];
 	string index;
 	int tileSize = TILE_SIZE;
-	int scale = SCALE;
+	float scale = SCALE;
 
 	for (int i = 0; i < numberOfTiles; i++)
 	{
@@ -42,16 +43,47 @@ Tileset::Tileset(int numberOfTiles, LPCWSTR nameOfLevel, D3DCOLOR backgroundColo
 	// ?
 }
 
-Tileset::~Tileset()
+void Tileset::Copy(const Tileset& tileset)
 {
-	// ?
-	/*for (int i = 0; i < this->numberOfTiles; i++)
+	this->numberOfTiles = tileset.numberOfTiles;
+	this->backgroundColor = tileset.backgroundColor;
+	this->tiles = new Tile*[tileset.numberOfTiles];
+
+	for (int i = 0; i < tileset.numberOfTiles; i++)
+	{
+		this->tiles[i] = tileset.tiles[i]->Clone();
+	}
+}
+
+Tileset::Tileset(const Tileset& tileset)
+{
+	Copy(tileset);
+}
+
+void Tileset::Clean()
+{
+	for (int i = 0; i < this->numberOfTiles; i++)
 	{
 		delete this->tiles[i];
 	}
 
-	delete[] this->tiles;*/
-	// ?
+	delete[] this->tiles;
+}
+
+Tileset& Tileset::operator = (const Tileset& tileset)
+{
+	if (this != &tileset)
+	{
+		Clean();
+		Copy(tileset);
+	}
+
+	return *this;
+}
+
+Tileset::~Tileset()
+{
+	Clean();
 }
 
 bool Tileset::CheckTile(int value, int numberOfRows, int firstTile, int numberOfTiles,

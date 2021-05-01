@@ -5,17 +5,47 @@ AnimatedAndMovableObj::AnimatedAndMovableObj()
 
 }
 
-AnimatedAndMovableObj::AnimatedAndMovableObj(float x, float y, float vX, float vY) : AnimatedObj(x, y)
+AnimatedAndMovableObj::AnimatedAndMovableObj(float x, float y, int numberOfAnimatedTiles, float vX, 
+	float vY) : AnimatedObj(x, y, numberOfAnimatedTiles)
 {
 	this->velocity = Velocity(vX, vY);
 	this->state = new IdleState();
 }
 
+void AnimatedAndMovableObj::Copy(const AnimatedAndMovableObj& animatedAndMovableObj)
+{
+	this->velocity = animatedAndMovableObj.velocity;
+	this->state = animatedAndMovableObj.state->Clone();
+}
+
+AnimatedAndMovableObj::AnimatedAndMovableObj(const AnimatedAndMovableObj& animatedAndMovableObj) : 
+	AnimatedObj(animatedAndMovableObj)
+{
+	Copy(animatedAndMovableObj);
+}
+
+void AnimatedAndMovableObj::Clean()
+{
+	delete this->state;
+}
+
+AnimatedAndMovableObj& AnimatedAndMovableObj::operator = (
+	const AnimatedAndMovableObj& animatedAndMovableObj)
+{
+	AnimatedObj::operator = (animatedAndMovableObj);
+
+	if (this != &animatedAndMovableObj)
+	{
+		Clean();
+		Copy(animatedAndMovableObj);
+	}
+
+	return *this;
+}
+
 AnimatedAndMovableObj::~AnimatedAndMovableObj()
 {
-	// ?
-	//delete state;
-	// ?
+	Clean();
 }
 
 void AnimatedAndMovableObj::Move(int screenWidth, int screenHeight)
@@ -23,18 +53,11 @@ void AnimatedAndMovableObj::Move(int screenWidth, int screenHeight)
 	float x = this->point.GetFirstValue() + this->velocity.GetFirstValue();
 	float y = this->point.GetSecondValue() + this->velocity.GetSecondValue();
 	this->point.SetValue(x, y);
-	AnimatedTile* animatedTile;
-	int length = this->animatedTiles.size();
-
-	for (int i = 0; i < length; i++)
+	
+	for (int i = 0; i < this->numberOfAnimatedTiles; i++)
 	{
-		animatedTile = this->animatedTiles.back();
-		animatedTile->SetPoint(x, y);
-		this->animatedTiles.pop_back();
-		this->animatedTiles.push_front(animatedTile);
+		this->animatedTiles[i]->SetPoint(x, y);
 	}
-
-	this->animatedTiles.reverse();
 }
 
 void AnimatedAndMovableObj::SetVelocity(float vX, float vY)

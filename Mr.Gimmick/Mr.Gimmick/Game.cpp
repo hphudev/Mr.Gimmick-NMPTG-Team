@@ -12,10 +12,18 @@ bool Game::InitGame(HWND window)
 	bool flag = this->directX.InitDirectX(this->window, SCREEN_WIDTH, SCREEN_HEIGHT, FULLSCREEN);
 
 	this->yumetaro = Yumetaro(YUMETARO_START_X, YUMETARO_START_Y, YUMETARO_VELOCITY_X,
-		YUMETARO_VELOCITY_Y, YUMETARO_WIDTH, YUMETARO_HEIGHT, SPRITE_YUMETARO_PATH);
+		YUMETARO_VELOCITY_Y, 1, YUMETARO_WIDTH, YUMETARO_HEIGHT, SPRITE_YUMETARO_PATH);
 
-	this->background = Background(NUMBER_OF_ROWS_LEVEL_1, NUMBER_OF_COLUMNS_LEVEL_1,
-		FILE_TILEMAP_PATH_LEVEL_1, NUMBER_OF_TILES_LEVEL_1, L"Level_1", BACKGROUND_COLOR_LEVEL_1);
+	this->background = Background(NUMBER_OF_ROWS_LEVEL_ONE, NUMBER_OF_COLUMNS_LEVEL_ONE,
+		FILE_TILEMAP_PATH_LEVEL_ONE, NUMBER_OF_TILES_LEVEL_ONE, L"Level_1", BACKGROUND_COLOR_LEVEL_ONE);
+
+	int numberOfScrollBars = NUMBER_OF_SCROLLBARS;
+	this->uselessObjs = new UselessObj*[numberOfScrollBars];
+
+	for (int i = 0; i < numberOfScrollBars; i++)
+	{
+		this->uselessObjs[i] = new ScrollBar();
+	}
 
 	return flag;
 }
@@ -29,6 +37,8 @@ bool Game::LoadGame()
 
 	this->background.LoadBackground(this->directX.GetDirectXGraphic());
 
+	this->background.LoadUselessObjs(this->uselessObjs);
+	
 	return 1;
 }
 
@@ -79,6 +89,8 @@ void Game::UpdateGame()
 		yumetaro.SetVelocity(0, velocity);
 		yumetaro.Move(SCREEN_WIDTH, SCREEN_HEIGHT);
 	}
+
+	this->background.UpdateBackground(this->directX.GetDirectXGraphic());
 }
 
 void Game::Render()
