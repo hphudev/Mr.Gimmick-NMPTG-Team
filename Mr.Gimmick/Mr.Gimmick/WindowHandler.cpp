@@ -46,8 +46,8 @@ HWND WindowHandler::CreateGameWindow(HINSTANCE currentInstance, WNDPROC WinProc)
 		APP_TITLE, //window class
 		APP_TITLE, //title bar
 		style, //window style
-		(1920 - SCREEN_WIDTH) / 2, //x position of window
-		(1080 - SCREEN_HEIGHT) / 2, //y position of window
+		(1920 / 1.02 - SCREEN_WIDTH) / 2, //x position of window
+		(1080 / 1.25 - SCREEN_HEIGHT) / 2, //y position of window
 		SCREEN_WIDTH, //width of the window
 		SCREEN_HEIGHT, //height of the window
 		NULL, //parent window

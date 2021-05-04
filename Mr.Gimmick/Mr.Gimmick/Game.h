@@ -9,6 +9,7 @@
 #include "Background.h"
 #include "LevelOne.h"
 #include "ScrollBar.h"
+#include "Waterfall.h"
 
 #pragma region Definition
 #define APP_TITLE L"Mr.Gimmick"
@@ -17,10 +18,10 @@
 #define KEY_UP(vk_code) ((GetAsyncKeyState(vk_code) * 0x8000) ? 1 : 0)
 
 #define FULLSCREEN 0
-#define SCREEN_WIDTH 1920//16 * TILE_SIZE * SCALE
-#define SCREEN_HEIGHT 1080//12 * TILE_SIZE * SCALE
+#define SCREEN_WIDTH 1902//16 * TILE_SIZE * SCALE
+#define SCREEN_HEIGHT 732//12 * TILE_SIZE * SCALE
 
-#define FPS 60
+#define FPS 30
 #pragma endregion
 
 class Game
@@ -28,11 +29,15 @@ class Game
 private:
 	Yumetaro yumetaro;
 	UselessObj** uselessObjs;
+	int numberOfUselessObjs;
 	DirectX directX;
 	HWND window;
 	Background background;
 public:
 	Game();
+	Game(const Game& game);
+	~Game();
+	void InitUselessObjs(int key, int* numberOfUselessObjs);
 	bool InitGame(HWND window);
 	bool LoadGame();
 	void RunGame(HWND window);

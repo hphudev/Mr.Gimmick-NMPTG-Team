@@ -141,3 +141,43 @@ void AnimatedTile::SetNumberOfDrawings(int numberOfDrawings)
 {
 	this->numberOfDrawings = numberOfDrawings;
 }
+
+int AnimatedTile::GetIndexOfNewImageOfTile(int value, int firstTile, int lastTile, string direction, 
+	int i, int j, int tileSize)
+{
+	int result = 0;
+
+	if (value >= firstTile && value <= lastTile)
+	{
+		int numberOfTiles = lastTile - firstTile + 1;
+
+		if (direction == "Right")
+		{
+			value += this->numberOfDrawings % numberOfTiles;
+
+			if (value <= lastTile)
+			{
+				result = value;
+			}
+			else
+			{
+				result = value = firstTile;
+			}
+		}
+		else
+		{
+			value -= this->numberOfDrawings % numberOfTiles;
+
+			if (value >= firstTile)
+			{
+				result = value;
+			}
+			else
+			{
+				result = value = lastTile;
+			}
+		}
+	}
+
+	return result;
+}

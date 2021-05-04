@@ -26,6 +26,9 @@ public:
     Yumetaro();
     Yumetaro(float x, float y, float vX, float vY, int numberOfAnimatedTiles, float width, float height, 
         LPCWSTR fileSpriteName);
+    // *
+    Yumetaro& operator = (const Yumetaro& yumetaro);
+    // *
     bool Load(D3DXCOLOR transparentColor, DirectXGraphic directXGrphic);
     void Move(int screenWidth, int screenHeight);
 };

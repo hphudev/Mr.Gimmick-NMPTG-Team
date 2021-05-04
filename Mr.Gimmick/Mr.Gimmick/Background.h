@@ -5,6 +5,8 @@
 #include "Tileset.h"
 #include "FileHandler.h"
 #include "ScrollBar.h"
+#include "LevelOne.h"
+#include "Waterfall.h"
 
 class Background
 {

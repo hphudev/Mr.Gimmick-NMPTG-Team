@@ -2,7 +2,7 @@
 
 AnimatedAndMovableObj::AnimatedAndMovableObj()
 {
-
+	this->state = NULL;
 }
 
 AnimatedAndMovableObj::AnimatedAndMovableObj(float x, float y, int numberOfAnimatedTiles, float vX, 

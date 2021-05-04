@@ -2,7 +2,49 @@
 
 Game::Game()
 {
+	this->uselessObjs = NULL;
+	this->window = NULL;
+	this->numberOfUselessObjs = 0;
+}
 
+Game::Game(const Game& game)
+{
+	this->background = game.background;
+	this->directX = game.directX;
+	this->window = game.window;
+	this->yumetaro = game.yumetaro;
+	this->numberOfUselessObjs = game.numberOfUselessObjs;
+	this->uselessObjs = new UselessObj*[game.numberOfUselessObjs];
+
+	for (int i = 0; i < game.numberOfUselessObjs; i++)
+	{
+		this->uselessObjs[i] = game.uselessObjs[i]->Clone();
+	}
+}
+
+Game::~Game()
+{
+	delete[] this->uselessObjs;
+}
+
+void Game::InitUselessObjs(int key, int* numberOfUselessObjs)
+{
+	for (int i = numberOfUselessObjs[key]; i < numberOfUselessObjs[key + 1]; i++)
+	{
+		switch (key)
+		{
+			case 0:
+			{
+				this->uselessObjs[i] = new ScrollBar();
+				break;
+			}
+			case 1:
+			{
+				this->uselessObjs[i] = new Waterfall();
+				break;
+			}
+		}
+	}
 }
 
 // Khởi tạo game
@@ -17,12 +59,18 @@ bool Game::InitGame(HWND window)
 	this->background = Background(NUMBER_OF_ROWS_LEVEL_ONE, NUMBER_OF_COLUMNS_LEVEL_ONE,
 		FILE_TILEMAP_PATH_LEVEL_ONE, NUMBER_OF_TILES_LEVEL_ONE, L"Level_1", BACKGROUND_COLOR_LEVEL_ONE);
 
-	int numberOfScrollBars = NUMBER_OF_SCROLLBARS;
-	this->uselessObjs = new UselessObj*[numberOfScrollBars];
+	const int numberOfTypeOfUselessObjs = NUMBER_OF_TYPE_OF_USELESS_OBJS;
+	int numberOfUselessObjs[numberOfTypeOfUselessObjs + 1];
+	numberOfUselessObjs[0] = 0;
+	numberOfUselessObjs[1] = numberOfUselessObjs[0] + NUMBER_OF_SCROLLBARS;
+	numberOfUselessObjs[2] = numberOfUselessObjs[1] + NUMBER_OF_WATERFALLS;
 
-	for (int i = 0; i < numberOfScrollBars; i++)
+	this->numberOfUselessObjs = numberOfUselessObjs[numberOfTypeOfUselessObjs];
+	this->uselessObjs = new UselessObj*[this->numberOfUselessObjs];
+	
+	for (int i = 0; i < numberOfTypeOfUselessObjs; i++)
 	{
-		this->uselessObjs[i] = new ScrollBar();
+		InitUselessObjs(i, numberOfUselessObjs);
 	}
 
 	return flag;

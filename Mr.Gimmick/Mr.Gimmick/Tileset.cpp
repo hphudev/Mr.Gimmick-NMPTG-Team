@@ -28,8 +28,11 @@ Tileset::Tileset(int numberOfTiles, LPCWSTR nameOfLevel, D3DCOLOR backgroundColo
 
 		if (CheckTile(i, 2, 140, 4, 14))
 		{
-			this->tiles[i] = new ScrollBarTile(i * tileSize, 0, tileSize, tileSize, filename, 1,
-				0, 1);
+			this->tiles[i] = new ScrollBarTile(i * tileSize, 0, tileSize, tileSize, filename, 1, 0, 1);
+		}
+		else if (CheckTile(i, 8, 94, 4, 14) || CheckTile(i, 4, 205, 4, 14))
+		{
+			this->tiles[i] = new WaterTile(i * tileSize, 0, tileSize, tileSize, filename, 1, 0, 1);
 		}
 		else
 		{

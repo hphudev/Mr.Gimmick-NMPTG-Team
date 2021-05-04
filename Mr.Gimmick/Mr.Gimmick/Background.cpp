@@ -63,7 +63,7 @@ void Background::Clean()
 	delete[] this->tiles;
 }
 
-Background& Background::operator=(const Background& background)
+Background& Background::operator = (const Background& background)
 {
 	if (this != &background)
 	{
@@ -103,7 +103,7 @@ void Background::LoadBackground(DirectXGraphic directXGraphic)
 		{
 			value = matrix[i][j];
 			this->tiles[i][j] = tiles[value]->Clone();
-			this->tiles[i][j]->SetPoint(j * tileSize, i * tileSize);
+			this->tiles[i][j]->SetPoint((float)j * tileSize, (float)i * tileSize);
 		}
 	}
 }
@@ -112,42 +112,13 @@ void Background::ChangeTile(int i, int j, int value, int firstTile, int lastTile
 {
 	if (value >= firstTile && value <= lastTile)
 	{
-		int numberOfTiles = lastTile - firstTile + 1;
 		int numberOfDrawings = ((AnimatedTile*)this->tiles[i][j])->GetNumberOfDrawings();
 		int tileSize = TILE_SIZE;
-
-		if (direction == "Right")
-		{
-			value += numberOfDrawings % numberOfTiles;
-
-			if (value <= lastTile)
-			{
-				this->tiles[i][j] = this->tileset.GetElement(value)->Clone();
-			}
-			else
-			{
-				this->tiles[i][j] = this->tileset.GetElement(firstTile)->Clone();
-				value = firstTile;
-			}
-		}
-		else
-		{
-			value -= numberOfDrawings % numberOfTiles;
-
-			if (value >= firstTile)
-			{
-				this->tiles[i][j] = this->tileset.GetElement(value)->Clone();
-			}
-			else
-			{
-				this->tiles[i][j] = this->tileset.GetElement(lastTile)->Clone();
-				value = lastTile;
-			}
-		}
-
+		int indexOfNewImageOfTile = ((AnimatedTile*)this->tiles[i][j])->GetIndexOfNewImageOfTile(value,
+			firstTile, lastTile, direction, i, j, tileSize);
+		this->tiles[i][j] = this->tileset.GetElement(indexOfNewImageOfTile)->Clone();
 		((AnimatedTile*)this->tiles[i][j])->SetNumberOfDrawings(numberOfDrawings);
-		this->tiles[i][j]->SetPoint(j * tileSize, i * tileSize);
-		this->tilemap.SetElement(i, j, value);
+		this->tiles[i][j]->SetPoint((float)j * tileSize, (float)i * tileSize);
 	}
 }
 
@@ -155,61 +126,114 @@ void Background::UpdateBackground(DirectXGraphic directXGraphic)
 {
 	int** matrix = tilemap.GetMatrix();
 	int value;
+	string type;
 
 	for (int i = 0; i < this->row; i++)
 	{
 		for (int j = 0; j < this->column; j++)
 		{
-			if (this->tiles[i][j]->GetType() == "ScrollBarTile")
+			type = this->tiles[i][j]->GetType();
+			value = matrix[i][j];
+
+			if (type == "ScrollBarTile")
 			{
-				value = matrix[i][j];
 				ChangeTile(i, j, value, 140, 143, "Right");
 				ChangeTile(i, j, value, 154, 157, "Left");
+			}
+
+			if (type == "WaterTile")
+			{
+				for (int k = 0; k < 8; k++)
+				{
+					ChangeTile(i, j, value, 94 + k * 14, 97 + k * 14, "Right");
+					
+					if (k < 4)
+					{
+						ChangeTile(i, j, value, 205 + k * 14, 208 + k * 14, "Right");
+					}
+				}
 			}
 		}
 	}
 }
 
+void SetPointAndPushBack(list<AnimatedTile*>& animatedTiles, Tile* tile, Point& point)
+{
+	animatedTiles.push_back((AnimatedTile*)tile);
+
+	if (point.GetFirstValue() == 0 && point.GetSecondValue() == 0)
+	{
+		point = tile->GetPoint();
+	}
+
+	if (tile->GetPoint().GetFirstValue() < point.GetFirstValue() && (point.GetFirstValue() != 0 || 
+		point.GetSecondValue() != 0))
+	{
+		point.SetFirstValue(tile->GetPoint().GetFirstValue());
+	}
+}
+
+void Load(list<AnimatedTile*>& animatedTiles, UselessObj*& uselessObj, int key, Point& point)
+{
+	int size = animatedTiles.size(), x = point.GetFirstValue(), y = point.GetSecondValue();
+
+	switch (key)
+	{
+		case 0:
+		{
+			uselessObj = new ScrollBar(x, y, size);
+			break;
+		}
+		case 1:
+		{
+			uselessObj = new Waterfall(x, y, size);
+			break;
+		}
+	}
+
+	for (int i = 0; i < size; i++)
+	{
+		uselessObj->SetElement(i, animatedTiles.front());
+		animatedTiles.pop_front();
+	}
+
+	point.SetValue(0, 0);
+}
+
 void Background::LoadUselessObjs(UselessObj**& uselessObjs)
 {
-	int index = 0, size;
+	const int numberOfTypeOfUselessObjs = NUMBER_OF_TYPE_OF_USELESS_OBJS;
+	int indexes[numberOfTypeOfUselessObjs], size;
+	indexes[0] = 0;
+	indexes[1] = indexes[0] + NUMBER_OF_SCROLLBARS;
 	string s = "ScrollBarTile";
-	list<AnimatedTile*> animatedTiles;
-	Point point, scrollBarPoint;
-	bool flag = 0;
+	list<AnimatedTile*> animatedTileLists[numberOfTypeOfUselessObjs];
+	Point points[numberOfTypeOfUselessObjs];
 
 	for (int i = 0; i < this->row; i++)
 	{
 		for (int j = 0; j < this->column; j++)
 		{
 			if (this->tiles[i][j]->GetType() == s && (this->tiles[i][j + 1]->GetType() == s ||
-				this->tiles[i][j - 1]->GetType() == s) &&
-				uselessObjs[index]->GetType() == "ScrollBar")
+				this->tiles[i][j - 1]->GetType() == s))
 			{
-				animatedTiles.push_back((AnimatedTile*)this->tiles[i][j]);
-
-				if (!flag)
-				{
-					point = this->tiles[i][j]->GetPoint();
-					scrollBarPoint.SetValue(point.GetFirstValue(), point.GetSecondValue());
-					flag = 1;
-				}
+				SetPointAndPushBack(animatedTileLists[0], this->tiles[i][j], points[0]);
 			}
 
 			if (this->tiles[i][j]->GetType() != s && j != 0 && this->tiles[i][j - 1]->GetType() == s)
 			{
-				size = animatedTiles.size();
-				uselessObjs[index] = new ScrollBar(scrollBarPoint.GetFirstValue(),
-					scrollBarPoint.GetSecondValue(), size);
+				Load(animatedTileLists[0], uselessObjs[indexes[0]], 0, points[0]);
+				indexes[0]++;
+			}
+			
+			if (this->tiles[i][j]->GetType() == "WaterTile")
+			{
+				SetPointAndPushBack(animatedTileLists[1], this->tiles[i][j], points[1]);
+			}
 
-				for (int i = 0; i < size; i++)
-				{
-					uselessObjs[index]->SetElement(i, animatedTiles.front());
-					animatedTiles.pop_front();
-				}
-
-				index++;
-				flag = 0;
+			if (i == this->row - 1 && j == this->column - 1)
+			{
+				Load(animatedTileLists[1], uselessObjs[indexes[1]], 1, points[1]);
 			}
 		}
 	}
