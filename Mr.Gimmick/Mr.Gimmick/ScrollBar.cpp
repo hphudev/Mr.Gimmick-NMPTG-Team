@@ -15,3 +15,8 @@ string ScrollBar::GetType()
 {
 	return "ScrollBar";
 }
+
+UselessObj* ScrollBar::Clone()
+{
+	return new ScrollBar(*this);
+}

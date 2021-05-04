@@ -4,6 +4,7 @@
 #include "Tile.h"
 #include "Sprite.h"
 #include "TransformHandler.h"
+#include "Tilemap.h"
 
 class AnimatedTile : public Tile
 {
@@ -27,4 +28,6 @@ public:
     string GetType();
     int GetNumberOfDrawings();
     void SetNumberOfDrawings(int numberOfDrawings);
+    int GetIndexOfNewImageOfTile(int value, int firstTile, int lastTile, string direction, int i, int j, 
+        int tileSize);
 };

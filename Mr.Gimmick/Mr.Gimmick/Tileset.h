@@ -6,6 +6,7 @@
 #include "AnimatedTile.h"
 #include "TransformHandler.h"
 #include "ScrollBarTile.h"
+#include "WaterTile.h"
 
 #pragma region Definition
 #define FOLDER_TILESET_PATH L"../../Resource/Map/"
