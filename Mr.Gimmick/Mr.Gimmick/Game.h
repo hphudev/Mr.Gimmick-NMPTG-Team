@@ -15,6 +15,7 @@
 #include "ItemsAndHUD.h"
 #include "Bosses.h"
 #include "Treasures.h"
+#include "PassiveCreatures.h"
 
 #pragma region Definition
 #define APP_TITLE L"Mr.Gimmick"
@@ -41,7 +42,9 @@ private:
 	UselessObj** uselessObjs;
 	HazardsAndInteractables* hazardsAndInteractables;
 	ItemsAndHUD* itemsAndHUD;
+	PassiveCreatures* passiveCreatures;
 	int numberOfUselessObjs, numberOfEnemies, numberOfHazardsAndInteractables, numberOfItemsAndHUD;
+	int numberOfPassiveCreatures;
 	DirectX directX;
 	HWND window;
 	Background background;
@@ -53,6 +56,7 @@ public:
 	void InitEnemies();
 	void InitHazardsAndInteractables();
 	void InitItemsAndHUD();
+	void InitPassiveCreatures();
 	bool InitGame(HWND window);
 	bool LoadGame();
 	void RunGame(HWND window);

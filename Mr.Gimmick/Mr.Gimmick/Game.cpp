@@ -7,8 +7,9 @@ Game::Game()
 	this->enemies = NULL;
 	this->hazardsAndInteractables = NULL;
 	this->itemsAndHUD = NULL;
-	this->numberOfUselessObjs = this->numberOfEnemies = this->numberOfHazardsAndInteractables = 
-		this->numberOfItemsAndHUD = 0;
+	this->passiveCreatures = NULL;
+	this->numberOfUselessObjs = this->numberOfEnemies = this->numberOfHazardsAndInteractables =
+		this->numberOfItemsAndHUD = this->numberOfPassiveCreatures = 0;
 }
 
 Game::Game(const Game& game)
@@ -51,6 +52,14 @@ Game::Game(const Game& game)
 	{
 		this->itemsAndHUD[i] = game.itemsAndHUD[i];
 	}
+
+	this->numberOfPassiveCreatures = game.numberOfPassiveCreatures;
+	this->passiveCreatures = new PassiveCreatures[game.numberOfPassiveCreatures];
+
+	for (int i = 0; i < game.numberOfPassiveCreatures; i++)
+	{
+		this->passiveCreatures[i] = game.passiveCreatures[i];
+	}
 }
 
 Game::~Game()
@@ -62,6 +71,8 @@ Game::~Game()
 	delete[] this->hazardsAndInteractables;
 
 	delete[] this->itemsAndHUD;
+
+	delete[] this->passiveCreatures;
 }
 
 void Game::InitUselessObjs(int key, int* numberOfUselessObjs)
@@ -141,6 +152,18 @@ void Game::InitItemsAndHUD()
 	this->itemsAndHUD[3] = ItemsAndHUD(16 * 127 - 6, 16 * 4 - 3, 4);
 }
 
+void Game::InitPassiveCreatures()
+{
+	this->numberOfPassiveCreatures = NUMBER_OF_PASSIVE_CREATURES;
+	this->passiveCreatures = new PassiveCreatures[this->numberOfPassiveCreatures];
+	this->passiveCreatures[0] = PassiveCreatures(16 * 110, 16 * 41);
+	this->passiveCreatures[1] = PassiveCreatures(16 * 106, 16 * 41);
+	this->passiveCreatures[2] = PassiveCreatures(16 * 102, 16 * 48 - 8);
+	this->passiveCreatures[3] = PassiveCreatures(16 * 98, 16 * 47);
+	this->passiveCreatures[4] = PassiveCreatures(16 * 94, 16 * 42);
+	this->passiveCreatures[5] = PassiveCreatures(16 * 90, 16 * 39);
+}
+
 // Khởi tạo game
 bool Game::InitGame(HWND window)
 {
@@ -174,6 +197,7 @@ bool Game::InitGame(HWND window)
 	InitEnemies();
 	InitHazardsAndInteractables();
 	InitItemsAndHUD();
+	InitPassiveCreatures();
 
 	return flag;
 }
@@ -199,6 +223,12 @@ bool Game::LoadGame()
 	for (int i = 0; i < this->numberOfItemsAndHUD; i++)
 	{
 		this->itemsAndHUD[i].Load(ITEMS_AND_HUD_BACKGROUND_COLOR, this->directX.GetDirectXGraphic());
+	}
+
+	for (int i = 0; i < this->numberOfPassiveCreatures; i++)
+	{
+		this->passiveCreatures[i].Load(PASSIVE_CREATURES_BACKGROUND_COLOR,
+			this->directX.GetDirectXGraphic());
 	}
 
 	this->background.LoadBackground(this->directX.GetDirectXGraphic());
@@ -308,6 +338,22 @@ void Game::Render()
 		for (int i = 0; i < this->numberOfItemsAndHUD; i++)
 		{
 			this->itemsAndHUD[i].Draw(1, 0, graphicDevice);
+		}
+
+		for (int i = 0; i < this->numberOfPassiveCreatures; i++)
+		{
+			if (i == 0)
+			{
+				this->passiveCreatures[i].Draw(1, 0, graphicDevice);
+			}
+			else if (i < 3)
+			{
+				this->passiveCreatures[i].Draw(2, 0, graphicDevice);
+			}
+			else
+			{
+				this->passiveCreatures[i].Draw(3, 0, graphicDevice);
+			}
 		}
 
 		this->boss.Draw(3, 0, graphicDevice);
