@@ -228,6 +228,7 @@
     <ClInclude Include="Velocity.h" />
     <ClInclude Include="TwoDimensionObj.h" />
     <ClInclude Include="Waterfall.h" />
+    <ClInclude Include="WaterfallTile.h" />
     <ClInclude Include="WaterTile.h" />
     <ClInclude Include="WindowHandler.h" />
     <ClInclude Include="Yumetaro.h" />
@@ -316,6 +317,7 @@
     <ClCompile Include="Velocity.cpp" />
     <ClCompile Include="TwoDimensionObj.cpp" />
     <ClCompile Include="Waterfall.cpp" />
+    <ClCompile Include="WaterfallTile.cpp" />
     <ClCompile Include="WaterTile.cpp" />
     <ClCompile Include="WindowHandler.cpp" />
     <ClCompile Include="Yumetaro.cpp" />

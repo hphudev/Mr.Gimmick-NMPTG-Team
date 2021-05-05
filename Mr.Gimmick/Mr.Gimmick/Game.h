@@ -10,6 +10,7 @@
 #include "LevelOne.h"
 #include "ScrollBar.h"
 #include "Waterfall.h"
+#include "Enemies.h"
 
 #pragma region Definition
 #define APP_TITLE L"Mr.Gimmick"
@@ -20,6 +21,8 @@
 #define FULLSCREEN 0
 #define SCREEN_WIDTH 1902//16 * TILE_SIZE * SCALE
 #define SCREEN_HEIGHT 732//12 * TILE_SIZE * SCALE
+//#define SCREEN_WIDTH 1920
+//#define SCREEN_HEIGHT 739
 
 #define FPS 30
 #pragma endregion
@@ -28,8 +31,9 @@ class Game
 {
 private:
 	Yumetaro yumetaro;
+	Enemies* enemies;
 	UselessObj** uselessObjs;
-	int numberOfUselessObjs;
+	int numberOfUselessObjs, numberOfEnemies;
 	DirectX directX;
 	HWND window;
 	Background background;
@@ -38,6 +42,7 @@ public:
 	Game(const Game& game);
 	~Game();
 	void InitUselessObjs(int key, int* numberOfUselessObjs);
+	void InitEnemies();
 	bool InitGame(HWND window);
 	bool LoadGame();
 	void RunGame(HWND window);

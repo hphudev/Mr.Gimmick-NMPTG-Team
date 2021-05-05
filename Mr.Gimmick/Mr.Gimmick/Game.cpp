@@ -4,7 +4,8 @@ Game::Game()
 {
 	this->uselessObjs = NULL;
 	this->window = NULL;
-	this->numberOfUselessObjs = 0;
+	this->enemies = NULL;
+	this->numberOfUselessObjs = this->numberOfEnemies = 0;
 }
 
 Game::Game(const Game& game)
@@ -13,6 +14,7 @@ Game::Game(const Game& game)
 	this->directX = game.directX;
 	this->window = game.window;
 	this->yumetaro = game.yumetaro;
+
 	this->numberOfUselessObjs = game.numberOfUselessObjs;
 	this->uselessObjs = new UselessObj*[game.numberOfUselessObjs];
 
@@ -20,11 +22,21 @@ Game::Game(const Game& game)
 	{
 		this->uselessObjs[i] = game.uselessObjs[i]->Clone();
 	}
+
+	this->numberOfEnemies = game.numberOfEnemies;
+	this->enemies = new Enemies[game.numberOfEnemies];
+
+	for (int i = 0; i < game.numberOfEnemies; i++)
+	{
+		this->enemies[i] = game.enemies[i];
+	}
 }
 
 Game::~Game()
 {
 	delete[] this->uselessObjs;
+
+	delete[] this->enemies;
 }
 
 void Game::InitUselessObjs(int key, int* numberOfUselessObjs)
@@ -45,6 +57,28 @@ void Game::InitUselessObjs(int key, int* numberOfUselessObjs)
 			}
 		}
 	}
+}
+
+void Game::InitEnemies()
+{
+	this->numberOfEnemies = NUMBER_OF_ENEMIES;
+	this->enemies = new Enemies[this->numberOfEnemies];
+	this->enemies[0] = Enemies(16 * 28, 16 * 22);
+	this->enemies[1] = Enemies(16 * 30, 16 * 22);
+	this->enemies[2] = Enemies(16 * 33, 16 * 21);
+	this->enemies[3] = Enemies(16 * 37, 16 * 22);
+	this->enemies[4] = Enemies(16 * 41, 16 * 21);
+	this->enemies[5] = Enemies(16 * 45, 16 * 22);
+	this->enemies[6] = Enemies(16 * 47, 16 * 22);
+	this->enemies[7] = Enemies(16 * 49, 16 * 22);
+	this->enemies[8] = Enemies(16 * 36, 16 * 31);
+	this->enemies[9] = Enemies(16 * 114, 16 * 28);
+	this->enemies[10] = Enemies(16 * 114, 16 * 19);
+	this->enemies[11] = Enemies(16 * 108, 16 * 7);
+	this->enemies[12] = Enemies(16 * 89, 16 * 10);
+	this->enemies[13] = Enemies(16 * 85, 16 * 10);
+	this->enemies[14] = Enemies(16 * 47, 16 * 40 - 3, 2, 0, 1, 26);
+	this->enemies[15] = Enemies(16 * 117, 16 * 31 - 3, 2, 0, 1, 26);
 }
 
 // Khởi tạo game
@@ -73,6 +107,8 @@ bool Game::InitGame(HWND window)
 		InitUselessObjs(i, numberOfUselessObjs);
 	}
 
+	InitEnemies();
+
 	return flag;
 }
 
@@ -81,6 +117,11 @@ bool Game::LoadGame()
 	if (!yumetaro.Load(YUMETARO_BACKGROUND_COLOR, this->directX.GetDirectXGraphic()))
 	{
 		return 0;
+	}
+
+	for (int i = 0; i < this->numberOfEnemies; i++)
+	{
+		this->enemies[i].Load(ENEMIES_BACKGROUND_COLOR, this->directX.GetDirectXGraphic());
 	}
 
 	this->background.LoadBackground(this->directX.GetDirectXGraphic());
@@ -138,6 +179,11 @@ void Game::UpdateGame()
 		yumetaro.Move(SCREEN_WIDTH, SCREEN_HEIGHT);
 	}
 
+	for (int i = 0; i < this->numberOfUselessObjs; i++)
+	{
+		this->uselessObjs[i]->Synchronize();
+	}
+
 	this->background.UpdateBackground(this->directX.GetDirectXGraphic());
 }
 
@@ -154,6 +200,18 @@ void Game::Render()
 		this->background.DrawBackground(directXGraphic.GetGraphicDevice().GetBackbuffer(), 
 			directXGraphic);
 		yumetaro.Draw(2, 0, graphicDevice);
+
+		for (int i = 0; i < this->numberOfEnemies; i++)
+		{
+			if (i <= 13)
+			{
+				this->enemies[i].Draw(1, 0, graphicDevice);
+			}
+			else
+			{
+				this->enemies[i].Draw(17, 0, graphicDevice);
+			}
+		}
 
 		// Dừng render
 		graphicDevice.EndRendering();
