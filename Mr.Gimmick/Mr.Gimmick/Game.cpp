@@ -5,7 +5,8 @@ Game::Game()
 	this->uselessObjs = NULL;
 	this->window = NULL;
 	this->enemies = NULL;
-	this->numberOfUselessObjs = this->numberOfEnemies = 0;
+	this->hazardsAndInteractables = NULL;
+	this->numberOfUselessObjs = this->numberOfEnemies = this->numberOfHazardsAndInteractables = 0;
 }
 
 Game::Game(const Game& game)
@@ -30,6 +31,14 @@ Game::Game(const Game& game)
 	{
 		this->enemies[i] = game.enemies[i];
 	}
+
+	this->numberOfHazardsAndInteractables = game.numberOfHazardsAndInteractables;
+	this->hazardsAndInteractables = new HazardsAndInteractables[game.numberOfHazardsAndInteractables];
+
+	for (int i = 0; i < game.numberOfHazardsAndInteractables; i++)
+	{
+		this->hazardsAndInteractables[i] = game.hazardsAndInteractables[i];
+	}
 }
 
 Game::~Game()
@@ -37,6 +46,8 @@ Game::~Game()
 	delete[] this->uselessObjs;
 
 	delete[] this->enemies;
+
+	delete[] this->hazardsAndInteractables;
 }
 
 void Game::InitUselessObjs(int key, int* numberOfUselessObjs)
@@ -81,6 +92,31 @@ void Game::InitEnemies()
 	this->enemies[15] = Enemies(16 * 117, 16 * 31 - 3, 2, 0, 1, 26);
 }
 
+void Game::InitHazardsAndInteractables()
+{
+	this->numberOfHazardsAndInteractables = NUMBER_OF_HAZARDS_AND_INTERACTABLES;
+	this->hazardsAndInteractables = new HazardsAndInteractables[this->numberOfHazardsAndInteractables];
+
+	for (int i = 0; i < 2; i++)
+	{
+		this->hazardsAndInteractables[i] = HazardsAndInteractables(16 * (55 - i * 3), 16 * 27);
+	}
+
+	for (int i = 2; i < 6; i++)
+	{
+		this->hazardsAndInteractables[i] = HazardsAndInteractables(16 * (53 + (i - 2) * 2), 16 * 39);
+	}
+
+	for (int i = 6; i < 8; i++)
+	{
+		this->hazardsAndInteractables[i] = HazardsAndInteractables(16 * (64 + (i - 6) * 2), 16 * 39);
+	}
+
+	this->hazardsAndInteractables[8] = HazardsAndInteractables(16 * 36, 16 * 28 - 2, 6);
+	this->hazardsAndInteractables[9] = HazardsAndInteractables(16 * 74, 16 * 42 - 2, 6);
+	this->hazardsAndInteractables[10] = HazardsAndInteractables(16 * 115 + 8, 16 * 41 + 1, 1, 53, 77);
+}
+
 // Khởi tạo game
 bool Game::InitGame(HWND window)
 {
@@ -108,6 +144,7 @@ bool Game::InitGame(HWND window)
 	}
 
 	InitEnemies();
+	InitHazardsAndInteractables();
 
 	return flag;
 }
@@ -122,6 +159,12 @@ bool Game::LoadGame()
 	for (int i = 0; i < this->numberOfEnemies; i++)
 	{
 		this->enemies[i].Load(ENEMIES_BACKGROUND_COLOR, this->directX.GetDirectXGraphic());
+	}
+
+	for (int i = 0; i < this->numberOfHazardsAndInteractables; i++)
+	{
+		this->hazardsAndInteractables[i].Load(HAZARDS_AND_INTERACTABLES_BACKGROUND_COLOR,
+			this->directX.GetDirectXGraphic());
 	}
 
 	this->background.LoadBackground(this->directX.GetDirectXGraphic());
@@ -212,6 +255,14 @@ void Game::Render()
 				this->enemies[i].Draw(17, 0, graphicDevice);
 			}
 		}
+
+		for (int i = 0; i < this->numberOfHazardsAndInteractables - 1; i++)
+		{
+			this->hazardsAndInteractables[i].Draw(1, 0, graphicDevice);
+		}
+
+		this->hazardsAndInteractables[this->numberOfHazardsAndInteractables - 1].Draw(3, 0, 
+			graphicDevice);
 
 		// Dừng render
 		graphicDevice.EndRendering();

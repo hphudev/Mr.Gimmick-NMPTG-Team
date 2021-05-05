@@ -67,3 +67,8 @@ void AnimatedObj::SetElement(int index, AnimatedTile* animatedTile)
 {
 	this->animatedTiles[index] = animatedTile;
 }
+
+bool AnimatedObj::Load(D3DXCOLOR transparentColor, DirectXGraphic directXGrphic)
+{
+	return false;
+}
