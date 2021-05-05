@@ -17,6 +17,7 @@ Game::Game(const Game& game)
 	this->directX = game.directX;
 	this->window = game.window;
 	this->yumetaro = game.yumetaro;
+	this->boss = game.boss;
 
 	this->numberOfUselessObjs = game.numberOfUselessObjs;
 	this->uselessObjs = new UselessObj*[game.numberOfUselessObjs];
@@ -151,6 +152,8 @@ bool Game::InitGame(HWND window)
 	this->background = Background(NUMBER_OF_ROWS_LEVEL_ONE, NUMBER_OF_COLUMNS_LEVEL_ONE,
 		FILE_TILEMAP_PATH_LEVEL_ONE, NUMBER_OF_TILES_LEVEL_ONE, L"Level_1", BACKGROUND_COLOR_LEVEL_ONE);
 
+	this->boss = Bosses(16 * 70 - 4, 16 * 6);
+
 	const int numberOfTypeOfUselessObjs = NUMBER_OF_TYPE_OF_USELESS_OBJS;
 	int numberOfUselessObjs[numberOfTypeOfUselessObjs + 1];
 	numberOfUselessObjs[0] = 0;
@@ -196,6 +199,8 @@ bool Game::LoadGame()
 	}
 
 	this->background.LoadBackground(this->directX.GetDirectXGraphic());
+
+	this->boss.Load(BOSSES_BACKGROUND_COLOR, this->directX.GetDirectXGraphic());
 
 	this->background.LoadUselessObjs(this->uselessObjs);
 	
@@ -296,6 +301,8 @@ void Game::Render()
 		{
 			this->itemsAndHUD[i].Draw(1, 0, graphicDevice);
 		}
+
+		this->boss.Draw(3, 0, graphicDevice);
 
 		// Dừng render
 		graphicDevice.EndRendering();
