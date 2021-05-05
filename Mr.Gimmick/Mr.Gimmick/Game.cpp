@@ -6,7 +6,9 @@ Game::Game()
 	this->window = NULL;
 	this->enemies = NULL;
 	this->hazardsAndInteractables = NULL;
-	this->numberOfUselessObjs = this->numberOfEnemies = this->numberOfHazardsAndInteractables = 0;
+	this->itemsAndHUD = NULL;
+	this->numberOfUselessObjs = this->numberOfEnemies = this->numberOfHazardsAndInteractables = 
+		this->numberOfItemsAndHUD = 0;
 }
 
 Game::Game(const Game& game)
@@ -39,6 +41,14 @@ Game::Game(const Game& game)
 	{
 		this->hazardsAndInteractables[i] = game.hazardsAndInteractables[i];
 	}
+
+	this->numberOfItemsAndHUD = game.numberOfItemsAndHUD;
+	this->itemsAndHUD = new ItemsAndHUD[game.numberOfItemsAndHUD];
+
+	for (int i = 0; i < game.numberOfItemsAndHUD; i++)
+	{
+		this->itemsAndHUD[i] = game.itemsAndHUD[i];
+	}
 }
 
 Game::~Game()
@@ -48,6 +58,8 @@ Game::~Game()
 	delete[] this->enemies;
 
 	delete[] this->hazardsAndInteractables;
+
+	delete[] this->itemsAndHUD;
 }
 
 void Game::InitUselessObjs(int key, int* numberOfUselessObjs)
@@ -117,6 +129,16 @@ void Game::InitHazardsAndInteractables()
 	this->hazardsAndInteractables[10] = HazardsAndInteractables(16 * 115 + 8, 16 * 41 + 1, 1, 53, 77);
 }
 
+void Game::InitItemsAndHUD()
+{
+	this->numberOfItemsAndHUD = NUMBER_OF_ITEMS_AND_HUD;
+	this->itemsAndHUD = new ItemsAndHUD[this->numberOfItemsAndHUD];
+	this->itemsAndHUD[0] = ItemsAndHUD(16 * 27, 16 * 19, 2);
+	this->itemsAndHUD[1] = ItemsAndHUD(16 * 34, 16 * 43, 3);
+	this->itemsAndHUD[2] = ItemsAndHUD(16 * 126, 16 * 22, 2);
+	this->itemsAndHUD[3] = ItemsAndHUD(16 * 127 - 6, 16 * 4 - 3, 4);
+}
+
 // Khởi tạo game
 bool Game::InitGame(HWND window)
 {
@@ -145,6 +167,7 @@ bool Game::InitGame(HWND window)
 
 	InitEnemies();
 	InitHazardsAndInteractables();
+	InitItemsAndHUD();
 
 	return flag;
 }
@@ -165,6 +188,11 @@ bool Game::LoadGame()
 	{
 		this->hazardsAndInteractables[i].Load(HAZARDS_AND_INTERACTABLES_BACKGROUND_COLOR,
 			this->directX.GetDirectXGraphic());
+	}
+
+	for (int i = 0; i < this->numberOfItemsAndHUD; i++)
+	{
+		this->itemsAndHUD[i].Load(ITEMS_AND_HUD_BACKGROUND_COLOR, this->directX.GetDirectXGraphic());
 	}
 
 	this->background.LoadBackground(this->directX.GetDirectXGraphic());
@@ -263,6 +291,11 @@ void Game::Render()
 
 		this->hazardsAndInteractables[this->numberOfHazardsAndInteractables - 1].Draw(3, 0, 
 			graphicDevice);
+
+		for (int i = 0; i < this->numberOfItemsAndHUD; i++)
+		{
+			this->itemsAndHUD[i].Draw(1, 0, graphicDevice);
+		}
 
 		// Dừng render
 		graphicDevice.EndRendering();

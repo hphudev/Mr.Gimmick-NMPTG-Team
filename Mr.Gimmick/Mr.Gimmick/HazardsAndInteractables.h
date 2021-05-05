@@ -14,6 +14,6 @@ public:
     HazardsAndInteractables();
     HazardsAndInteractables(float x, float y, int currentFrame = 1, float width = 17, float height = 23, 
         int numberOfAnimatedTiles = 1, LPCWSTR fileSpriteName = SPRITE_HAZARDS_AND_INTERACTABLES_PATH);
-    HazardsAndInteractables& operator = (const HazardsAndInteractables& yumetaro);
+    HazardsAndInteractables& operator = (const HazardsAndInteractables& hazardsAndInteractables);
     bool Load(D3DXCOLOR transparentColor, DirectXGraphic directXGrphic);
 };
