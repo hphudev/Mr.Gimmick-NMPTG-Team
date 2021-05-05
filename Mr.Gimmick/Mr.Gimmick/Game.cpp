@@ -18,6 +18,7 @@ Game::Game(const Game& game)
 	this->window = game.window;
 	this->yumetaro = game.yumetaro;
 	this->boss = game.boss;
+	this->treasure = game.treasure;
 
 	this->numberOfUselessObjs = game.numberOfUselessObjs;
 	this->uselessObjs = new UselessObj*[game.numberOfUselessObjs];
@@ -154,6 +155,8 @@ bool Game::InitGame(HWND window)
 
 	this->boss = Bosses(16 * 70 - 4, 16 * 6);
 
+	this->treasure = Treasures(16 * 5 + 3, 16 * 5 + 3);
+
 	const int numberOfTypeOfUselessObjs = NUMBER_OF_TYPE_OF_USELESS_OBJS;
 	int numberOfUselessObjs[numberOfTypeOfUselessObjs + 1];
 	numberOfUselessObjs[0] = 0;
@@ -177,7 +180,7 @@ bool Game::InitGame(HWND window)
 
 bool Game::LoadGame()
 {
-	if (!yumetaro.Load(YUMETARO_BACKGROUND_COLOR, this->directX.GetDirectXGraphic()))
+	if (!this->yumetaro.Load(YUMETARO_BACKGROUND_COLOR, this->directX.GetDirectXGraphic()))
 	{
 		return 0;
 	}
@@ -201,6 +204,8 @@ bool Game::LoadGame()
 	this->background.LoadBackground(this->directX.GetDirectXGraphic());
 
 	this->boss.Load(BOSSES_BACKGROUND_COLOR, this->directX.GetDirectXGraphic());
+
+	this->treasure.Load(TREASURES_BACKGROUND_COLOR, this->directX.GetDirectXGraphic());
 
 	this->background.LoadUselessObjs(this->uselessObjs);
 	
@@ -233,26 +238,26 @@ void Game::UpdateGame()
 	// Di chuyển bằng bàn phím
 	if (KEY_DOWN(VK_LEFT))
 	{
-		yumetaro.SetVelocity(-velocity, 0);
-		yumetaro.Move(SCREEN_WIDTH, SCREEN_HEIGHT);
+		this->yumetaro.SetVelocity(-velocity, 0);
+		this->yumetaro.Move(SCREEN_WIDTH, SCREEN_HEIGHT);
 	}
 
 	if (KEY_DOWN(VK_RIGHT))
 	{
-		yumetaro.SetVelocity(velocity, 0);
-		yumetaro.Move(SCREEN_WIDTH, SCREEN_HEIGHT);
+		this->yumetaro.SetVelocity(velocity, 0);
+		this->yumetaro.Move(SCREEN_WIDTH, SCREEN_HEIGHT);
 	}
 
 	if (KEY_DOWN(VK_UP))
 	{
-		yumetaro.SetVelocity(0, -velocity);
-		yumetaro.Move(SCREEN_WIDTH, SCREEN_HEIGHT);
+		this->yumetaro.SetVelocity(0, -velocity);
+		this->yumetaro.Move(SCREEN_WIDTH, SCREEN_HEIGHT);
 	}
 
 	if (KEY_DOWN(VK_DOWN))
 	{
-		yumetaro.SetVelocity(0, velocity);
-		yumetaro.Move(SCREEN_WIDTH, SCREEN_HEIGHT);
+		this->yumetaro.SetVelocity(0, velocity);
+		this->yumetaro.Move(SCREEN_WIDTH, SCREEN_HEIGHT);
 	}
 
 	for (int i = 0; i < this->numberOfUselessObjs; i++)
@@ -275,7 +280,10 @@ void Game::Render()
 		DirectXGraphic directXGraphic = this->directX.GetDirectXGraphic();
 		this->background.DrawBackground(directXGraphic.GetGraphicDevice().GetBackbuffer(), 
 			directXGraphic);
-		yumetaro.Draw(2, 0, graphicDevice);
+
+		this->treasure.Draw(1, 0, graphicDevice);
+
+		this->yumetaro.Draw(2, 0, graphicDevice);
 
 		for (int i = 0; i < this->numberOfEnemies; i++)
 		{
