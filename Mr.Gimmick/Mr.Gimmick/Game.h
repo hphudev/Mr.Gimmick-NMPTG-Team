@@ -12,6 +12,7 @@
 #include "Waterfall.h"
 #include "Enemies.h"
 #include "HazardsAndInteractables.h"
+#include "ItemsAndHUD.h"
 
 #pragma region Definition
 #define APP_TITLE L"Mr.Gimmick"
@@ -35,7 +36,8 @@ private:
 	Enemies* enemies;
 	UselessObj** uselessObjs;
 	HazardsAndInteractables* hazardsAndInteractables;
-	int numberOfUselessObjs, numberOfEnemies, numberOfHazardsAndInteractables;
+	ItemsAndHUD* itemsAndHUD;
+	int numberOfUselessObjs, numberOfEnemies, numberOfHazardsAndInteractables, numberOfItemsAndHUD;
 	DirectX directX;
 	HWND window;
 	Background background;
@@ -46,6 +48,7 @@ public:
 	void InitUselessObjs(int key, int* numberOfUselessObjs);
 	void InitEnemies();
 	void InitHazardsAndInteractables();
+	void InitItemsAndHUD();
 	bool InitGame(HWND window);
 	bool LoadGame();
 	void RunGame(HWND window);
