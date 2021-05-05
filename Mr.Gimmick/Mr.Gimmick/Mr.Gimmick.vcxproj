@@ -308,7 +308,7 @@
     <ClCompile Include="Tilemap.cpp" />
     <ClCompile Include="Tileset.cpp" />
     <ClCompile Include="TransformHandler.cpp" />
-    <ClCompile Include="Treasure.cpp" />
+    <ClCompile Include="Treasures.cpp" />
     <ClCompile Include="UFO.cpp" />
     <ClCompile Include="UnplayableObj.cpp" />
     <ClCompile Include="UsefulObj.cpp" />

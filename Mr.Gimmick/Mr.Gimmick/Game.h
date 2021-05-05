@@ -14,6 +14,7 @@
 #include "HazardsAndInteractables.h"
 #include "ItemsAndHUD.h"
 #include "Bosses.h"
+#include "Treasures.h"
 
 #pragma region Definition
 #define APP_TITLE L"Mr.Gimmick"
@@ -35,6 +36,7 @@ class Game
 private:
 	Yumetaro yumetaro;
 	Bosses boss;
+	Treasures treasure;
 	Enemies* enemies;
 	UselessObj** uselessObjs;
 	HazardsAndInteractables* hazardsAndInteractables;
