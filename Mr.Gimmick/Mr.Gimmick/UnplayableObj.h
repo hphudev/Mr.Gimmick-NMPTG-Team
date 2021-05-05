@@ -4,5 +4,7 @@
 
 class UnplayableObj : public AnimatedAndMovableObj
 {
-
+public:
+	UnplayableObj();
+	UnplayableObj(float x, float y, int numberOfAnimatedTiles, float vX, float vY);
 };

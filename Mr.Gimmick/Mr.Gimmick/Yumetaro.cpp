@@ -11,14 +11,12 @@ Yumetaro::Yumetaro(float x, float y, float vX, float vY, int numberOfAnimatedTil
 	this->animatedTiles[0] = new AnimatedTile(x, y, width, height, fileSpriteName, 6, 0, 1);
 }
 
-// *
 Yumetaro& Yumetaro::operator = (const Yumetaro& yumetaro)
 {
 	AnimatedAndMovableObj::operator = (yumetaro);
 
 	return *this;
 }
-// *
 
 bool Yumetaro::Load(D3DXCOLOR transparentColor, DirectXGraphic directXGrphic)
 {
