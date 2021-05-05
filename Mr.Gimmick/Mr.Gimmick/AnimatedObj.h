@@ -18,4 +18,5 @@ public:
 	~AnimatedObj();
 	void Draw(int indexOfRow, bool isRotate, GraphicDevice graphicDevice);
 	void SetElement(int index, AnimatedTile* animatedTile);
+	virtual bool Load(D3DXCOLOR transparentColor, DirectXGraphic directXGrphic);
 };

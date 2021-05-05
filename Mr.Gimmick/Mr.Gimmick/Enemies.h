@@ -14,6 +14,6 @@ public:
     Enemies();
     Enemies(float x, float y, float vX = 2, float vY = 0, int numberOfAnimatedTiles = 1, 
         float width = 19.4, float height = 19.4, LPCWSTR fileSpriteName = SPRITE_ENEMIES_PATH);
-    Enemies& operator = (const Enemies& yumetaro);
+    Enemies& operator = (const Enemies& enemies);
     bool Load(D3DXCOLOR transparentColor, DirectXGraphic directXGrphic);
 };

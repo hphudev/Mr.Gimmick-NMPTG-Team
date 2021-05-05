@@ -11,6 +11,7 @@
 #include "ScrollBar.h"
 #include "Waterfall.h"
 #include "Enemies.h"
+#include "HazardsAndInteractables.h"
 
 #pragma region Definition
 #define APP_TITLE L"Mr.Gimmick"
@@ -33,7 +34,8 @@ private:
 	Yumetaro yumetaro;
 	Enemies* enemies;
 	UselessObj** uselessObjs;
-	int numberOfUselessObjs, numberOfEnemies;
+	HazardsAndInteractables* hazardsAndInteractables;
+	int numberOfUselessObjs, numberOfEnemies, numberOfHazardsAndInteractables;
 	DirectX directX;
 	HWND window;
 	Background background;
@@ -43,6 +45,7 @@ public:
 	~Game();
 	void InitUselessObjs(int key, int* numberOfUselessObjs);
 	void InitEnemies();
+	void InitHazardsAndInteractables();
 	bool InitGame(HWND window);
 	bool LoadGame();
 	void RunGame(HWND window);
