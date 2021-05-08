@@ -1,5 +1,13 @@
 #include "AnimatedObj.h"
 
+void AnimatedObj::SetDimension()
+{
+	Dimension tileDimension;
+	tileDimension = this->animatedTiles[0]->GetDimension();
+	this->dimension = Dimension(tileDimension.GetFirstValue() * numberOfAnimatedTiles,
+		tileDimension.GetSecondValue());
+}
+
 AnimatedObj::AnimatedObj()
 {
 	this->numberOfAnimatedTiles = 0;

@@ -8,6 +8,7 @@ InanimatedTile::InanimatedTile()
 InanimatedTile::InanimatedTile(float x, float y, float imageWidth, float imageHeight, 
 	LPCWSTR fileImageName) : Tile(x, y)
 {
+	this->dimension = Dimension(imageWidth, imageHeight);
 	this->image = new Image(imageWidth, imageHeight, fileImageName);
 }
 

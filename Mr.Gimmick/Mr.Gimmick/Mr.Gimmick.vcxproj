@@ -196,6 +196,8 @@
     <ClInclude Include="PlayableObj.h" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="Pulley.h" />
+    <ClInclude Include="Quadtree.h" />
+    <ClInclude Include="QuadtreeNode.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Rope.h" />
     <ClInclude Include="RunState.h" />
@@ -220,6 +222,7 @@
     <ClInclude Include="Tileset.h" />
     <ClInclude Include="TransformHandler.h" />
     <ClInclude Include="Treasures.h" />
+    <ClInclude Include="TreeObj.h" />
     <ClInclude Include="UFO.h" />
     <ClInclude Include="UnplayableObj.h" />
     <ClInclude Include="UsefulObj.h" />
@@ -286,6 +289,8 @@
     <ClCompile Include="PlayableObj.cpp" />
     <ClCompile Include="Point.cpp" />
     <ClCompile Include="Pulley.cpp" />
+    <ClCompile Include="Quadtree.cpp" />
+    <ClCompile Include="QuadtreeNode.cpp" />
     <ClCompile Include="Rope.cpp" />
     <ClCompile Include="RunState.cpp" />
     <ClCompile Include="Scene.cpp" />
@@ -309,6 +314,7 @@
     <ClCompile Include="Tileset.cpp" />
     <ClCompile Include="TransformHandler.cpp" />
     <ClCompile Include="Treasures.cpp" />
+    <ClCompile Include="TreeObj.cpp" />
     <ClCompile Include="UFO.cpp" />
     <ClCompile Include="UnplayableObj.cpp" />
     <ClCompile Include="UsefulObj.cpp" />

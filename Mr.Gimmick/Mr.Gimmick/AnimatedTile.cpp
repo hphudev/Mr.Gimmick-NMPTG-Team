@@ -9,6 +9,7 @@ AnimatedTile::AnimatedTile(float x, float y, float spriteWidth, float spriteHeig
 	LPCWSTR fileSpriteName, int lastSpriteFrame, int animationDelay, int currentSpriteFrame, 
 	int animationCount) : Tile(x, y)
 {
+	this->dimension = Dimension(spriteWidth, spriteHeight);
 	this->sprite = new Sprite(spriteWidth, spriteHeight, fileSpriteName, lastSpriteFrame, animationDelay,
 		currentSpriteFrame, animationCount);
 }

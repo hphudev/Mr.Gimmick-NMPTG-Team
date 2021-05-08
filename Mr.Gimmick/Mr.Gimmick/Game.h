@@ -16,6 +16,7 @@
 #include "Bosses.h"
 #include "Treasures.h"
 #include "PassiveCreatures.h"
+#include "Quadtree.h"
 
 #pragma region Definition
 #define APP_TITLE L"Mr.Gimmick"
@@ -35,6 +36,8 @@
 class Game
 {
 private:
+	map<int, GameObj*> gameObjs;
+	Quadtree quadtree;
 	Yumetaro yumetaro;
 	Bosses boss;
 	Treasures treasure;
@@ -49,6 +52,7 @@ private:
 	HWND window;
 	Background background;
 public:
+	TreeObj* InitTreeObjs();
 	Game();
 	Game(const Game& game);
 	~Game();

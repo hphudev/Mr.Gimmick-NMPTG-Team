@@ -3,10 +3,17 @@
 #include "Level.h"
 
 #pragma region Definition
+#define FILE_QUADTREE_PATH_LEVEL_ONE "../../Resource/Quadtree.txt"
+
+#define MAP_LEVEL_ONE_WIDTH 2080
+#define MAP_LEVEL_ONE_HEIGHT 800
+
 #define NUMBER_OF_ROWS_LEVEL_ONE 50
 #define NUMBER_OF_COLUMNS_LEVEL_ONE 130
 
 #define NUMBER_OF_TILES_LEVEL_ONE 322
+
+#define NUMBER_OF_GAME_OBJS 44
 
 #define NUMBER_OF_TYPE_OF_USELESS_OBJS 2
 #define NUMBER_OF_SCROLLBARS 4
