@@ -11,6 +11,6 @@ protected:
     int gameObjID;
 public:
     int GetID();
+    GameObj(float x, float y, int gameObjectID);
     GameObj();
-    GameObj(float x, float y);
 };

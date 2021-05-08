@@ -5,8 +5,8 @@ UselessObj::UselessObj()
 
 }
 
-UselessObj::UselessObj(float x, float y, int numberOfAnimatedTiles) : 
-	AnimatedAndImmovableObj(x, y, numberOfAnimatedTiles)
+UselessObj::UselessObj(float x, float y, int numberOfAnimatedTiles, int gameObjID) :
+	AnimatedAndImmovableObj(x, y, numberOfAnimatedTiles, gameObjID)
 {
 
 }

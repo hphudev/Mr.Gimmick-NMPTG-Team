@@ -5,8 +5,8 @@ Treasures::Treasures()
 
 }
 
-Treasures::Treasures(float x, float y, int currentFrame, float width, float height,
-	int numberOfAnimatedTiles, LPCWSTR fileSpriteName) : UsefulObj(x, y, numberOfAnimatedTiles)
+Treasures::Treasures(float x, float y, int gameObjID, int currentFrame, float width, float height,
+	int numberOfAnimatedTiles, LPCWSTR fileSpriteName) : UsefulObj(x, y, numberOfAnimatedTiles, gameObjID)
 {
 	this->animatedTiles[0] = new AnimatedTile(x, y, width, height, fileSpriteName, 1, 0, currentFrame);
 	SetDimension();

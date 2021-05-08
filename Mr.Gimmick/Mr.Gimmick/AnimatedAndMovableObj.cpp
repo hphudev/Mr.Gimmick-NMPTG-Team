@@ -6,7 +6,7 @@ AnimatedAndMovableObj::AnimatedAndMovableObj()
 }
 
 AnimatedAndMovableObj::AnimatedAndMovableObj(float x, float y, int numberOfAnimatedTiles, float vX, 
-	float vY) : AnimatedObj(x, y, numberOfAnimatedTiles)
+	float vY, int gameObjID) : AnimatedObj(x, y, numberOfAnimatedTiles, gameObjID)
 {
 	this->velocity = Velocity(vX, vY);
 	this->state = new IdleState();

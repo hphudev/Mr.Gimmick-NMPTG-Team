@@ -14,7 +14,8 @@ AnimatedObj::AnimatedObj()
 	this->animatedTiles = NULL;
 }
 
-AnimatedObj::AnimatedObj(float x, float y, int numberOfAnimatedTiles) : GameObj(x, y)
+AnimatedObj::AnimatedObj(float x, float y, int numberOfAnimatedTiles, int gameObjID) :  GameObj(x, y, 
+	gameObjID)
 {
 	this->numberOfAnimatedTiles = numberOfAnimatedTiles;
 	this->animatedTiles = new AnimatedTile*[numberOfAnimatedTiles];

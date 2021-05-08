@@ -1,1 +1,117 @@
-﻿  Mr.Gimmick.vcxproj -> C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Debug\Mr.Gimmick.exe
+﻿  AnimatedObj.cpp
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\TransformHandler.h(15,46): warning C4305: 'argument': truncation from 'double' to 'float'
+  Background.cpp
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\TransformHandler.h(15,46): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\Background.cpp(178,37): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\Background.cpp(178,64): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\Background.cpp(184,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\Background.cpp(184,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\Background.cpp(189,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\Background.cpp(189,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\Background.cpp(207,42): warning C4101: 'size': unreferenced local variable
+  Bosses.cpp
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\TransformHandler.h(15,46): warning C4305: 'argument': truncation from 'double' to 'float'
+  Door.cpp
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\TransformHandler.h(15,46): warning C4305: 'argument': truncation from 'double' to 'float'
+  Enemies.cpp
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\TransformHandler.h(15,46): warning C4305: 'argument': truncation from 'double' to 'float'
+  Flag.cpp
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\TransformHandler.h(15,46): warning C4305: 'argument': truncation from 'double' to 'float'
+  Game.cpp
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\TransformHandler.h(15,46): warning C4305: 'argument': truncation from 'double' to 'float'
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\Game.cpp(178,65): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\Game.cpp(183,65): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\Game.cpp(188,65): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\Game.cpp(350,30): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\Game.cpp(356,30): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\Game.cpp(362,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\Game.cpp(368,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  ItemsAndHUD.cpp
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\TransformHandler.h(15,46): warning C4305: 'argument': truncation from 'double' to 'float'
+  AnimatedAndImmovableObj.cpp
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\TransformHandler.h(15,46): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\AnimatedAndImmovableObj.cpp(9,13): error C2661: 'AnimatedObj::AnimatedObj': no overloaded function takes 3 arguments
+  HazardsAndInteractables.cpp
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\TransformHandler.h(15,46): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\HazardsAndInteractables.cpp(9,80): error C2661: 'AnimatedObj::AnimatedObj': no overloaded function takes 3 arguments
+  main.cpp
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\TransformHandler.h(15,46): warning C4305: 'argument': truncation from 'double' to 'float'
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+  Map.cpp
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\TransformHandler.h(15,46): warning C4305: 'argument': truncation from 'double' to 'float'
+  AnimatedAndMovableObj.cpp
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\TransformHandler.h(15,46): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\AnimatedAndMovableObj.cpp(9,25): error C2661: 'AnimatedObj::AnimatedObj': no overloaded function takes 3 arguments
+  PassiveCreatures.cpp
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\TransformHandler.h(15,46): warning C4305: 'argument': truncation from 'double' to 'float'
+  PlayableObj.cpp
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\TransformHandler.h(15,46): warning C4305: 'argument': truncation from 'double' to 'float'
+  Pulley.cpp
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\TransformHandler.h(15,46): warning C4305: 'argument': truncation from 'double' to 'float'
+  Quadtree.cpp
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\Quadtree.cpp(75,47): warning C4244: 'argument': conversion from 'float' to 'const int', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\Quadtree.cpp(79,55): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Rope.cpp
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\TransformHandler.h(15,46): warning C4305: 'argument': truncation from 'double' to 'float'
+  Scene.cpp
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\TransformHandler.h(15,46): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\Scene.cpp(11,11): warning C4244: '=': conversion from 'float' to 'LONG', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\Scene.cpp(12,10): warning C4244: '=': conversion from 'float' to 'LONG', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\Scene.cpp(13,12): warning C4244: '=': conversion from 'float' to 'LONG', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\Scene.cpp(14,13): warning C4244: '=': conversion from 'float' to 'LONG', possible loss of data
+  SceneManager.cpp
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\TransformHandler.h(15,46): warning C4305: 'argument': truncation from 'double' to 'float'
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\Scene.h(14,1): warning C4005: 'SCREEN_WIDTH': macro redefinition
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\Game.h(28): message : see previous definition of 'SCREEN_WIDTH'
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\Scene.h(15,1): warning C4005: 'SCREEN_HEIGHT': macro redefinition
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\Game.h(29): message : see previous definition of 'SCREEN_HEIGHT'
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\SceneManager.cpp(20,6): warning C4101: 'msg': unreferenced local variable
+  Generating Code...
+  Compiling...
+  SceneIntro.cpp
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\TransformHandler.h(15,46): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\SceneIntro.cpp(45,105): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\SceneIntro.cpp(45,79): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  SceneMap.cpp
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\TransformHandler.h(15,46): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\SceneMap.cpp(19,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\SceneMap.cpp(20,33): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\SceneMap.cpp(44,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\SceneMap.cpp(63,99): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\SceneMap.cpp(63,75): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  ScenePlay.cpp
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\TransformHandler.h(15,46): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\ScenePlay.cpp(31,25): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\ScenePlay.cpp(37,25): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\ScenePlay.cpp(43,28): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\ScenePlay.cpp(49,28): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  SceneStartMenu.cpp
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\TransformHandler.h(15,46): warning C4305: 'argument': truncation from 'double' to 'float'
+  ScrollBar.cpp
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\TransformHandler.h(15,46): warning C4305: 'argument': truncation from 'double' to 'float'
+  Treasures.cpp
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\TransformHandler.h(15,46): warning C4305: 'argument': truncation from 'double' to 'float'
+  UFO.cpp
+  UnplayableObj.cpp
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\TransformHandler.h(15,46): warning C4305: 'argument': truncation from 'double' to 'float'
+  UsefulObj.cpp
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\TransformHandler.h(15,46): warning C4305: 'argument': truncation from 'double' to 'float'
+  UselessObj.cpp
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\TransformHandler.h(15,46): warning C4305: 'argument': truncation from 'double' to 'float'
+  Waterfall.cpp
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\TransformHandler.h(15,46): warning C4305: 'argument': truncation from 'double' to 'float'
+  WindowHandler.cpp
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\TransformHandler.h(15,46): warning C4305: 'argument': truncation from 'double' to 'float'
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\WindowHandler.cpp(45,1): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  Yumetaro.cpp
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\TransformHandler.h(15,46): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\DELL\Documents\TvT\UIT\SE102.L21\Project\Github\New folder\Mr.Gimmick-NMPTG-Team\Mr.Gimmick\Mr.Gimmick\Yumetaro.cpp(32,21): warning C4305: 'initializing': truncation from 'double' to 'float'
+  Generating Code...

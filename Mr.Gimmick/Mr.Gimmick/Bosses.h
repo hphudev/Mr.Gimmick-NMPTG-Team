@@ -12,7 +12,7 @@ class Bosses : public UnplayableObj
 {
 public:
     Bosses();
-    Bosses(float x, float y, float vX = 2, float vY = 0, int numberOfAnimatedTiles = 1,
+    Bosses(float x, float y, int gameObjID, float vX = 2, float vY = 0, int numberOfAnimatedTiles = 1,
         float width = 40, float height = 50, LPCWSTR fileSpriteName = SPRITE_BOSSES_PATH);
     Bosses& operator = (const Bosses& bosses);
     bool Load(D3DXCOLOR transparentColor, DirectXGraphic directXGrphic);

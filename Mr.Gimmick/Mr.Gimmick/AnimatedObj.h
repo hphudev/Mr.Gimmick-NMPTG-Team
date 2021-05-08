@@ -11,7 +11,7 @@ protected:
 public:
 	void SetDimension();
 	AnimatedObj();
-	AnimatedObj(float x, float y, int numberOfAnimatedTiles);
+	AnimatedObj(float x, float y, int numberOfAnimatedTiles, int gameObjID);
 	void Copy(const AnimatedObj& animatedObj);
 	AnimatedObj(const AnimatedObj& animatedObj);
 	void Clean();
