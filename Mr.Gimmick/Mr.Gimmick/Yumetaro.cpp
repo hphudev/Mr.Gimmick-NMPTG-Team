@@ -6,7 +6,8 @@ Yumetaro::Yumetaro()
 }
 
 Yumetaro::Yumetaro(float x, float y, float vX, float vY, int numberOfAnimatedTiles, float width, 
-	float height, LPCWSTR fileSpriteName) : PlayableObj(x, y, numberOfAnimatedTiles, vX, vY)
+	float height, LPCWSTR fileSpriteName, int gameObjID) : PlayableObj(x, y, numberOfAnimatedTiles, vX,
+		vY, gameObjID)
 {
 	this->animatedTiles[0] = new AnimatedTile(x, y, width, height, fileSpriteName, 6, 0, 1);
 	SetDimension();

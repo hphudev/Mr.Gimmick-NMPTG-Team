@@ -11,7 +11,7 @@ protected:
 	State* state;
 public:
 	AnimatedAndMovableObj();
-	AnimatedAndMovableObj(float x, float y, int numberOfAnimatedTiles, float vX, float vY);
+	AnimatedAndMovableObj(float x, float y, int numberOfAnimatedTiles, float vX, float vY, int gameObjID);
 	void Copy(const AnimatedAndMovableObj& animatedAndMovableObj);
 	AnimatedAndMovableObj(const AnimatedAndMovableObj& animatedAndMovableObj);
 	void Clean();

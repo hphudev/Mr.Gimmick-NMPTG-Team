@@ -5,8 +5,8 @@ Waterfall::Waterfall()
 
 }
 
-Waterfall::Waterfall(float x, float y, int numberOfAnimatedTiles) : 
-	UselessObj(x, y, numberOfAnimatedTiles)
+Waterfall::Waterfall(float x, float y, int numberOfAnimatedTiles, int gameObjID) : UselessObj(x, y, 
+	numberOfAnimatedTiles, gameObjID)
 {
 
 }

@@ -6,5 +6,5 @@ class PlayableObj : public AnimatedAndMovableObj
 {
 public:
     PlayableObj();
-    PlayableObj(float x, float y, int numberOfAnimatedTiles, float vX, float vY);
+    PlayableObj(float x, float y, int numberOfAnimatedTiles, float vX, float vY, int gameObjID);
 };

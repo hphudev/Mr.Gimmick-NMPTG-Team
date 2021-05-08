@@ -127,12 +127,12 @@ void Game::InitUselessObjs(int key, int* numberOfUselessObjs)
 		{
 			case 0:
 			{
-				this->uselessObjs[i] = new ScrollBar(288, 288, 0);
+				this->uselessObjs[i] = new ScrollBar(288, 288, 1, 20 + i - numberOfUselessObjs[key]);
 				break;
 			}
 			case 1:
 			{
-				this->uselessObjs[i] = new Waterfall(1056, 16, 0);
+				this->uselessObjs[i] = new Waterfall(1056, 16, 1, 24);
 				break;
 			}
 		}
@@ -145,23 +145,23 @@ void Game::InitEnemies()
 {
 	this->numberOfEnemies = NUMBER_OF_ENEMIES;
 	this->enemies = new Enemies[this->numberOfEnemies];
-	this->enemies[0] = Enemies(16 * 28, 16 * 22);
-	this->enemies[1] = Enemies(16 * 30, 16 * 22);
-	this->enemies[2] = Enemies(16 * 33, 16 * 21);
-	this->enemies[3] = Enemies(16 * 37, 16 * 22);
-	this->enemies[4] = Enemies(16 * 41, 16 * 21);
-	this->enemies[5] = Enemies(16 * 45, 16 * 22);
-	this->enemies[6] = Enemies(16 * 47, 16 * 22);
-	this->enemies[7] = Enemies(16 * 49, 16 * 22);
-	this->enemies[8] = Enemies(16 * 36, 16 * 31);
-	this->enemies[9] = Enemies(16 * 114, 16 * 28);
-	this->enemies[10] = Enemies(16 * 114, 16 * 19);
-	this->enemies[11] = Enemies(16 * 108, 16 * 7);
-	this->enemies[12] = Enemies(16 * 89, 16 * 10);
-	this->enemies[13] = Enemies(16 * 85, 16 * 10);
-	this->enemies[14] = Enemies(16 * 47, 16 * 40 - 3, 2, 0, 1, 26);
-	this->enemies[15] = Enemies(16 * 117, 16 * 31 - 3, 2, 0, 1, 26);
-
+	this->enemies[0] = Enemies(16 * 28, 16 * 22, 4);
+	this->enemies[1] = Enemies(16 * 30, 16 * 22, 5);
+	this->enemies[2] = Enemies(16 * 33, 16 * 21, 6);
+	this->enemies[3] = Enemies(16 * 37, 16 * 22, 7);
+	this->enemies[4] = Enemies(16 * 41, 16 * 21, 8);
+	this->enemies[5] = Enemies(16 * 45, 16 * 22, 9);
+	this->enemies[6] = Enemies(16 * 47, 16 * 22, 10);
+	this->enemies[7] = Enemies(16 * 49, 16 * 22, 11);
+	this->enemies[8] = Enemies(16 * 36, 16 * 31, 12);
+	this->enemies[9] = Enemies(16 * 114, 16 * 28, 13);
+	this->enemies[10] = Enemies(16 * 114, 16 * 19, 14);
+	this->enemies[11] = Enemies(16 * 108, 16 * 7, 15);
+	this->enemies[12] = Enemies(16 * 89, 16 * 10, 16);
+	this->enemies[13] = Enemies(16 * 85, 16 * 10, 17);
+	this->enemies[14] = Enemies(16 * 47, 16 * 40 - 3, 18, 2, 0, 1, 26);
+	this->enemies[15] = Enemies(16 * 117, 16 * 31 - 3, 19, 2, 0, 1, 26);
+	
 	for (int i = 0; i < this->numberOfEnemies; i++)
 	{
 		this->gameObjs.insert(pair<int, GameObj*>(this->enemies[i].GetID(), &this->enemies[i]));
@@ -175,23 +175,25 @@ void Game::InitHazardsAndInteractables()
 
 	for (int i = 0; i < 2; i++)
 	{
-		this->hazardsAndInteractables[i] = HazardsAndInteractables(16 * (55 - i * 3), 16 * 27);
+		this->hazardsAndInteractables[i] = HazardsAndInteractables(16 * (55 - i * 3), 16 * 27, 25 + i);
 	}
 
 	for (int i = 2; i < 6; i++)
 	{
-		this->hazardsAndInteractables[i] = HazardsAndInteractables(16 * (53 + (i - 2) * 2), 16 * 39);
+		this->hazardsAndInteractables[i] = HazardsAndInteractables(16 * (53 + (i - 2) * 2), 16 * 39, 25 + 
+			i);
 	}
 
 	for (int i = 6; i < 8; i++)
 	{
-		this->hazardsAndInteractables[i] = HazardsAndInteractables(16 * (64 + (i - 6) * 2), 16 * 39);
+		this->hazardsAndInteractables[i] = HazardsAndInteractables(16 * (64 + (i - 6) * 2), 16 * 39, 25 + 
+			i);
 	}
 
-	this->hazardsAndInteractables[8] = HazardsAndInteractables(16 * 36, 16 * 28 - 2, 6);
-	this->hazardsAndInteractables[9] = HazardsAndInteractables(16 * 74, 16 * 42 - 2, 6);
-	this->hazardsAndInteractables[10] = HazardsAndInteractables(16 * 115 + 8, 16 * 41 + 1, 1, 53, 77);
-
+	this->hazardsAndInteractables[8] = HazardsAndInteractables(16 * 36, 16 * 28 - 2, 33, 6);
+	this->hazardsAndInteractables[9] = HazardsAndInteractables(16 * 74, 16 * 42 - 2, 34, 6);
+	this->hazardsAndInteractables[10] = HazardsAndInteractables(16 * 115 + 8, 16 * 41 + 1, 35, 1, 53, 77);
+	
 	for (int i = 0; i < this->numberOfHazardsAndInteractables; i++)
 	{
 		this->gameObjs.insert(pair<int, GameObj*>(this->hazardsAndInteractables[i].GetID(),
@@ -203,11 +205,11 @@ void Game::InitItemsAndHUD()
 {
 	this->numberOfItemsAndHUD = NUMBER_OF_ITEMS_AND_HUD;
 	this->itemsAndHUD = new ItemsAndHUD[this->numberOfItemsAndHUD];
-	this->itemsAndHUD[0] = ItemsAndHUD(16 * 27, 16 * 19, 2);
-	this->itemsAndHUD[1] = ItemsAndHUD(16 * 34, 16 * 43, 3);
-	this->itemsAndHUD[2] = ItemsAndHUD(16 * 126, 16 * 22, 2);
-	this->itemsAndHUD[3] = ItemsAndHUD(16 * 127 - 6, 16 * 4 - 3, 4);
-
+	this->itemsAndHUD[0] = ItemsAndHUD(16 * 27, 16 * 19, 42, 2);
+	this->itemsAndHUD[1] = ItemsAndHUD(16 * 34, 16 * 43, 43, 3);
+	this->itemsAndHUD[2] = ItemsAndHUD(16 * 126, 16 * 22, 44, 2);
+	this->itemsAndHUD[3] = ItemsAndHUD(16 * 127 - 6, 16 * 4 - 3, 45, 4);
+	
 	for (int i = 0; i < this->numberOfItemsAndHUD; i++)
 	{
 		this->gameObjs.insert(pair<int, GameObj*>(this->itemsAndHUD[i].GetID(), &this->itemsAndHUD[i]));
@@ -218,13 +220,13 @@ void Game::InitPassiveCreatures()
 {
 	this->numberOfPassiveCreatures = NUMBER_OF_PASSIVE_CREATURES;
 	this->passiveCreatures = new PassiveCreatures[this->numberOfPassiveCreatures];
-	this->passiveCreatures[0] = PassiveCreatures(16 * 110, 16 * 41);
-	this->passiveCreatures[1] = PassiveCreatures(16 * 106, 16 * 41);
-	this->passiveCreatures[2] = PassiveCreatures(16 * 102, 16 * 48 - 8);
-	this->passiveCreatures[3] = PassiveCreatures(16 * 98, 16 * 47);
-	this->passiveCreatures[4] = PassiveCreatures(16 * 94, 16 * 42);
-	this->passiveCreatures[5] = PassiveCreatures(16 * 90, 16 * 39);
-
+	this->passiveCreatures[0] = PassiveCreatures(16 * 110, 16 * 41, 36);
+	this->passiveCreatures[1] = PassiveCreatures(16 * 106, 16 * 41, 37);
+	this->passiveCreatures[2] = PassiveCreatures(16 * 102, 16 * 48 - 8, 38);
+	this->passiveCreatures[3] = PassiveCreatures(16 * 98, 16 * 47, 39);
+	this->passiveCreatures[4] = PassiveCreatures(16 * 94, 16 * 42, 40);
+	this->passiveCreatures[5] = PassiveCreatures(16 * 90, 16 * 39, 41);
+	
 	for (int i = 0; i < this->numberOfPassiveCreatures; i++)
 	{
 		this->gameObjs.insert(pair<int, GameObj*>(this->passiveCreatures[i].GetID(),
@@ -239,15 +241,15 @@ bool Game::InitGame(HWND window)
 	bool flag = this->directX.InitDirectX(this->window, SCREEN_WIDTH, SCREEN_HEIGHT, FULLSCREEN);
 
 	this->yumetaro = Yumetaro(YUMETARO_START_X, YUMETARO_START_Y, YUMETARO_VELOCITY_X,
-		YUMETARO_VELOCITY_Y, 1, YUMETARO_WIDTH, YUMETARO_HEIGHT, SPRITE_YUMETARO_PATH);
-
+		YUMETARO_VELOCITY_Y, 1, YUMETARO_WIDTH, YUMETARO_HEIGHT, SPRITE_YUMETARO_PATH, 1);
+	
 	this->background = Background(NUMBER_OF_ROWS_LEVEL_ONE, NUMBER_OF_COLUMNS_LEVEL_ONE,
 		FILE_TILEMAP_PATH_LEVEL_ONE, NUMBER_OF_TILES_LEVEL_ONE, L"Level_1", BACKGROUND_COLOR_LEVEL_ONE);
 
-	this->boss = Bosses(16 * 70 - 4, 16 * 6);
+	this->boss = Bosses(16 * 70 - 4, 16 * 6, 2);
 
-	this->treasure = Treasures(16 * 5 + 3, 16 * 5 + 3);
-
+	this->treasure = Treasures(16 * 5 + 3, 16 * 5 + 3, 3);
+	
 	const int numberOfTypeOfUselessObjs = NUMBER_OF_TYPE_OF_USELESS_OBJS;
 	int numberOfUselessObjs[numberOfTypeOfUselessObjs + 1];
 	numberOfUselessObjs[0] = 0;

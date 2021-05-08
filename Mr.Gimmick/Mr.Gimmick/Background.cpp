@@ -173,7 +173,7 @@ void SetPointAndPushBack(list<AnimatedTile*>& animatedTiles, Tile* tile, Point& 
 	}
 }
 
-void Load(list<AnimatedTile*>& animatedTiles, UselessObj*& uselessObj, int key, Point& point)
+void Load(list<AnimatedTile*>& animatedTiles, UselessObj*& uselessObj, int key, Point& point, int count)
 {
 	int size = animatedTiles.size(), x = point.GetFirstValue(), y = point.GetSecondValue();
 
@@ -181,12 +181,12 @@ void Load(list<AnimatedTile*>& animatedTiles, UselessObj*& uselessObj, int key, 
 	{
 		case 0:
 		{
-			uselessObj = new ScrollBar(x, y, size);
+			uselessObj = new ScrollBar(x, y, size, 20 + count);
 			break;
 		}
 		case 1:
 		{
-			uselessObj = new Waterfall(x, y, size);
+			uselessObj = new Waterfall(x, y, size, 24);
 			break;
 		}
 	}
@@ -204,7 +204,7 @@ void Load(list<AnimatedTile*>& animatedTiles, UselessObj*& uselessObj, int key, 
 void Background::LoadUselessObjs(UselessObj**& uselessObjs)
 {
 	const int numberOfTypeOfUselessObjs = NUMBER_OF_TYPE_OF_USELESS_OBJS;
-	int indexes[numberOfTypeOfUselessObjs], size;
+	int indexes[numberOfTypeOfUselessObjs], size, count = 0;
 	indexes[0] = 0;
 	indexes[1] = indexes[0] + NUMBER_OF_SCROLLBARS;
 	string s = "ScrollBarTile";
@@ -223,7 +223,7 @@ void Background::LoadUselessObjs(UselessObj**& uselessObjs)
 
 			if (this->tiles[i][j]->GetType() != s && j != 0 && this->tiles[i][j - 1]->GetType() == s)
 			{
-				Load(animatedTileLists[0], uselessObjs[indexes[0]], 0, points[0]);
+				Load(animatedTileLists[0], uselessObjs[indexes[0]], 0, points[0], count++);
 				indexes[0]++;
 			}
 			
@@ -234,7 +234,7 @@ void Background::LoadUselessObjs(UselessObj**& uselessObjs)
 
 			if (i == this->row - 1 && j == this->column - 1)
 			{
-				Load(animatedTileLists[1], uselessObjs[indexes[1]], 1, points[1]);
+				Load(animatedTileLists[1], uselessObjs[indexes[1]], 1, points[1], count);
 			}
 		}
 	}

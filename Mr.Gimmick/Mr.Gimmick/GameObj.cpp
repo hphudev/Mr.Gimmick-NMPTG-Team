@@ -5,12 +5,12 @@ int GameObj::GetID()
     return this->gameObjID;
 }
 
-GameObj::GameObj()
+GameObj::GameObj(float x, float y, int gameObjID) : TwoDimensionObj(x, y)
 {
-
+    this->gameObjID = gameObjID;
 }
 
-GameObj::GameObj(float x, float y) : TwoDimensionObj(x, y)
+GameObj::GameObj()
 {
-
+    this->gameObjID = 0;
 }
