@@ -1,5 +1,48 @@
 ﻿#include "Game.h"
 
+TreeObj* Game::InitTreeObjs()
+{
+	TreeObj* treeObjs = new TreeObj[NUMBER_OF_GAME_OBJS];
+	treeObjs[0] = TreeObj(&this->boss);
+	treeObjs[1] = TreeObj(&this->treasure);
+	int index = 2;
+
+	for (int i = 0; i < this->numberOfEnemies; i++)
+	{
+		treeObjs[index + i] = TreeObj(&this->enemies[i]);
+	}
+
+	index += this->numberOfEnemies;
+
+	for (int i = 0; i < this->numberOfUselessObjs; i++)
+	{
+		treeObjs[index + i] = TreeObj(this->uselessObjs[i]);
+	}
+
+	index += this->numberOfUselessObjs;
+
+	for (int i = 0; i < this->numberOfHazardsAndInteractables; i++)
+	{
+		treeObjs[index + i] = TreeObj(&this->hazardsAndInteractables[i]);
+	}
+
+	index += this->numberOfHazardsAndInteractables;
+
+	for (int i = 0; i < this->numberOfPassiveCreatures; i++)
+	{
+		treeObjs[index + i] = TreeObj(&this->passiveCreatures[i]);
+	}
+
+	index += numberOfPassiveCreatures;
+
+	for (int i = 0; i < this->numberOfItemsAndHUD; i++)
+	{
+		treeObjs[index + i] = TreeObj(&this->itemsAndHUD[i]);
+	}
+
+	return treeObjs;
+}
+
 Game::Game()
 {
 	this->uselessObjs = NULL;
@@ -14,6 +57,7 @@ Game::Game()
 
 Game::Game(const Game& game)
 {
+	this->gameObjs = game.gameObjs;
 	this->background = game.background;
 	this->directX = game.directX;
 	this->window = game.window;
@@ -83,15 +127,17 @@ void Game::InitUselessObjs(int key, int* numberOfUselessObjs)
 		{
 			case 0:
 			{
-				this->uselessObjs[i] = new ScrollBar();
+				this->uselessObjs[i] = new ScrollBar(288, 288, 0);
 				break;
 			}
 			case 1:
 			{
-				this->uselessObjs[i] = new Waterfall();
+				this->uselessObjs[i] = new Waterfall(1056, 16, 0);
 				break;
 			}
 		}
+
+		this->gameObjs.insert(pair<int, GameObj*>(this->uselessObjs[i]->GetID(), this->uselessObjs[i]));
 	}
 }
 
@@ -115,6 +161,11 @@ void Game::InitEnemies()
 	this->enemies[13] = Enemies(16 * 85, 16 * 10);
 	this->enemies[14] = Enemies(16 * 47, 16 * 40 - 3, 2, 0, 1, 26);
 	this->enemies[15] = Enemies(16 * 117, 16 * 31 - 3, 2, 0, 1, 26);
+
+	for (int i = 0; i < this->numberOfEnemies; i++)
+	{
+		this->gameObjs.insert(pair<int, GameObj*>(this->enemies[i].GetID(), &this->enemies[i]));
+	}
 }
 
 void Game::InitHazardsAndInteractables()
@@ -140,6 +191,12 @@ void Game::InitHazardsAndInteractables()
 	this->hazardsAndInteractables[8] = HazardsAndInteractables(16 * 36, 16 * 28 - 2, 6);
 	this->hazardsAndInteractables[9] = HazardsAndInteractables(16 * 74, 16 * 42 - 2, 6);
 	this->hazardsAndInteractables[10] = HazardsAndInteractables(16 * 115 + 8, 16 * 41 + 1, 1, 53, 77);
+
+	for (int i = 0; i < this->numberOfHazardsAndInteractables; i++)
+	{
+		this->gameObjs.insert(pair<int, GameObj*>(this->hazardsAndInteractables[i].GetID(),
+			&this->hazardsAndInteractables[i]));
+	}
 }
 
 void Game::InitItemsAndHUD()
@@ -150,6 +207,11 @@ void Game::InitItemsAndHUD()
 	this->itemsAndHUD[1] = ItemsAndHUD(16 * 34, 16 * 43, 3);
 	this->itemsAndHUD[2] = ItemsAndHUD(16 * 126, 16 * 22, 2);
 	this->itemsAndHUD[3] = ItemsAndHUD(16 * 127 - 6, 16 * 4 - 3, 4);
+
+	for (int i = 0; i < this->numberOfItemsAndHUD; i++)
+	{
+		this->gameObjs.insert(pair<int, GameObj*>(this->itemsAndHUD[i].GetID(), &this->itemsAndHUD[i]));
+	}
 }
 
 void Game::InitPassiveCreatures()
@@ -162,6 +224,12 @@ void Game::InitPassiveCreatures()
 	this->passiveCreatures[3] = PassiveCreatures(16 * 98, 16 * 47);
 	this->passiveCreatures[4] = PassiveCreatures(16 * 94, 16 * 42);
 	this->passiveCreatures[5] = PassiveCreatures(16 * 90, 16 * 39);
+
+	for (int i = 0; i < this->numberOfPassiveCreatures; i++)
+	{
+		this->gameObjs.insert(pair<int, GameObj*>(this->passiveCreatures[i].GetID(),
+			&this->passiveCreatures[i]));
+	}
 }
 
 // Khởi tạo game
@@ -198,6 +266,17 @@ bool Game::InitGame(HWND window)
 	InitHazardsAndInteractables();
 	InitItemsAndHUD();
 	InitPassiveCreatures();
+
+	//this->quadtree = Quadtree(max(MAP_LEVEL_ONE_WIDTH, MAP_LEVEL_ONE_HEIGHT), NUMBER_OF_GAME_OBJS, 
+	//	InitTreeObjs());
+	//this->quadtree.BuildQuadtree(max(SCREEN_WIDTH, SCREEN_HEIGHT), this->quadtree.GetRoot());
+
+	this->gameObjs.insert(pair<int, GameObj*>(this->yumetaro.GetID(), &this->yumetaro));
+	this->gameObjs.insert(pair<int, GameObj*>(this->boss.GetID(), &this->boss));
+	this->gameObjs.insert(pair<int, GameObj*>(this->treasure.GetID(), &this->treasure));
+
+	map<int, QuadtreeNode*> quadtreeNodes = this->quadtree.InitQuadtreeNodeFromFile(this->gameObjs);
+	this->quadtree.LinkQuadtreeNode(quadtreeNodes);
 
 	return flag;
 }

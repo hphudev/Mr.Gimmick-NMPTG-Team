@@ -9,6 +9,7 @@ ItemsAndHUD::ItemsAndHUD(float x, float y, int currentFrame, float width, float 
 	int numberOfAnimatedTiles, LPCWSTR fileSpriteName) : UsefulObj(x, y, numberOfAnimatedTiles)
 {
 	this->animatedTiles[0] = new AnimatedTile(x, y, width, height, fileSpriteName, 1, 0, currentFrame);
+	SetDimension();
 }
 
 ItemsAndHUD& ItemsAndHUD::operator = (const ItemsAndHUD& itemsAndHUD)

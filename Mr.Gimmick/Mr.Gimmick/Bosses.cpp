@@ -9,6 +9,7 @@ Bosses::Bosses(float x, float y, float vX, float vY, int numberOfAnimatedTiles, 
 	LPCWSTR fileSpriteName) : UnplayableObj(x, y, numberOfAnimatedTiles, vX, vY)
 {
 	this->animatedTiles[0] = new AnimatedTile(x, y, width, height, fileSpriteName, 1, 0, 1);
+	SetDimension();
 }
 
 Bosses& Bosses::operator = (const Bosses& bosses)

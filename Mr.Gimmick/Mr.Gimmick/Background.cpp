@@ -198,6 +198,7 @@ void Load(list<AnimatedTile*>& animatedTiles, UselessObj*& uselessObj, int key, 
 	}
 
 	point.SetValue(0, 0);
+	uselessObj->SetDimension();
 }
 
 void Background::LoadUselessObjs(UselessObj**& uselessObjs)

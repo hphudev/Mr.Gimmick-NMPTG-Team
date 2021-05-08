@@ -9,6 +9,7 @@ Yumetaro::Yumetaro(float x, float y, float vX, float vY, int numberOfAnimatedTil
 	float height, LPCWSTR fileSpriteName) : PlayableObj(x, y, numberOfAnimatedTiles, vX, vY)
 {
 	this->animatedTiles[0] = new AnimatedTile(x, y, width, height, fileSpriteName, 6, 0, 1);
+	SetDimension();
 }
 
 Yumetaro& Yumetaro::operator = (const Yumetaro& yumetaro)

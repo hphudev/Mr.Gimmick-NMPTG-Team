@@ -1,5 +1,32 @@
 #include "FileHandler.h"
 
+list<list<float>> FileHandler::ReadQuadtreeFile(string filename)
+{
+	list<list<float>> result;
+	ifstream input;
+	string line;
+	float value;
+	list<float> dataInOneLine;
+	input.open(filename);
+
+	while (getline(input, line))
+	{
+		istringstream tmp(line);
+
+		while (tmp >> value)
+		{
+			dataInOneLine.push_back(value);
+		}
+
+		result.push_back(list<float>(dataInOneLine));
+		dataInOneLine.clear();
+	}
+
+	input.close();
+
+	return result;
+}
+
 Tilemap FileHandler::ReadTilemapFile(int row, int column, LPCWSTR filename)
 {
 	Tilemap result(row, column, filename);

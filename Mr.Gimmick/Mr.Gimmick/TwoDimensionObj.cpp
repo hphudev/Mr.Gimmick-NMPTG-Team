@@ -1,5 +1,15 @@
 #include "TwoDimensionObj.h"
 
+Box TwoDimensionObj::GetBox()
+{
+	return Box(this->point, this->dimension);
+}
+
+Dimension TwoDimensionObj::GetDimension()
+{
+	return this->dimension;
+}
+
 TwoDimensionObj::TwoDimensionObj()
 {
 

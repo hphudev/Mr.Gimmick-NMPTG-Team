@@ -9,6 +9,7 @@ protected:
 	AnimatedTile** animatedTiles;
 	int numberOfAnimatedTiles;
 public:
+	void SetDimension();
 	AnimatedObj();
 	AnimatedObj(float x, float y, int numberOfAnimatedTiles);
 	void Copy(const AnimatedObj& animatedObj);

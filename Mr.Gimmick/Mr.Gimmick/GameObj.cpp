@@ -1,5 +1,10 @@
 #include "GameObj.h"
 
+int GameObj::GetID()
+{
+    return this->gameObjID;
+}
+
 GameObj::GameObj()
 {
 

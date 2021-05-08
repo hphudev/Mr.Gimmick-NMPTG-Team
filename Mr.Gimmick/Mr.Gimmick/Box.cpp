@@ -1,10 +1,25 @@
 ﻿#include "Box.h"
 
-Box::Box(float x, float y, float vX, float vY, float width, float height)
+bool Box::AABBCheck(Box box)
 {
-	this->point = Point(x, y);
-	this->velocity = Velocity(vX, vY);
-	this->dimension = Dimension(width, height);
+	float x1 = this->point.GetFirstValue(), x2 = box.point.GetFirstValue();
+	float width1 = this->dimension.GetFirstValue(), width2 = box.dimension.GetFirstValue();
+	float y1 = this->point.GetSecondValue(), y2 = box.point.GetSecondValue();
+	float height1 = this->dimension.GetSecondValue(), height2 = box.dimension.GetSecondValue();
+
+	return !(x1 + width1 < x2 || x2 + width2 < x1 || y1 + height1 < y2 || y2 + height2 < y1);
+}
+
+Box::Box(Point point, Dimension dimension, Velocity velocity)
+{
+	this->point = point;
+	this->velocity = velocity;
+	this->dimension = dimension;
+}
+
+Box::Box()
+{
+
 }
 
 //

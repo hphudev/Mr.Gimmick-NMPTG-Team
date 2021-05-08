@@ -3,7 +3,6 @@
 #include "Point.h"
 #include "Dimension.h"
 #include "Velocity.h"
-#include "Vector.h"
 
 // Describes an axis-aligned rectangle with a velocity
 class Box
@@ -14,6 +13,8 @@ private:
 	Velocity velocity;
 	Dimension dimension;
 public:
-	Box(float x, float y, float vX, float vY, float width, float height);
+	bool AABBCheck(Box box);
+	Box(Point point, Dimension dimension, Velocity velocity = Velocity());
+	Box();
 	//float SweptAABB(Box obstacle, Vector<float>& normal);
 };

@@ -10,6 +10,7 @@ PassiveCreatures::PassiveCreatures(float x, float y, float vX, float vY, int num
 		vY)
 {
 	this->animatedTiles[0] = new AnimatedTile(x, y, width, height, fileSpriteName, 1, 0, 1);
+	SetDimension();
 }
 
 PassiveCreatures& PassiveCreatures::operator = (const PassiveCreatures& enemies)
