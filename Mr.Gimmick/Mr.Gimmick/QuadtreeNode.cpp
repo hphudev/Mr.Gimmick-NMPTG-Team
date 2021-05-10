@@ -1,5 +1,31 @@
 #include "QuadtreeNode.h"
 
+void QuadtreeNode::AddObj(Box box, TreeObj treeObj)
+{
+	if (box.AABBCheck(GetBox()))
+	{
+		this->treeObjs.push_back(treeObj);
+	}
+}
+
+void QuadtreeNode::Clip()
+{
+	int size = this->treeObjs.size();
+	TreeObj treeObj;
+	Box box;
+
+	for (int i = 0; i < size; i++)
+	{
+		treeObj = this->treeObjs.front();
+		box = treeObj.GetBox();
+		this->topLeftChildNode->AddObj(box, treeObj);
+		this->topRightChildNode->AddObj(box, treeObj);
+		this->bottomLeftChildNode->AddObj(box, treeObj);
+		this->bottomRightChildNode->AddObj(box, treeObj);
+		this->treeObjs.pop_front();
+	}
+}
+
 void QuadtreeNode::SetChild(int key, QuadtreeNode* childQuadtreeNode)
 {
 	switch (key)

@@ -25,10 +25,8 @@
 #define KEY_UP(vk_code) ((GetAsyncKeyState(vk_code) * 0x8000) ? 1 : 0)
 
 #define FULLSCREEN 0
-#define SCREEN_WIDTH 1902//16 * TILE_SIZE * SCALE
-#define SCREEN_HEIGHT 732//12 * TILE_SIZE * SCALE
-//#define SCREEN_WIDTH 1920
-//#define SCREEN_HEIGHT 739
+#define SCREEN_WIDTH 16 * TILE_SIZE * SCALE
+#define SCREEN_HEIGHT 12 * TILE_SIZE * SCALE
 
 #define FPS 30
 #pragma endregion

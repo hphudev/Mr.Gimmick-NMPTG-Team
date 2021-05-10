@@ -269,9 +269,9 @@ bool Game::InitGame(HWND window)
 	InitItemsAndHUD();
 	InitPassiveCreatures();
 
-	//this->quadtree = Quadtree(max(MAP_LEVEL_ONE_WIDTH, MAP_LEVEL_ONE_HEIGHT), NUMBER_OF_GAME_OBJS, 
-	//	InitTreeObjs());
-	//this->quadtree.BuildQuadtree(max(SCREEN_WIDTH, SCREEN_HEIGHT), this->quadtree.GetRoot());
+	this->quadtree = Quadtree(max(MAP_LEVEL_ONE_WIDTH, MAP_LEVEL_ONE_HEIGHT), NUMBER_OF_GAME_OBJS, 
+		InitTreeObjs());
+	this->quadtree.BuildQuadtree(max(SCREEN_WIDTH, SCREEN_HEIGHT), this->quadtree.GetRoot());
 
 	this->gameObjs.insert(pair<int, GameObj*>(this->yumetaro.GetID(), &this->yumetaro));
 	this->gameObjs.insert(pair<int, GameObj*>(this->boss.GetID(), &this->boss));

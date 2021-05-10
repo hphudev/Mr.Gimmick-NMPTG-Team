@@ -99,6 +99,7 @@ void Quadtree::BuildQuadtree(float length, QuadtreeNode* quadtreeNode)
 	}
 
 	quadtreeNode->Divide();
+	quadtreeNode->Clip();
 
 	for (int i = 1; i <= 4; i++)
 	{
