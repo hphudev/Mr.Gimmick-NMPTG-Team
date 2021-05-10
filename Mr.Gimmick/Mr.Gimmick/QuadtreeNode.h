@@ -1,6 +1,8 @@
 #pragma once
 
 #include <list>
+#include "FileHandler.h"
+#include "LevelOne.h"
 #include "TreeObj.h"
 #include "TwoDimensionObj.h"
 #include "Box.h"
@@ -12,6 +14,8 @@ private:
 	int nodeID;
 	list<TreeObj> treeObjs;
 public:
+	bool IsContainTreeObj();
+	void Export(string filename = FILE_QUADTREE_PATH_LEVEL_ONE);
 	void AddObj(Box box, TreeObj treeObj);
 	void Clip();
 	void SetChild(int key, QuadtreeNode* childQuadtreeNode);

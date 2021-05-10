@@ -95,11 +95,17 @@ void Quadtree::BuildQuadtree(float length, QuadtreeNode* quadtreeNode)
 {
 	if (!quadtreeNode->IsDivided(length))
 	{
+		if (quadtreeNode->IsContainTreeObj())
+		{
+			quadtreeNode->Export();
+		}
+
 		return;
 	}
 
 	quadtreeNode->Divide();
 	quadtreeNode->Clip();
+	quadtreeNode->Export();
 
 	for (int i = 1; i <= 4; i++)
 	{
