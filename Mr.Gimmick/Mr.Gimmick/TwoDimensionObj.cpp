@@ -1,13 +1,28 @@
 #include "TwoDimensionObj.h"
 
-Box TwoDimensionObj::GetBox()
+void TwoDimensionObj::SetFirstValueOfPoint(int firstValueOfPoint)
 {
-	return Box(this->point, this->dimension);
+	this->point.SetFirstValue(firstValueOfPoint);
 }
 
-Dimension TwoDimensionObj::GetDimension()
+void TwoDimensionObj::SetFirstValueOfDimension(int firstValueOfDimension)
 {
-	return this->dimension;
+	this->dimension.SetFirstValue(firstValueOfDimension);
+}
+
+void TwoDimensionObj::IncreaseValueOfPoint(int additionalFirstValue, int additionalSecondValue)
+{
+	this->point.IncreaseValue(additionalFirstValue, additionalSecondValue);
+}
+
+void TwoDimensionObj::IncreaseSecondValueOfPoint(int additionalSecondValue)
+{
+	this->point.IncreaseSecondValue(additionalSecondValue);
+}
+
+void TwoDimensionObj::IncreaseFirstValueOfPoint(int additionalFirstValue)
+{
+	this->point.IncreaseFirstValue(additionalFirstValue);
 }
 
 TwoDimensionObj::TwoDimensionObj()
@@ -28,4 +43,19 @@ Point TwoDimensionObj::GetPoint()
 void TwoDimensionObj::SetPoint(float x, float y)
 {
 	this->point.SetValue(x, y);
+}
+
+Dimension TwoDimensionObj::GetDimension()
+{
+	return this->dimension;
+}
+
+Box TwoDimensionObj::GetBox()
+{
+	return Box(this->point, this->dimension);
+}
+
+void TwoDimensionObj::SetDimension(Dimension dimension)
+{
+	this->dimension = dimension;
 }

@@ -9,15 +9,15 @@ protected:
 	AnimatedTile** animatedTiles;
 	int numberOfAnimatedTiles;
 public:
-	void SetDimension();
 	AnimatedObj();
 	AnimatedObj(float x, float y, int numberOfAnimatedTiles, int gameObjID);
-	void Copy(const AnimatedObj& animatedObj);
 	AnimatedObj(const AnimatedObj& animatedObj);
+	~AnimatedObj();
+	void SetDimension();
+	void Copy(const AnimatedObj& animatedObj);
 	void Clean();
 	AnimatedObj& operator = (const AnimatedObj& animatedObj);
-	~AnimatedObj();
-	void Draw(int indexOfRow, bool isRotate, GraphicDevice graphicDevice);
+	void Draw(int indexOfRow, bool isRotate, GraphicDevice graphicDevice, Point cameraPoint);
 	void SetElement(int index, AnimatedTile* animatedTile);
 	virtual bool Load(D3DXCOLOR transparentColor, DirectXGraphic directXGrphic);
 };

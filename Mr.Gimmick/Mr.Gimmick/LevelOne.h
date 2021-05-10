@@ -3,8 +3,6 @@
 #include "Level.h"
 
 #pragma region Definition
-#define FILE_QUADTREE_PATH_LEVEL_ONE "../../Resource/Quadtree.txt"
-
 #define MAP_LEVEL_ONE_WIDTH 2080
 #define MAP_LEVEL_ONE_HEIGHT 800
 
@@ -30,6 +28,8 @@
 #define BACKGROUND_COLOR_LEVEL_ONE D3DCOLOR_XRGB(255, 255, 0)
 
 #define FILE_TILEMAP_PATH_LEVEL_ONE L"../../Resource/Map/Level_1/Tilemap.txt"
+
+#define FILE_QUADTREE_PATH_LEVEL_ONE "../../Resource/Quadtree.txt"
 #pragma endregion
 
 class LevelOne : public Level

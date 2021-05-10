@@ -13,8 +13,8 @@ private:
 	Velocity velocity;
 	Dimension dimension;
 public:
-	bool AABBCheck(Box box);
-	Box(Point point, Dimension dimension, Velocity velocity = Velocity());
 	Box();
+	Box(Point point, Dimension dimension, Velocity velocity = Velocity());
+	bool AABBCheck(Box box);
 	//float SweptAABB(Box obstacle, Vector<float>& normal);
 };

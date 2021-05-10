@@ -2,14 +2,20 @@
 
 #include <d3dx9.h>
 #include "Handler.h"
-#include "Pair.h"
+// *
+#include "Point.h"
+// *
 
 #pragma region Definition
-#define SCALE 3
+#define SCALE 4
 #pragma endregion
 
 class TransformHandler : public Handler
 {
 public:
-	const D3DXMATRIX* GetScaleMatrix(Pair scale = Pair(SCALE, SCALE));
+	D3DXMATRIX* GetScaleMatrix(Pair scale = Pair(SCALE, SCALE));
+	// *
+	const D3DXMATRIX* GetTransformMatrix(Point cameraPoint);
+	D3DXMATRIX* GetTranslationMatrix(Pair translation);
+	// *
 };

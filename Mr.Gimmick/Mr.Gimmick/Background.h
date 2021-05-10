@@ -7,6 +7,7 @@
 #include "ScrollBar.h"
 #include "LevelOne.h"
 #include "Waterfall.h"
+#include "Camera.h"
 
 class Background
 {
@@ -24,7 +25,7 @@ public:
 	void Clean();
 	Background& operator = (const Background& background);
 	~Background();
-	void DrawBackground(LPDIRECT3DSURFACE9 backbuffer, DirectXGraphic directXGraphic);
+	void DrawBackground(LPDIRECT3DSURFACE9 backbuffer, DirectXGraphic directXGraphic, Camera camera);
 	void LoadBackground(DirectXGraphic directXGraphic);
 	void ChangeTile(int i, int j, int value, int firstTile, int lastTile, string direction);
 	void UpdateBackground(DirectXGraphic directXGraphic);

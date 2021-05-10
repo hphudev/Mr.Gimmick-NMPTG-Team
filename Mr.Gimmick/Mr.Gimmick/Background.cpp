@@ -79,13 +79,20 @@ Background::~Background()
 	Clean();
 }
 
-void Background::DrawBackground(LPDIRECT3DSURFACE9 backbuffer, DirectXGraphic directXGraphic)
+void Background::DrawBackground(LPDIRECT3DSURFACE9 backbuffer, DirectXGraphic directXGraphic, 
+	Camera camera)
 {
-	for (int i = 0; i < this->row; i++)
+	float x = camera.GetPoint().GetFirstValue();
+	float y = camera.GetPoint().GetSecondValue();
+	float width = camera.GetDimension().GetFirstValue();
+	float height = camera.GetDimension().GetSecondValue();
+	int tileSize = TILE_SIZE, scale = SCALE;
+
+	for (int i = y / tileSize; i < (y + height) / tileSize; i++)
 	{
-		for (int j = 0; j < this->column; j++)
+		for (int j = x / tileSize; j < (x + width) / tileSize; j++)
 		{
-			this->tiles[i][j]->Draw(directXGraphic.GetGraphicDevice(), 1, 0, backbuffer);
+			this->tiles[i][j]->Draw(directXGraphic.GetGraphicDevice(), camera.GetPoint(), 1, 0, backbuffer);
 		}
 	}
 }

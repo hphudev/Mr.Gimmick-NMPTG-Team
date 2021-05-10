@@ -12,8 +12,8 @@ class PassiveCreatures : public UnplayableObj
 {
 public:
     PassiveCreatures();
-    PassiveCreatures(float x, float y, int gameObjID, float vX = 2, float vY = 0,
-        int numberOfAnimatedTiles = 1, float width = 20.4, float height = 20.4,
+    PassiveCreatures(float x, float y, int gameObjID, float vX = 2, float vY = 0, 
+        int numberOfAnimatedTiles = 1, float width = 20.4, float height = 20.4, 
         LPCWSTR fileSpriteName = SPRITE_PASSIVE_CREATURES_PATH);
     PassiveCreatures& operator = (const PassiveCreatures& enemies);
     bool Load(D3DXCOLOR transparentColor, DirectXGraphic directXGrphic);

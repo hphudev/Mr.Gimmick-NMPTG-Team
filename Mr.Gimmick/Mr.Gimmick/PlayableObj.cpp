@@ -1,5 +1,10 @@
 #include "PlayableObj.h"
 
+PlayableObj::PlayableObj(const PlayableObj& playableObj) : AnimatedAndMovableObj(playableObj)
+{
+
+}
+
 PlayableObj::PlayableObj()
 {
 

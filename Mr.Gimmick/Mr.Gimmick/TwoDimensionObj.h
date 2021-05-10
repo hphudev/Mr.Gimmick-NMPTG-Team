@@ -11,10 +11,16 @@ protected:
 	Point point;
 	Dimension dimension;
 public:
-	Box GetBox();
-	Dimension GetDimension();
+	void SetFirstValueOfPoint(int firstValueOfPoint);
+	void SetFirstValueOfDimension(int firstValueOfDimension);
+	void IncreaseValueOfPoint(int additionalFirstValue, int additionalSecondValue);
+	void IncreaseSecondValueOfPoint(int additionalSecondValue);
+	void IncreaseFirstValueOfPoint(int additionalFirstValue);
 	TwoDimensionObj();
 	TwoDimensionObj(float x, float y);
 	Point GetPoint();
 	void SetPoint(float x, float y);
+	Dimension GetDimension();
+	Box GetBox();
+	void SetDimension(Dimension dimension);
 };

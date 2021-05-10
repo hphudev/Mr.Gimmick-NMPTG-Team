@@ -5,7 +5,7 @@ ScrollBar::ScrollBar()
 
 }
 
-ScrollBar::ScrollBar(float x, float y, int numberOfAnimatedTiles, int gameObjID) : UselessObj(x, y,
+ScrollBar::ScrollBar(float x, float y, int numberOfAnimatedTiles, int gameObjID) : UselessObj(x, y, 
 	numberOfAnimatedTiles, gameObjID)
 {
 
