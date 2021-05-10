@@ -1,98 +1,47 @@
 #include "Quadtree.h"
 
-map<int, GameObj*> Quadtree::GetGameObjsInCamera()
+Quadtree::Quadtree()
 {
-	return this->gameObjsInCamera;
+	this->root = NULL;
 }
 
-void Quadtree::CallRecursionToListObjInCamera(Camera camera, QuadtreeNode* quadtreeNode, int key)
+Quadtree::Quadtree(float length, int numberOfTreeObjs, TreeObj* treeObjs)
 {
-	QuadtreeNode* childQuadtreeNode = quadtreeNode->GetChild(key);
+	list<TreeObj> treeObjList;
 
-	if (childQuadtreeNode != NULL && childQuadtreeNode->GetBox().AABBCheck(camera.GetBox()))
+	for (int i = 0; i < numberOfTreeObjs; i++)
 	{
-		ListObjInCamera(camera, childQuadtreeNode);
+		treeObjList.push_back(treeObjs[i]);
 	}
+
+	this->root = new QuadtreeNode(0, 0, 0, Dimension(length, length), treeObjList);
 }
 
-void Quadtree::ListObjInCamera(Camera camera, QuadtreeNode* quadtreeNode)
+void Quadtree::BuildQuadtree(float length, QuadtreeNode* quadtreeNode)
 {
-	if (quadtreeNode == this->root)
+	if (!quadtreeNode->IsDivided(length))
 	{
-		this->gameObjsInCamera.clear();
+		if (quadtreeNode->IsContainTreeObj())
+		{
+			quadtreeNode->Export();
+		}
+
+		return;
 	}
 
-	if (quadtreeNode != NULL)
-	{
-		if (quadtreeNode->IsLeafQuadtreeNode())
-		{
-			if (quadtreeNode->GetBox().AABBCheck(camera.GetBox()))
-			{
-				list<TreeObj> treeObjs = quadtreeNode->GetTreeObjs();
-				TreeObj treeObj;
+	quadtreeNode->Divide();
+	quadtreeNode->Clip();
+	quadtreeNode->Export();
 
-				while (!treeObjs.empty())
-				{
-					treeObj = treeObjs.front();
-					treeObjs.pop_front();
-					this->gameObjsInCamera[treeObj.GetID()] = treeObj.GetGameObj();
-				}
-			}
-		}
-		else
-		{
-			for (int i = 1; i <= 4; i++)
-			{
-				CallRecursionToListObjInCamera(camera, quadtreeNode, i);
-			}
-		}
-	}
+	BuildQuadtree(length, quadtreeNode->GetChild(1));
+	BuildQuadtree(length, quadtreeNode->GetChild(2));
+	BuildQuadtree(length, quadtreeNode->GetChild(3));
+	BuildQuadtree(length, quadtreeNode->GetChild(4));
 }
 
-void Quadtree::LinkQuadtreeNode(map<int, QuadtreeNode*> quadtreeNodes)
+QuadtreeNode* Quadtree::GetRoot()
 {
-	map<int, QuadtreeNode*>::iterator it;
-
-	for (it = quadtreeNodes.begin(); it != quadtreeNodes.end(); it++)
-	{
-		int nodeID = it->first;
-		QuadtreeNode* quadtreeNode = it->second;
-
-		if (nodeID == 0)
-		{
-			this->root = quadtreeNode;
-		}
-		else
-		{
-			int parentID = quadtreeNode->GetParentID();
-			QuadtreeNode* parentQuadtreeNode = quadtreeNodes[parentID];
-			int position = nodeID % 10;
-
-			switch (position)
-			{
-			case 1:
-			{
-				parentQuadtreeNode->SetChild(1, quadtreeNode);
-				break;
-			}
-			case 2:
-			{
-				parentQuadtreeNode->SetChild(2, quadtreeNode);
-				break;
-			}
-			case 3:
-			{
-				parentQuadtreeNode->SetChild(3, quadtreeNode);
-				break;
-			}
-			case 4:
-			{
-				parentQuadtreeNode->SetChild(4, quadtreeNode);
-				break;
-			}
-			}
-		}
-	}
+	return this->root;
 }
 
 map<int, QuadtreeNode*> Quadtree::InitQuadtreeNodeFromFile(map<int, GameObj*> gameObjs)
@@ -135,46 +84,97 @@ map<int, QuadtreeNode*> Quadtree::InitQuadtreeNodeFromFile(map<int, GameObj*> ga
 	return quadtreeNodes;
 }
 
-QuadtreeNode* Quadtree::GetRoot()
+void Quadtree::LinkQuadtreeNode(map<int, QuadtreeNode*> quadtreeNodes)
 {
-	return this->root;
-}
+	map<int, QuadtreeNode*>::iterator it;
 
-void Quadtree::BuildQuadtree(float length, QuadtreeNode* quadtreeNode)
-{
-	if (!quadtreeNode->IsDivided(length))
+	for (it = quadtreeNodes.begin(); it != quadtreeNodes.end(); it++)
 	{
-		if (quadtreeNode->IsContainTreeObj())
+		int nodeID = it->first;
+		QuadtreeNode* quadtreeNode = it->second;
+
+		if (nodeID == 0)
 		{
-			quadtreeNode->Export();
+			this->root = quadtreeNode;
 		}
+		else
+		{
+			int parentID = quadtreeNode->GetParentID();
+			QuadtreeNode* parentQuadtreeNode = quadtreeNodes[parentID];
+			int position = nodeID % 10;
 
-		return;
-	}
-
-	quadtreeNode->Divide();
-	quadtreeNode->Clip();
-	quadtreeNode->Export();
-
-	for (int i = 1; i <= 4; i++)
-	{
-		BuildQuadtree(length, quadtreeNode->GetChild(i));
+			switch (position)
+			{
+				case 1:
+				{
+					parentQuadtreeNode->SetChild(1, quadtreeNode);
+					break;
+				}
+				case 2:
+				{
+					parentQuadtreeNode->SetChild(2, quadtreeNode);
+					break;
+				}
+				case 3:
+				{
+					parentQuadtreeNode->SetChild(3, quadtreeNode);
+					break;
+				}
+				case 4:
+				{
+					parentQuadtreeNode->SetChild(4, quadtreeNode);
+					break;
+				}
+			}
+		}
 	}
 }
 
-Quadtree::Quadtree(float length, int numberOfTreeObjs, TreeObj* treeObjs)
+void Quadtree::CallRecursionToListObjInCamera(Camera camera, QuadtreeNode* quadtreeNode, int key)
 {
-	list<TreeObj> treeObjList;
-
-	for (int i = 0; i < numberOfTreeObjs; i++)
+	QuadtreeNode* childQuadtreeNode = quadtreeNode->GetChild(key);
+	
+	if (childQuadtreeNode != NULL && childQuadtreeNode->GetBox().AABBCheck(camera.GetBox()))
 	{
-		treeObjList.push_back(treeObjs[i]);
+		ListObjInCamera(camera, childQuadtreeNode);
 	}
-
-	this->root = new QuadtreeNode(0, 0, 0, Dimension(length, length), treeObjList);
 }
 
-Quadtree::Quadtree()
+map<int, GameObj*> Quadtree::GetGameObjsInCamera()
 {
-	this->root = NULL;
+	return this->gameObjsInCamera;
+}
+
+void Quadtree::ListObjInCamera(Camera camera, QuadtreeNode* quadtreeNode)
+{
+	if (quadtreeNode == this->root)
+	{
+		this->gameObjsInCamera.clear();
+	}
+
+	if (quadtreeNode != NULL)
+	{
+		if (quadtreeNode->IsLeafQuadtreeNode())
+		{
+			if (quadtreeNode->GetBox().AABBCheck(camera.GetBox()))
+			{
+				list<TreeObj> treeObjs = quadtreeNode->GetTreeObjs();
+				TreeObj treeObj;
+
+				while (!treeObjs.empty())
+				{
+					treeObj = treeObjs.front();
+					treeObjs.pop_front();
+					this->gameObjsInCamera[treeObj.GetID()] = treeObj.GetGameObj();
+				}
+			}
+		}
+		else
+		{
+			for (int i = 1; i <= 4; i++)
+			{
+				CallRecursionToListObjInCamera(camera, quadtreeNode, i);
+			}
+		}
+	}
 }

@@ -1,134 +1,20 @@
 #include "QuadtreeNode.h"
 
-list<TreeObj> QuadtreeNode::GetTreeObjs()
+QuadtreeNode::QuadtreeNode()
 {
-	return this->treeObjs;
+	this->topLeftChildNode = this->topRightChildNode = this->bottomLeftChildNode =
+		this->bottomRightChildNode = NULL;
+	this->nodeID = 0;
 }
 
-bool QuadtreeNode::IsLeafQuadtreeNode()
+QuadtreeNode::QuadtreeNode(int nodeID, float x, float y, Dimension dimension, list<TreeObj> treeObjs) : 
+	TwoDimensionObj(x, y)
 {
-	return IsContainTreeObj();
-}
-
-bool QuadtreeNode::IsContainTreeObj()
-{
-	return !this->treeObjs.empty();
-}
-
-void QuadtreeNode::Export(string filename)
-{
-	string content = to_string(this->nodeID) + " " + to_string(this->point.GetFirstValue()) + " " +
-		to_string(this->point.GetSecondValue()) + " " + to_string(this->dimension.GetFirstValue()) + " "
-		+ to_string(this->dimension.GetSecondValue()) + " ";
-	int size = this->treeObjs.size();
-	list<TreeObj> treeObjs = this->treeObjs;
-
-	for (int i = 0; i < size; i++)
-	{
-		content += to_string(treeObjs.front().GetID()) + " ";
-		treeObjs.pop_front();
-	}
-
-	content += "\n";
-	FileHandler().Write(filename, content);
-}
-
-void QuadtreeNode::AddObj(Box box, TreeObj treeObj)
-{
-	if (box.AABBCheck(GetBox()))
-	{
-		this->treeObjs.push_back(treeObj);
-	}
-}
-
-void QuadtreeNode::Clip()
-{
-	int size = this->treeObjs.size();
-	TreeObj treeObj;
-	Box box;
-
-	for (int i = 0; i < size; i++)
-	{
-		treeObj = this->treeObjs.front();
-		box = treeObj.GetBox();
-		this->topLeftChildNode->AddObj(box, treeObj);
-		this->topRightChildNode->AddObj(box, treeObj);
-		this->bottomLeftChildNode->AddObj(box, treeObj);
-		this->bottomRightChildNode->AddObj(box, treeObj);
-		this->treeObjs.pop_front();
-	}
-}
-
-void QuadtreeNode::SetChild(int key, QuadtreeNode* childQuadtreeNode)
-{
-	switch (key)
-	{
-		case 1:
-		{
-			this->topLeftChildNode = childQuadtreeNode;
-			break;
-		}
-		case 2:
-		{
-			this->topRightChildNode = childQuadtreeNode;
-			break;
-		}
-		case 3:
-		{
-			this->bottomLeftChildNode = childQuadtreeNode;
-			break;
-		}
-		case 4:
-		{
-			this->bottomRightChildNode = childQuadtreeNode;
-			break;
-		}
-	}
-}
-
-int QuadtreeNode::GetParentID()
-{
-	return this->nodeID / 10;
-}
-
-int QuadtreeNode::GetID()
-{
-	return this->nodeID;
-}
-
-QuadtreeNode* QuadtreeNode::GetChild(int key)
-{
-	switch (key)
-	{
-		case 1:
-		{
-			return this->topLeftChildNode;
-		}
-		case 2:
-		{
-			return this->topRightChildNode;
-		}
-		case 3:
-		{
-			return this->bottomLeftChildNode;
-		}
-		case 4:
-		{
-			return this->bottomRightChildNode;
-		}
-	}
-}
-
-void QuadtreeNode::Divide()
-{
-	int tmp = this->nodeID * 10;
-	float x = this->point.GetFirstValue(), y = this->point.GetSecondValue();
-	float newLength = this->dimension.GetFirstValue() / 2;
-	Dimension newDimension(newLength, newLength);
-	this->topLeftChildNode = new QuadtreeNode(tmp + 1, x, y, newDimension);
-	this->topRightChildNode = new QuadtreeNode(tmp + 2, x + newLength, y, newDimension);
-	this->bottomLeftChildNode = new QuadtreeNode(tmp + 3, x, y + newLength, newDimension);
-	this->bottomRightChildNode = new QuadtreeNode(tmp + 4, x + newLength, y + newLength, newDimension);
+	this->topLeftChildNode = this->topRightChildNode = this->bottomLeftChildNode =
+		this->bottomRightChildNode = NULL;
+	this->nodeID = nodeID;
+	this->dimension = dimension;
+	this->treeObjs = treeObjs;
 }
 
 bool QuadtreeNode::IsDivided(float length)
@@ -159,19 +45,138 @@ bool QuadtreeNode::IsDivided(float length)
 	return 0;
 }
 
-QuadtreeNode::QuadtreeNode(int nodeID, float x, float y, Dimension dimension, list<TreeObj> treeObjs) :
-	TwoDimensionObj(x, y)
+void QuadtreeNode::Divide()
 {
-	this->topLeftChildNode = this->topRightChildNode = this->bottomLeftChildNode =
-		this->bottomRightChildNode = NULL;
-	this->nodeID = nodeID;
-	this->dimension = dimension;
-	this->treeObjs = treeObjs;
+	int tmp = this->nodeID * 10;
+	float x = this->point.GetFirstValue(), y = this->point.GetSecondValue();
+	float newLength = this->dimension.GetFirstValue() / 2;
+	Dimension newDimension(newLength, newLength);
+	this->topLeftChildNode = new QuadtreeNode(tmp + 1, x, y, newDimension);
+	this->topRightChildNode = new QuadtreeNode(tmp + 2, x + newLength, y, newDimension);
+	this->bottomLeftChildNode = new QuadtreeNode(tmp + 3, x, y + newLength, newDimension);
+	this->bottomRightChildNode = new QuadtreeNode(tmp + 4, x + newLength, y + newLength, newDimension);
 }
 
-QuadtreeNode::QuadtreeNode()
+QuadtreeNode* QuadtreeNode::GetChild(int key)
 {
-	this->topLeftChildNode = this->topRightChildNode = this->bottomLeftChildNode =
-		this->bottomRightChildNode = NULL;
-	this->nodeID = 0;
+	switch (key)
+	{
+		case 1:
+		{
+			return this->topLeftChildNode;
+		}
+		case 2:
+		{
+			return this->topRightChildNode;
+		}
+		case 3:
+		{
+			return this->bottomLeftChildNode;
+		}
+		case 4:
+		{
+			return this->bottomRightChildNode;
+		}
+	}
+}
+
+int QuadtreeNode::GetID()
+{
+	return this->nodeID;
+}
+
+int QuadtreeNode::GetParentID()
+{
+	return this->nodeID / 10;
+}
+
+void QuadtreeNode::SetChild(int key, QuadtreeNode* childQuadtreeNode)
+{
+	switch (key)
+	{
+		case 1:
+		{
+			this->topLeftChildNode = childQuadtreeNode;
+			break;
+		}
+		case 2:
+		{
+			this->topRightChildNode = childQuadtreeNode;
+			break;
+		}
+		case 3:
+		{
+			this->bottomLeftChildNode = childQuadtreeNode;
+			break;
+		}
+		case 4:
+		{
+			this->bottomRightChildNode = childQuadtreeNode;
+			break;
+		}
+	}
+}
+
+void QuadtreeNode::Clip()
+{
+	int size = this->treeObjs.size();
+	TreeObj treeObj;
+	Box box;
+
+	for (int i = 0; i < size; i++)
+	{
+		treeObj = this->treeObjs.front();
+		box = treeObj.GetBox();
+		this->topLeftChildNode->AddObj(box, treeObj);
+		this->topRightChildNode->AddObj(box, treeObj);
+		this->bottomLeftChildNode->AddObj(box, treeObj);
+		this->bottomRightChildNode->AddObj(box, treeObj);
+		this->treeObjs.pop_front();
+	}
+}
+
+void QuadtreeNode::AddObj(Box box, TreeObj treeObj)
+{
+	if (box.AABBCheck(GetBox()))
+	{
+		this->treeObjs.push_back(treeObj);
+	}
+}
+
+void QuadtreeNode::Export(string filename)
+{
+	string content = to_string(this->nodeID) + " " + to_string(this->point.GetFirstValue()) + " " +
+		to_string(this->point.GetSecondValue()) + " " + to_string(this->dimension.GetFirstValue()) + " "
+		+ to_string(this->dimension.GetSecondValue()) + " ";
+	int size = this->treeObjs.size();
+	list<TreeObj> treeObjs = this->treeObjs;
+
+	for (int i = 0; i < size; i++)
+	{
+		content += to_string(treeObjs.front().GetID()) + " ";
+		treeObjs.pop_front();
+	}
+
+	content += "\n";
+	FileHandler().Write(filename, content);
+}
+
+bool QuadtreeNode::IsContainTreeObj()
+{
+	return !this->treeObjs.empty();
+}
+
+bool QuadtreeNode::IsLeafQuadtreeNode()
+{
+	return IsContainTreeObj();
+}
+
+list<TreeObj> QuadtreeNode::GetTreeObjs()
+{
+	return this->treeObjs;
+}
+
+Box QuadtreeNode::GetBox()
+{
+	return Box(this->point, this->dimension);
 }

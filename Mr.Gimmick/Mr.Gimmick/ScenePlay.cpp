@@ -7,7 +7,7 @@ ScenePlay::ScenePlay(HWND window)
 	this->window = window;
 	bool flag = this->directX.InitDirectX(this->window, SCREEN_WIDTH, SCREEN_HEIGHT, FULLSCREEN);
 
-	this->yumetaro =new  Yumetaro(YUMETARO_START_X, YUMETARO_START_Y, YUMETARO_VELOCITY_X,
+	this->yumetaro = new Yumetaro(YUMETARO_START_X, YUMETARO_START_Y, YUMETARO_VELOCITY_X,
 		YUMETARO_VELOCITY_Y, 1, YUMETARO_WIDTH, YUMETARO_HEIGHT, SPRITE_YUMETARO_PATH, 1);
 
 	this->yumetaro->Load(YUMETARO_BACKGROUND_COLOR, this->directX.GetDirectXGraphic());
@@ -58,8 +58,9 @@ void ScenePlay::Render()
 	if (graphicDevice.BeginRendering())
 	{
 		DirectXGraphic directXGraphic = this->directX.GetDirectXGraphic();
-		this->background.DrawBackground(directXGraphic.GetGraphicDevice().GetBackbuffer(), directXGraphic);
-		yumetaro->Draw(2, 0, graphicDevice);
+		this->background.DrawBackground(directXGraphic.GetGraphicDevice().GetBackbuffer(), directXGraphic, 
+			Camera());
+		yumetaro->Draw(2, 0, graphicDevice, Point());
 
 		// Dừng render
 		graphicDevice.EndRendering();

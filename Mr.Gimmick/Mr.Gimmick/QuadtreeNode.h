@@ -1,32 +1,33 @@
 #pragma once
 
 #include <list>
-#include "FileHandler.h"
-#include "LevelOne.h"
 #include "TreeObj.h"
 #include "TwoDimensionObj.h"
 #include "Box.h"
+#include "FileHandler.h"
+#include "LevelOne.h"
 
 class QuadtreeNode : public TwoDimensionObj
 {
 private:
-	QuadtreeNode* topLeftChildNode, * topRightChildNode, * bottomLeftChildNode, * bottomRightChildNode;
+	QuadtreeNode *topLeftChildNode, *topRightChildNode, *bottomLeftChildNode, *bottomRightChildNode;
 	int nodeID;
 	list<TreeObj> treeObjs;
 public:
-	list<TreeObj> GetTreeObjs();
+	QuadtreeNode();
+	QuadtreeNode(int nodeID, float x, float y, Dimension dimension, 
+		list<TreeObj> treeObjs = list<TreeObj>());
+	bool IsDivided(float length);
+	void Divide();
+	QuadtreeNode* GetChild(int key);
+	int GetID();
+	int GetParentID();
+	void SetChild(int key, QuadtreeNode* childQuadtreeNode);
+	void Clip();
+	void AddObj(Box box, TreeObj treeObj);
+	void Export(string filename = FILE_QUADTREE_PATH_LEVEL_ONE);
 	bool IsLeafQuadtreeNode();
 	bool IsContainTreeObj();
-	void Export(string filename = FILE_QUADTREE_PATH_LEVEL_ONE);
-	void AddObj(Box box, TreeObj treeObj);
-	void Clip();
-	void SetChild(int key, QuadtreeNode* childQuadtreeNode);
-	int GetParentID();
-	int GetID();
-	QuadtreeNode* GetChild(int key);
-	void Divide();
-	bool IsDivided(float length);
-	QuadtreeNode(int nodeID, float x, float y, Dimension dimension,
-		list<TreeObj> treeObjs = list<TreeObj>());
-	QuadtreeNode();
+	list<TreeObj> GetTreeObjs();
+	Box GetBox();
 };

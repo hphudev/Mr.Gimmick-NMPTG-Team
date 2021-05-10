@@ -1,8 +1,8 @@
 #include "GameObj.h"
 
-int GameObj::GetID()
+GameObj::GameObj()
 {
-    return this->gameObjID;
+    this->gameObjID = 0;
 }
 
 GameObj::GameObj(float x, float y, int gameObjID) : TwoDimensionObj(x, y)
@@ -10,7 +10,7 @@ GameObj::GameObj(float x, float y, int gameObjID) : TwoDimensionObj(x, y)
     this->gameObjID = gameObjID;
 }
 
-GameObj::GameObj()
+int GameObj::GetID()
 {
-    this->gameObjID = 0;
+    return this->gameObjID;
 }

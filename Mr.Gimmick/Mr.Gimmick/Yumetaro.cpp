@@ -1,12 +1,17 @@
 ﻿#include "Yumetaro.h"
 
+Yumetaro::Yumetaro(const Yumetaro& yumetaro) : PlayableObj(yumetaro)
+{
+	
+}
+
 Yumetaro::Yumetaro()
 {
 
 }
 
 Yumetaro::Yumetaro(float x, float y, float vX, float vY, int numberOfAnimatedTiles, float width, 
-	float height, LPCWSTR fileSpriteName, int gameObjID) : PlayableObj(x, y, numberOfAnimatedTiles, vX,
+	float height, LPCWSTR fileSpriteName, int gameObjID) : PlayableObj(x, y, numberOfAnimatedTiles, vX, 
 		vY, gameObjID)
 {
 	this->animatedTiles[0] = new AnimatedTile(x, y, width, height, fileSpriteName, 6, 0, 1);
@@ -26,13 +31,18 @@ bool Yumetaro::Load(D3DXCOLOR transparentColor, DirectXGraphic directXGrphic)
 	return this->animatedTiles[0]->Load(transparentColor, directXGrphic);
 }
 
+void Yumetaro::Animate()
+{
+	this->animatedTiles[0]->Animate();
+}
+
 void Yumetaro::Move(int screenWidth, int screenHeight)
 {
 	Dimension spriteDimension = this->animatedTiles[0]->GetSprite()->GetDimension();
 	float lim[2];
 	float scale = SCALE;
-	lim[0] = screenWidth / scale - spriteDimension.GetFirstValue();
-	lim[1] = screenHeight / scale - spriteDimension.GetSecondValue();
+	lim[0] = screenWidth - spriteDimension.GetFirstValue() * scale;
+	lim[1] = screenHeight - spriteDimension.GetSecondValue() * scale;
 
 	float x = this->point.GetFirstValue();
 	float y = this->point.GetSecondValue();
@@ -45,31 +55,29 @@ void Yumetaro::Move(int screenWidth, int screenHeight)
 	float vX = this->velocity.GetFirstValue();
 	float vY = this->velocity.GetSecondValue();
 
-	if ((flags[0] && flags[1] && flags[2] && flags[3]) || (!flags[0] && vX <= 0) || 
-		(!flags[1] && vY >= 0) || (!flags[2] && vY <= 0) || (!flags[3] && vY >= 0))
+	//if ((flags[0] && flags[1] && flags[2] && flags[3]) || (!flags[0] && vX <= 0) || 
+	//	(!flags[1] && vY >= 0) || (!flags[2] && vY <= 0) || (!flags[3] && vY >= 0))
 	{
 		AnimatedAndMovableObj::Move(screenWidth, screenHeight);
 	}
 
 	if (!flags[0])
 	{
-		this->point.SetFirstValue(lim[0]);
+		//this->point.SetFirstValue(lim[0]);
 	}
 
 	if (!flags[1])
 	{
-		this->point.SetFirstValue(0);
+		//this->point.SetFirstValue(0);
 	}
 
 	if (!flags[2])
 	{
-		this->point.SetSecondValue(lim[1]);
+		//this->point.SetSecondValue(lim[1]);
 	}
 
 	if (!flags[3])
 	{
-		this->point.SetSecondValue(0);
+		//this->point.SetSecondValue(0);
 	}
-
-	this->animatedTiles[0]->Animate();
 }

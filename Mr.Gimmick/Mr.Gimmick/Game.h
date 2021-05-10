@@ -27,6 +27,8 @@
 #define FULLSCREEN 0
 #define SCREEN_WIDTH 16 * TILE_SIZE * SCALE
 #define SCREEN_HEIGHT 12 * TILE_SIZE * SCALE
+#define SCENE_MIN_WIDTH TILE_SIZE
+#define SCENE_MAX_WIDTH 67 * TILE_SIZE
 
 #define FPS 30
 #pragma endregion
@@ -34,8 +36,10 @@
 class Game
 {
 private:
-	map<int, GameObj*> gameObjs;
-	Quadtree quadtree;
+	#pragma region Attributes
+	TwoDimensionObj scene;
+	int indexOfScene;
+	Camera camera;
 	Yumetaro yumetaro;
 	Bosses boss;
 	Treasures treasure;
@@ -49,21 +53,26 @@ private:
 	DirectX directX;
 	HWND window;
 	Background background;
+	Quadtree quadtree;
+	map<int, GameObj*> gameObjs;
+	#pragma endregion
 public:
-	TreeObj* InitTreeObjs();
+	#pragma region Operations
+	bool InitGame(HWND window);
+	void UpdateGame();
+	void Render();
 	Game();
 	Game(const Game& game);
 	~Game();
+	TreeObj* InitTreeObjs();
 	void InitUselessObjs(int key, int* numberOfUselessObjs);
 	void InitEnemies();
 	void InitHazardsAndInteractables();
 	void InitItemsAndHUD();
 	void InitPassiveCreatures();
-	bool InitGame(HWND window);
 	bool LoadGame();
 	void RunGame(HWND window);
-	void UpdateGame();
-	void Render();
 	void EndGame(HWND window);
 	DirectX GetDirectX();
+	#pragma endregion
 };

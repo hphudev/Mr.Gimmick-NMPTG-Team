@@ -1,5 +1,21 @@
 #include "Pair.h"
 
+void Pair::IncreaseValue(int addtionalFirstValue, int additionalSecondValue)
+{
+	IncreaseFirstValue(addtionalFirstValue);
+	IncreaseSecondValue(additionalSecondValue);
+}
+
+void Pair::IncreaseSecondValue(int additionalSecondValue)
+{
+	this->secondValue += additionalSecondValue;
+}
+
+void Pair::IncreaseFirstValue(int addtionalFirstValue)
+{
+	this->firstValue += addtionalFirstValue;
+}
+
 Pair::Pair()
 {
 	this->firstValue = this->secondValue = 0;

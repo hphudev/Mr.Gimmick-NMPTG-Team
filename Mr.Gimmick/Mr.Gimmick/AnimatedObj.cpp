@@ -1,5 +1,18 @@
 #include "AnimatedObj.h"
 
+AnimatedObj::AnimatedObj()
+{
+	this->numberOfAnimatedTiles = 0;
+	this->animatedTiles = NULL;
+}
+
+AnimatedObj::AnimatedObj(float x, float y, int numberOfAnimatedTiles, int gameObjID) : 
+	GameObj(x, y, gameObjID)
+{
+	this->numberOfAnimatedTiles = numberOfAnimatedTiles;
+	this->animatedTiles = new AnimatedTile*[numberOfAnimatedTiles];
+}
+
 void AnimatedObj::SetDimension()
 {
 	Dimension tileDimension;
@@ -8,26 +21,13 @@ void AnimatedObj::SetDimension()
 		tileDimension.GetSecondValue());
 }
 
-AnimatedObj::AnimatedObj()
-{
-	this->numberOfAnimatedTiles = 0;
-	this->animatedTiles = NULL;
-}
-
-AnimatedObj::AnimatedObj(float x, float y, int numberOfAnimatedTiles, int gameObjID) :  GameObj(x, y, 
-	gameObjID)
-{
-	this->numberOfAnimatedTiles = numberOfAnimatedTiles;
-	this->animatedTiles = new AnimatedTile*[numberOfAnimatedTiles];
-}
-
 void AnimatedObj::Copy(const AnimatedObj& animatedObj)
 {
-	this->dimension = animatedObj.dimension;
-	this->gameObjID = animatedObj.gameObjID;
 	this->point = animatedObj.point;
 	this->numberOfAnimatedTiles = animatedObj.numberOfAnimatedTiles;
 	this->animatedTiles = new AnimatedTile*[animatedObj.numberOfAnimatedTiles];
+	this->dimension = animatedObj.dimension;
+	this->gameObjID = animatedObj.gameObjID;
 
 	for (int i = 0; i < animatedObj.numberOfAnimatedTiles; i++)
 	{
@@ -66,11 +66,11 @@ AnimatedObj::~AnimatedObj()
 	Clean();
 }
 
-void AnimatedObj::Draw(int indexOfRow, bool isRotate, GraphicDevice graphicDevice)
+void AnimatedObj::Draw(int indexOfRow, bool isRotate, GraphicDevice graphicDevice, Point cameraPoint)
 {
 	for (int i = 0; i < this->numberOfAnimatedTiles; i++)
 	{
-		this->animatedTiles[i]->Draw(graphicDevice, indexOfRow);
+		this->animatedTiles[i]->Draw(graphicDevice, cameraPoint, indexOfRow);
 	}
 }
 

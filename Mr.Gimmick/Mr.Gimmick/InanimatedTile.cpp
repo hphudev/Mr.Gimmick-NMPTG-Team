@@ -22,16 +22,28 @@ InanimatedTile::~InanimatedTile()
 	delete this->image;
 }
 
-void InanimatedTile::Draw(GraphicDevice graphicDevice, int indexOfRow, bool isRotate, 
+void InanimatedTile::Draw(GraphicDevice graphicDevice, Point cameraPoint, int indexOfRow, bool isRotate, 
 	LPDIRECT3DSURFACE9 backbuffer)
 {
 	RECT destinationRectangle;
 	float scale = SCALE;
-	float x = this->point.GetFirstValue() * scale;
-	float y = this->point.GetSecondValue() * scale;
+	float x = (this->point.GetFirstValue() - cameraPoint.GetFirstValue()) * scale;
+	float y = (this->point.GetSecondValue() - cameraPoint.GetSecondValue()) * scale;
 	Dimension dimension = this->image->GetDimension();
 	float width = dimension.GetFirstValue();
 	float height = dimension.GetSecondValue();
+
+	if (x != (int)x)
+	{
+		if (x < 0)
+		{
+			x = (int)x - 1;
+		}
+		else
+		{
+			x = (int)x;
+		}
+	}
 
 	// Set the surface's rectangle for drawing
 	destinationRectangle.left = x;

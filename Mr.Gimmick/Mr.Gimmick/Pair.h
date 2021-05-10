@@ -5,6 +5,9 @@ class Pair
 protected:
 	float firstValue, secondValue;
 public:
+	void IncreaseValue(int addtionalFirstValue, int additionalSecondValue);
+	void IncreaseSecondValue(int additionalSecondValue);
+	void IncreaseFirstValue(int addtionalFirstValue);
 	Pair();
 	Pair(float firstValue, float secondValue);
 	float GetFirstValue();

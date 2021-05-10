@@ -1,6 +1,8 @@
 #pragma once
 
 #include <d3dx9.h>
+#include "Tileset.h"
+#include "TwoDimensionObj.h"
 #include "Keyboard.h"
 #include "DirectX.h"
 #include "Background.h"
@@ -19,7 +21,7 @@
 #define MAP 2 
 #define GAMEPLAY 3
 
-class Scene
+class Scene : public TwoDimensionObj
 {
 protected:
 	LPDIRECT3DTEXTURE9 texture;

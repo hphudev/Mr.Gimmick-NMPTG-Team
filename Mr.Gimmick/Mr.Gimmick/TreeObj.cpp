@@ -1,18 +1,8 @@
 #include "TreeObj.h"
 
-GameObj* TreeObj::GetGameObj()
+TreeObj::TreeObj()
 {
-	return this->gameObj;
-}
-
-int TreeObj::GetID()
-{
-	return this->gameObj->GetID();
-}
-
-Box TreeObj::GetBox()
-{
-	return this->gameObj->GetBox();
+	this->gameObj = NULL;
 }
 
 TreeObj::TreeObj(GameObj* gameObj)
@@ -20,7 +10,17 @@ TreeObj::TreeObj(GameObj* gameObj)
 	this->gameObj = gameObj;
 }
 
-TreeObj::TreeObj()
+Box TreeObj::GetBox()
 {
-	this->gameObj = NULL;
+	return this->gameObj->GetBox();
+}
+
+int TreeObj::GetID()
+{
+	return this->gameObj->GetID();
+}
+
+GameObj* TreeObj::GetGameObj()
+{
+	return this->gameObj;
 }

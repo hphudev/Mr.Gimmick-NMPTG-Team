@@ -23,15 +23,10 @@ AnimatedTile::AnimatedTile(const AnimatedTile& animatedTile)
 
 AnimatedTile::~AnimatedTile()
 {
-	if (this->texture != NULL)
-	{
-		this->texture->Release();
-	}
-
 	delete this->sprite;
 }
 
-void AnimatedTile::Draw(GraphicDevice graphicDevice, int indexOfRow, bool isRotate, 
+void AnimatedTile::Draw(GraphicDevice graphicDevice, Point cameraPoint, int indexOfRow, bool isRotate, 
 	LPDIRECT3DSURFACE9 backbuffer)
 {
 	this->numberOfDrawings++;
@@ -52,7 +47,8 @@ void AnimatedTile::Draw(GraphicDevice graphicDevice, int indexOfRow, bool isRota
 		D3DXSPRITE_ALPHABLEND);		// Sprite được vẽ hỗ trợ trong suốt
 
 	// Tạo vector để cập nhật vị trí của sprite
-	D3DXVECTOR3 position(this->point.GetFirstValue(), this->point.GetSecondValue(), 0);
+	D3DXVECTOR3 position(this->point.GetFirstValue() - cameraPoint.GetFirstValue(), 
+		this->point.GetSecondValue() - cameraPoint.GetSecondValue(), 0);
 
 	// Thiết đặt kích thước cho từng tile nguồn
 	Dimension dimension = this->sprite->GetDimension();
@@ -67,7 +63,9 @@ void AnimatedTile::Draw(GraphicDevice graphicDevice, int indexOfRow, bool isRota
 	}
 
 	// Vẽ sprite
-	spriteHandler->SetTransform((new TransformHandler())->GetScaleMatrix());
+	TransformHandler transformHandler;
+	D3DXMATRIX transformMatrix = *transformHandler.GetScaleMatrix();
+	spriteHandler->SetTransform(&transformMatrix);
 	spriteHandler->Draw(
 		this->texture,		// Texture được sử dụng làm hình ảnh nguồn cho sprite
 		&sourceRectangle,		// Vị trí của tile trong sprite
