@@ -1,8 +1,8 @@
 #pragma once
 
-#include "GameComponent.h"
+#include "TwoDimensionObj.h"
 
-class Camera : public GameComponent
+class Camera : public TwoDimensionObj
 {
 
 };

@@ -1,5 +1,15 @@
 #include "QuadtreeNode.h"
 
+list<TreeObj> QuadtreeNode::GetTreeObjs()
+{
+	return this->treeObjs;
+}
+
+bool QuadtreeNode::IsLeafQuadtreeNode()
+{
+	return IsContainTreeObj();
+}
+
 bool QuadtreeNode::IsContainTreeObj()
 {
 	return !this->treeObjs.empty();

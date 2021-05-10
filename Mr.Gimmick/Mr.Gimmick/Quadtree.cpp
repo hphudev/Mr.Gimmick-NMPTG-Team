@@ -1,5 +1,54 @@
 #include "Quadtree.h"
 
+map<int, GameObj*> Quadtree::GetGameObjsInCamera()
+{
+	return this->gameObjsInCamera;
+}
+
+void Quadtree::CallRecursionToListObjInCamera(Camera camera, QuadtreeNode* quadtreeNode, int key)
+{
+	QuadtreeNode* childQuadtreeNode = quadtreeNode->GetChild(key);
+
+	if (childQuadtreeNode != NULL && childQuadtreeNode->GetBox().AABBCheck(camera.GetBox()))
+	{
+		ListObjInCamera(camera, childQuadtreeNode);
+	}
+}
+
+void Quadtree::ListObjInCamera(Camera camera, QuadtreeNode* quadtreeNode)
+{
+	if (quadtreeNode == this->root)
+	{
+		this->gameObjsInCamera.clear();
+	}
+
+	if (quadtreeNode != NULL)
+	{
+		if (quadtreeNode->IsLeafQuadtreeNode())
+		{
+			if (quadtreeNode->GetBox().AABBCheck(camera.GetBox()))
+			{
+				list<TreeObj> treeObjs = quadtreeNode->GetTreeObjs();
+				TreeObj treeObj;
+
+				while (!treeObjs.empty())
+				{
+					treeObj = treeObjs.front();
+					treeObjs.pop_front();
+					this->gameObjsInCamera[treeObj.GetID()] = treeObj.GetGameObj();
+				}
+			}
+		}
+		else
+		{
+			for (int i = 1; i <= 4; i++)
+			{
+				CallRecursionToListObjInCamera(camera, quadtreeNode, i);
+			}
+		}
+	}
+}
+
 void Quadtree::LinkQuadtreeNode(map<int, QuadtreeNode*> quadtreeNodes)
 {
 	map<int, QuadtreeNode*>::iterator it;
