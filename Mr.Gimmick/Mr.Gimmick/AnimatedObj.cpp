@@ -23,6 +23,8 @@ AnimatedObj::AnimatedObj(float x, float y, int numberOfAnimatedTiles, int gameOb
 
 void AnimatedObj::Copy(const AnimatedObj& animatedObj)
 {
+	this->dimension = animatedObj.dimension;
+	this->gameObjID = animatedObj.gameObjID;
 	this->point = animatedObj.point;
 	this->numberOfAnimatedTiles = animatedObj.numberOfAnimatedTiles;
 	this->animatedTiles = new AnimatedTile*[animatedObj.numberOfAnimatedTiles];

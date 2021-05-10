@@ -12,6 +12,8 @@ private:
 	int nodeID;
 	list<TreeObj> treeObjs;
 public:
+	void AddObj(Box box, TreeObj treeObj);
+	void Clip();
 	void SetChild(int key, QuadtreeNode* childQuadtreeNode);
 	int GetParentID();
 	int GetID();
