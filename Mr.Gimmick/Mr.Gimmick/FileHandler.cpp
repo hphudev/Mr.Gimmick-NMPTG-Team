@@ -1,5 +1,12 @@
 #include "FileHandler.h"
 
+void FileHandler::Write(string filename, string content)
+{
+	ofstream file(filename, ios_base::app);
+	file << content;
+	file.close();
+}
+
 list<list<float>> FileHandler::ReadQuadtreeFile(string filename)
 {
 	list<list<float>> result;

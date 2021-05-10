@@ -1,5 +1,28 @@
 #include "QuadtreeNode.h"
 
+bool QuadtreeNode::IsContainTreeObj()
+{
+	return !this->treeObjs.empty();
+}
+
+void QuadtreeNode::Export(string filename)
+{
+	string content = to_string(this->nodeID) + " " + to_string(this->point.GetFirstValue()) + " " +
+		to_string(this->point.GetSecondValue()) + " " + to_string(this->dimension.GetFirstValue()) + " "
+		+ to_string(this->dimension.GetSecondValue()) + " ";
+	int size = this->treeObjs.size();
+	list<TreeObj> treeObjs = this->treeObjs;
+
+	for (int i = 0; i < size; i++)
+	{
+		content += to_string(treeObjs.front().GetID()) + " ";
+		treeObjs.pop_front();
+	}
+
+	content += "\n";
+	FileHandler().Write(filename, content);
+}
+
 void QuadtreeNode::AddObj(Box box, TreeObj treeObj)
 {
 	if (box.AABBCheck(GetBox()))

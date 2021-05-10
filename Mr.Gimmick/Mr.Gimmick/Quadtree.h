@@ -1,7 +1,6 @@
 #pragma once
 
 #include <map>
-#include "FileHandler.h"
 #include "QuadtreeNode.h"
 
 class Quadtree

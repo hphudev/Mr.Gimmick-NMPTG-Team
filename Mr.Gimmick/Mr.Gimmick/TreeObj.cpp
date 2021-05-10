@@ -1,5 +1,10 @@
 #include "TreeObj.h"
 
+int TreeObj::GetID()
+{
+	return this->gameObj->GetID();
+}
+
 Box TreeObj::GetBox()
 {
 	return this->gameObj->GetBox();
